@@ -1,10 +1,10 @@
-# Configure Windi CSS
+# Cấu hình Windi CSS
 
 <Environment type="node" />
 
-Markdown naturally supports embedded HTML markups. You can therefore style your content the way you want. To provide some convenience, we have [Windi CSS](https://github.com/windicss/windicss) built-in, so you can style markup directly using class utilities. 
+Markdown hỗ trợ các thẻ HTML được nhúng một cách tự nhiên. Do đó, bạn có thể tạo nội dung của mình theo cách bạn muốn. Để mang lại sự tiện lợi, chúng tôi đã tích hợp sẵn [Windi CSS](https://github.com/windicss/windicss) built-in, vì vậy bạn có thể tạo thẻ HTML trực tiếp bằng các class.
 
-For example:
+Ví dụ:
 
 ```html
 <div class="grid pt-4 gap-4 grids-cols-[100px,1fr]">
@@ -17,11 +17,11 @@ For example:
 </div>
 ```
 
-The [Attributify Mode](https://windicss.org/posts/v30.html#attributify-mode) in [Windi CSS v3.0](https://windicss.org/posts/v30.html) is enabled by default.
+[Attributify Mode](https://windicss.org/posts/v30.html#attributify-mode) trong [Windi CSS v3.0](https://windicss.org/posts/v30.html) mặc định được bật.
 
-## Configurations
+## Cấu hình
 
-To configure Windi CSS, create `setup/windicss.ts` with the following content to extend the builtin configurations
+Để định cấu hình CSS Windi, hãy tạo `setup/windicss.ts` ới nội dung sau để mở rộng cấu hình tích hợp
 
 ```ts
 // setup/windicss.ts
@@ -46,4 +46,4 @@ export default defineWindiSetup(() => ({
 }))
 ```
 
-Learn more about [Windi CSS configurations](https://windicss.org/guide/configuration.html)
+Tìm hiểu thêm về: [Cấu hình Windi CSS](https://windicss.org/guide/configuration.html)

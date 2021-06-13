@@ -1,14 +1,14 @@
-# Editor Support
+# Hỗ trợ trình soạn thảo
 
-Since Slidev is using Markdown as the source entry, you can use ANY editors you love to write it.
+Vì Slidev đang sử dụng Markdown làm mục nhập nguồn, bạn có thể sử dụng BẤT KỲ trình soạn thảo nào bạn thích để viết nó.
 
-If you want some high-level management to your slides, we have provided the following editor integrations for you!
+Nếu bạn muốn một số quản lý hiệu quả cao cho các slide của mình, chúng tôi cung cấp các trình soạn thảo tích hợp cho bạn!
 
-## Integrated Editor
+## Trình soạn thảo tích hợp
 
-Slidev comes with an integrated [CodeMirror](https://codemirror.net/) editor that will instantly reload and save the changes to your file. 
+Slidev đi kèm với trình soạn thảo tích hợp [CodeMirror](https://codemirror.net/) sẽ tải lại ngay lập tức và lưu các thay đổi vào file của bạn. 
 
-Click the <carbon-edit class="inline-icon-btn"/> button to open it.
+Click vào nút <carbon-edit class="inline-icon-btn"/> để mở.
 
 ![](/screenshots/integrated-editor.png)
 
@@ -28,15 +28,15 @@ Click the <carbon-edit class="inline-icon-btn"/> button to open it.
     </a>
 </p>
 
-The VS Code extension provides some features to help you better organize your slides and have a quick overview of them.
+The VS Code extension cung cấp một số tính năng để giúp bạn tổ chức các slide của mình tốt hơn và có cái nhìn tổng quan nhanh về chúng.
 
-### Features
+### Tính năng
 
-- View slides in the side panel
-- Go to next / prev buttons
-- Re-ordering slides
-- Folding for slide blocks
-- Convert Markdown to HTML
+- Xem các slide trong panel bên cạnh
+- Chuyển đến các nút next / prev
+- Sắp xếp lại các slide
+- Đóng gói các khối slide
+- Chuyển đổi Markdown sang HTML
 
 ![](https://user-images.githubusercontent.com/11247099/116809994-cc2caa00-ab73-11eb-879f-60585747c3c9.png)
 

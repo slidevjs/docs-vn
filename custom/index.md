@@ -1,10 +1,10 @@
-# Customizations
+# Các tùy chỉnh
 
-Slidev is fully customizable, from styling to tooling configurations. It allows you to configure the tools underneath ([Vite](/custom/config-vite), [Windi CSS](/custom/config-windicss), [Monaco](/custom/config-monaco), etc.)
+Slidev hoàn toàn có thể tùy chỉnh, từ kiểu dáng đến cấu hình công cụ. Nó cho phép bạn định cấu hình các công cụ bên dưới ([Vite](/custom/config-vite), [Windi CSS](/custom/config-windicss), [Monaco](/custom/config-monaco), v.v...)
 
-## Frontmatter Configures
+## Cấu hình Frontmatter
 
-You can configure Slidev in the frontmatter of your first slide, the following shows the default value for each option.
+Bạn có thể định cấu hình Slidev trong frontmatter của trang trình bày đầu tiên của mình, phần sau hiển thị giá trị mặc định cho mỗi tùy chọn.
 
 ```yaml
 ---
@@ -44,17 +44,17 @@ defaults:
 # information for your slides, can be a markdown string
 info: |
   ## Slidev
-  My first [Slidev](http://sli.dev/) presentations!
+  Trang trình bày [Slidev](http://sli.dev/) đầu tiên của tôi!
 ---
 ```
 
-Check out the [type definitions](https://github.com/slidevjs/slidev/blob/main/packages/types/src/types.ts#L29) for more options.
+Xem [định nghĩa loại](https://github.com/slidevjs/slidev/blob/main/packages/types/src/types.ts#L29) để có thêm tùy chọn.
 
-## Directory Structure
+## Cấu trúc thư mục
 
-Slidev uses directory structure conventions to minimalize the configuration surface and make extensions in functionality flexible and intuitive.
+Slidev sử dụng các quy ước cấu trúc thư mục để thu nhỏ bề mặt cấu hình và làm cho các phần mở rộng trong chức năng trở nên linh hoạt và trực quan.
 
-Refer to the [Directory Structure](/custom/directory-structure) section.
+Tham khảo phần [Cấu trúc thư mục](/custom/directory-structure).
 
 ## Config Tools
 

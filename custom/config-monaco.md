@@ -1,10 +1,10 @@
-# Configure Monaco
+# Cấu hình Monaco
 
 <Environment type="client" />
 
-> By default, Monaco only is enabled only on dev mode. To make it work on SPA build, add `monaco: true` to your frontmatter configs.
+> Theo mặc định, Monaco chỉ được bật trên chế độ dev. Để nó hoạt động trên bản dựng SPA, hãy thêm `monaco: true` vào cấu hình frontmatter của bạn.
 
-Create `./setup/monaco.ts` with the following content:
+Tạo `./setup/monaco.ts` với nội dung sau:
 
 ```ts
 import { defineMonacoSetup } from '@slidev/types'
@@ -14,11 +14,11 @@ export default defineMonacoSetup(async (monaco) => {
 })
 ```
 
-Learn more about [configuring Monaco](https://github.com/Microsoft/monaco-editor).
+Tìm hiểu nhiều hơn tại [Cấu hình Monaco](https://github.com/Microsoft/monaco-editor).
 
-## Usage
+## Sử dụng
 
-To use Monaco in your slides, simply append `{monaco}` to your code snippets:
+Để sử dụng Monaco trong các trang trình bày của bạn, chỉ cần thêm `{monaco}` vào các đoạn code của bạn:
 
 ~~~js
 //```js
@@ -31,7 +31,7 @@ plusOne.value++ // error
 //```
 ~~~
 
-To
+Và
 
 ~~~js
 //```js {monaco}
@@ -44,9 +44,9 @@ plusOne.value++ // error
 //```
 ~~~
 
-## Exporting
+## Xuất trang trình bày
 
-By default, Monaco will ONLY work on `dev` mode. If you would also like to have it available in the exported SPA, you can configure it in your frontmatter:
+Theo mặc định, Monaco sẽ CHỈ hoạt động ở chế độ `dev`. Nếu bạn cũng muốn có nó trong SPA đã xuất, bạn có thể định cấu hình nó trong frontmatter của mình:
 
 ```yaml
 ---
@@ -54,9 +54,9 @@ monaco: true # default "dev"
 ---
 ```
 
-## Types Auto Installing
+## Các loại cài đặt tự động
 
-When you use TypeScript with Monaco, types for dependencies will be installed to the client-side automatically.
+Khi bạn sử dụng TypeScript với Monaco, các kiểu dependencie sẽ được cài đặt tự động cho phía client.
 
 ~~~ts
 //```ts {monaco}
@@ -67,4 +67,4 @@ const counter = ref(0)
 //```
 ~~~
 
-In the example above, just make sure `vue` and `@vueuse/core` are installed locally as dependencies / devDependencies, Slidev will handle the rest and your editor will just work!
+Trong ví dụ trên, chỉ cần đảm bảo rằng `vue` và `@vueuse/core` được cài đặt cục bộ dưới dạng dependencies / devDependencies, Slidev sẽ xử lý phần còn lại và trình soạn thảo của bạn sẽ hoạt động!

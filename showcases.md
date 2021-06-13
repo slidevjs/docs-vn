@@ -4,7 +4,7 @@ sidebar: false
 
 # Showcases
 
-Talks / Presentations using Slidev.
+Nói chuyện / Thuyết trình bằng Slidev.
 
-<!-- Edit in ./docs/.vitepress/showcases.ts -->
+<!-- Chỉnh sửa trong ./docs/.vitepress/showcases.ts -->
 <ShowCases />

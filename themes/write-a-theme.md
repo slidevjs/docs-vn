@@ -1,34 +1,34 @@
-# Write a Theme
+# Viết chủ đề mới
 
-To get started, we recommend you use our generator for scaffolding your first theme
+Để bắt đầu, chúng tôi khuyên bạn nên sử dụng trình tạo của chúng tôi để làm giàn giáo cho chủ đề đầu tiên của bạn
 
 ```bash
 $ npm init slidev-theme
 ```
 
-Then you can modify and play with it. You can also refer to the [official themes](/themes/gallery) as examples.
+Sau đó, bạn có thể sửa đổi và thử với nó. Bạn cũng có thể tham khảo [chủ đề chính thức](/themes/gallery) làm ví dụ.
 
 ## Capability
 
-A theme can contribute to the following points:
+Một chủ đề có thể đóng góp vào những điểm sau:
 
-- Global styles
-- Provide default configurations (fonts, color schema, highlighters, etc.)
-- Provide custom layouts or override the existing one
-- Provide custom components or override the existing one
-- Extend Windi CSS configurations
-- Configure tools like Monaco and Prism
+- Style toàn cầu
+- Cung cấp cấu hình mặc định (font, lược đồ màu, đánh dấu, v.v...)
+- Cung cấp layout tùy chỉnh hoặc ghi đè layout hiện có
+- Cung cấp các component tùy chỉnh hoặc ghi đè component hiện có
+- Mở rộng cấu hình CSS Windi
+- Định cấu hình các công cụ như Monaco và Prism
 
-## Conventions
+## Quy ước
 
-Themes are published to npm registry, and they should follow the conventions below:
+Chủ đề được publish lên npm registry và chúng phải tuân theo các quy ước dưới đây:
 
-- Package name should start with `slidev-theme-`, for example: `slidev-theme-awesome`
-- Add `slidev-theme` and `slidev` in the `keywords` field of your `package.json`
+- Tên gói phải bắt đầu bằng `slidev-theme-`, ví dụ: `slidev-theme-awesome`
+- Thêm `slidev-theme` và `slidev` trong trường `keywords` của `package.json`
 
-## Setup
+## Cài đặt
 
-To set up the testing playground for your theme, you can create `example.md` with the following frontmatter, to tell Slidev you are using the current directory as a theme.
+Để thiết lập nơi thử nghiệm cho chủ đề của mình, bạn có thể tạo `example.md` với frontmatter sau để cho Slidev biết bạn đang sử dụng thư mục hiện tại làm chủ đề.
 
 ```md
 ---
@@ -36,7 +36,7 @@ theme: ./
 ---
 ```
 
-Optionally, you can also add some scripts to your `packages.json`
+Theo tùy chọn, bạn cũng có thể thêm một số tập lệnh vào `package.json` của mình
 
 ```json
 // package.json
@@ -50,15 +50,15 @@ Optionally, you can also add some scripts to your `packages.json`
 }
 ```
 
-To publish your theme, simply run `npm publish` and you are good to go. There is no build process required (which means you can directly publish `.vue` and `.ts` files, Slidev is smart enough to understand them).
+Để xuất bản chủ đề của bạn, chỉ cần chạy `npm publish` và bạn đã sẵn sàng. Không yêu cầu quy trình xây dựng (có nghĩa là bạn có thể xuất bản trực tiếp các file `.vue` và `.ts`, Slidev đủ thông minh để hiểu chúng).
 
-Theme contribution points follow the same conventions as local customization, please refer to [the docs for the naming conventions](/custom/). 
+Điểm đóng góp của chủ đề tuân theo các quy ước giống như tùy chỉnh cục bộ, vui lòng tham khảo [tài liệu về quy ước đặt tên](/custom/). 
 
-## Default Configurations
+## Cấu hình mặc định
 
-> Available since v0.19
+> Có hiệu lực từ v0.19
 
-A theme can provide default [configurations](/custom/#frontmatter-configures) via `package.json`.
+Chủ đề có thể cung cấp [cấu hình](/custom/#frontmatter-configures) mặc định thông qua `package.json`.
 
 ```json
 // package.json
@@ -76,15 +76,15 @@ A theme can provide default [configurations](/custom/#frontmatter-configures) vi
 }
 ```
 
-Fonts will be auto imported from [Google Fonts](https://fonts.google.com/).
+Fonts sẽ được nhập tự động từ [Google Fonts](https://fonts.google.com/).
 
-Learn more about [fonts](/custom/fonts) and [frontmatter configurations](/custom/#frontmatter-configures).
+Tìm hiểu thêm về [fonts](/custom/fonts) và [cấu hình frontmatter](/custom/#frontmatter-configures).
 
-## Theme Metadata
+## Chủ đề Metadata
 
-### Color Schema
+### Bảng màu
 
-By default, Slidev assumes themes support both light mode and dark mode. If you only want your theme be presented in a designed color schema, you will need to specify it explicitly in `package.json`
+Theo mặc định, Slidev giả định các chủ đề hỗ trợ cả chế độ sáng và chế độ tối. Nếu bạn chỉ muốn chủ đề của mình được trình bày trong một lược đồ màu được thiết kế, bạn sẽ cần chỉ định nó một cách rõ ràng trong `package.json`
 
 ```json
 // package.json
@@ -100,7 +100,7 @@ By default, Slidev assumes themes support both light mode and dark mode. If you 
 }
 ```
 
-To access the dark mode when creating your theme styles, you can wrap the dark-mode-specific css inside a `dark` class:
+Để truy cập chế độ tối khi tạo kiểu chủ đề của bạn, bạn có thể wrap css dành riêng cho chế độ tối bên trong một class `dark`:
 
 ```css
 /* general css here */
@@ -114,15 +114,15 @@ html.dark {
 }
 ```
 
-Slidev toggles a `dark` class on the page's `html` element for switching color schema.
+Slidev chuyển đổi một class `dark` trên phần tử `html` của trang để chuyển đổi bảng màu.
 
-### Highlighter
+### Đánh dấu
 
-Syntax highlighting colors are also provided in the theme. We support both [Prism](https://prismjs.com/) and [Shiki](https://github.com/shikijs/shiki). For more information please refer to [the syntax highlighting docs](/custom/highlighters).
+Các màu đánh dấu cú pháp cũng được cung cấp trong chủ đề. Chúng tôi hỗ trợ cả [Prism](https://prismjs.com/) và [Shiki](https://github.com/shikijs/shiki). Để biết thêm thông tin, vui lòng tham khảo [tài liệu đánh dấu cú pháp](/custom/highlighters).
 
-You can support either one of them, or both. Refer to the default theme for configurations examples [`./styles/prism.css`](https://github.com/slidevjs/slidev/blob/main/packages/theme-default/styles/prism.css) / [`./setup/shiki.ts`](https://github.com/slidevjs/slidev/blob/main/packages/theme-default/setup/shiki.ts).
+Bạn có thể hỗ trợ một trong hai hoặc cả hai. Tham khảo chủ đề mặc định để biết các ví dụ về cấu hình [`./styles/prism.css`](https://github.com/slidevjs/slidev/blob/main/packages/theme-default/styles/prism.css) / [`./setup/shiki.ts`](https://github.com/slidevjs/slidev/blob/main/packages/theme-default/setup/shiki.ts).
 
-Also, remember to specify the supported highlighters in your `package.json`
+Ngoài ra, hãy nhớ chỉ định các điểm đánh dấu được hỗ trợ trong `package.json` của bạn
 
 ```json
 // package.json
@@ -133,9 +133,9 @@ Also, remember to specify the supported highlighters in your `package.json`
 }
 ```
 
-### Slidev Version
+### Phiên bản Slidev
 
-If the theme is relying on a specific feature of Slidev that are newly introduced, you can set the minimal Slidev version required to have your theme working properly:
+Nếu chủ đề dựa trên một tính năng cụ thể của Slidev mới được giới thiệu, bạn có thể đặt phiên bản Slidev cần thiết để chủ đề của bạn hoạt động bình thường:
 
 ```json
 // package.json
@@ -146,4 +146,4 @@ If the theme is relying on a specific feature of Slidev that are newly introduce
 }
 ```
 
-If users are using older versions of Slidev, an error will be thrown.
+Nếu người dùng đang sử dụng các phiên bản Slidev cũ hơn, lỗi sẽ xuất hiện.

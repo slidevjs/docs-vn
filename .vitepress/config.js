@@ -2,19 +2,19 @@
 
 const Guide = [
   {
-    text: 'Why Slidev',
+    text: 'Tại sao chọn Slidev',
     link: '/guide/why',
   },
   {
-    text: 'Getting Started',
+    text: 'Bắt đầu',
     link: '/guide/',
   },
   {
-    text: 'Installation',
+    text: 'Cài đặt',
     link: '/guide/install',
   },
   {
-    text: 'Markdown Syntax',
+    text: 'Cú pháp Markdown',
     link: '/guide/syntax',
   },
   {
@@ -26,19 +26,19 @@ const Guide = [
     link: '/guide/animations',
   },
   {
-    text: 'Exporting',
+    text: 'Xuất trang trình bày',
     link: '/guide/exporting',
   },
   {
-    text: 'Record Presentation',
+    text: 'Ghi lại bản trình bày',
     link: '/guide/recording',
   },
   {
-    text: 'Presenter Mode',
+    text: 'Chế độ trình bày',
     link: '/guide/presenter-mode',
   },
   {
-    text: 'Editor Integrations',
+    text: 'Tích hợp trình soạn thảo',
     link: '/guide/editors',
   },
   {
@@ -49,22 +49,26 @@ const Guide = [
 
 const Theme = [
   {
-    text: 'Use Theme',
+    text: 'Sử dụng chủ đề',
     link: '/themes/use',
   },
   {
-    text: 'Theme Gallery',
+    text: 'Thư viện chủ đề',
     link: '/themes/gallery',
   },
   {
-    text: 'Write a Theme',
+    text: 'Viết chủ đề mới',
     link: '/themes/write-a-theme',
   },
 ]
 
 const Translations = [
   {
+    text: 'Việt Nam'
+  },
+  {
     text: 'English',
+    link: 'https://sli.dev{{pathname}}',
   },
   {
     text: '简体中文',
@@ -86,47 +90,47 @@ const Translations = [
 
 const Customizations = [
   {
-    text: 'Customizations',
+    text: 'Tùy chỉnh',
     link: '/custom/',
   },
   {
-    text: 'Directory Structure',
+    text: 'Cấu trúc thư mục',
     link: '/custom/directory-structure',
   },
   {
-    text: 'Fonts',
+    text: 'Font',
     link: '/custom/fonts',
   },
   {
-    text: 'Highlighters',
+    text: 'Đánh dấu',
     link: '/custom/highlighters',
   },
   {
-    text: 'Configure Vue',
+    text: 'Cấu hình Vue',
     link: '/custom/config-vue',
   },
   {
-    text: 'Configure Vite',
+    text: 'Cấu hình Vite',
     link: '/custom/config-vite',
   },
   {
-    text: 'Configure Windi CSS',
+    text: 'Cấu hình Windi CSS',
     link: '/custom/config-windicss',
   },
   {
-    text: 'Configure Monaco',
+    text: 'Cấu hình Monaco',
     link: '/custom/config-monaco',
   },
   {
-    text: 'Configure KaTeX',
+    text: 'Cấu hình KaTeX',
     link: '/custom/config-katex',
   },
   {
-    text: 'Configure Mermaid',
+    text: 'Cấu hình Mermaid',
     link: '/custom/config-mermaid',
   },
   {
-    text: 'Configure Shortcuts',
+    text: 'Cấu hình Phím tắt',
     link: '/custom/config-shortcuts',
   },
   {
@@ -145,33 +149,33 @@ const Resources = [
     link: '/showcases',
   },
   {
-    text: 'Curated Covers',
+    text: 'Quản lý slide',
     link: '/resources/covers',
   },
 ]
 
 const slidebars = [
   {
-    text: 'Guide',
+    text: 'Hướng dẫn',
     children: Guide,
   },
   {
-    text: 'Themes',
+    text: 'Chủ đề',
     children: Theme,
   },
   {
-    text: 'Customizations',
+    text: 'Các tùy chỉnh',
     children: Customizations,
   },
   {
-    text: 'Built-in',
+    text: 'Tích hợp',
     children: [
       {
-        text: 'Components',
+        text: 'Component',
         link: '/builtin/components',
       },
       {
-        text: 'Layouts',
+        text: 'Layout',
         link: '/builtin/layouts',
       },
     ],
@@ -183,13 +187,13 @@ const slidebars = [
  */
 module.exports = {
   title: 'Slidev',
-  description: 'Presentation slides for developers',
+  description: 'Trang trình bày dành cho nhà lập trình',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.png' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', { property: 'og:title', content: 'Slidev' }],
     ['meta', { property: 'og:image', content: 'https://sli.dev/og-image.png' }],
-    ['meta', { property: 'og:description', content: 'Presentation slides for developers' }],
+    ['meta', { property: 'og:description', content: 'Trang trình bày dành cho nhà lập trình' }],
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:creator', content: '@slidevjs' }],
     ['meta', { name: 'twitter:image', content: 'https://sli.dev/og-image.png' }],
@@ -202,27 +206,27 @@ module.exports = {
     logo: '/logo.svg',
     docsBranch: 'main',
     editLinks: true,
-    editLinkText: 'Suggest changes to this page',
+    editLinkText: 'Đề xuất các thay đổi cho trang này',
 
     nav: [
       {
-        text: 'Guide',
+        text: 'Hướng dẫn',
         items: Guide,
       },
       {
-        text: 'Theme',
+        text: 'Chủ đề',
         items: Theme,
       },
       {
-        text: 'Customize',
+        text: 'Tùy chỉnh',
         items: Customizations,
       },
       {
-        text: 'Resources',
+        text: 'Tài nguyên',
         items: Resources,
       },
       {
-        text: 'English',
+        text: 'Việt Nam',
         items: Translations,
       },
     ],

@@ -1,14 +1,14 @@
-# Curated Covers
+# Bìa nổi bật
 
-We curated a few cover images to demonstrate our starter template.
+Chúng tôi đã sắp xếp một vài hình ảnh bìa để minh họa cho mẫu ban đầu của chúng tôi.
 
 ![](/screenshots/covers.png)
 
 ```yaml
 ---
-# random image from the curated collection
+# hình ảnh ngẫu nhiên từ bộ sưu tập nổi bật
 background: https://source.unsplash.com/collection/94734566/1920x1080
 ---
 ```
 
-If you enjoy any of them, check out our [Unsplash collection](https://unsplash.com/collections/94734566/slidev) and find out their authors.
+Nếu bạn thích bất kỳ tác phẩm nào trong số chúng, hãy xem [bộ sưu tập Unsplash](https://unsplash.com/collections/94734566/slidev) của chúng tôi và tìm hiểu tác giả của chúng.

@@ -1,70 +1,70 @@
-# Why Slidev
+# Tại sao chọn Slidev
 
-There are a lot of feature-rich, general-purpose, WYSIWYG slides makers like [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) and [Apple Keynote](https://www.apple.com/keynote/). They work pretty well for making nice slides with animations, charts, and many other things, while being very intuitive and easy to learn. So why bother making Slidev?
+Có rất nhiều trình tạo slide WYSIWYG đa năng, có mục đích chung, như [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) và [Apple Keynote](https://www.apple.com/keynote/). Chúng hoạt động khá tốt để tạo các slide đẹp với animation, biểu đồ và nhiều thứ khác, đồng thời rất trực quan và dễ học. Vậy tại sao phải làm Slidev?
 
-Slidev aims to provide the flexibility and interactivity for developers to make their presentations even more interesting, expressive, and attractive by using the tools and technologies they are already familiar with. 
+Slidev nhằm mục đích cung cấp tính linh hoạt và tính tương tác cho các nhà lập trình để làm cho bản trình bày của họ trở nên thú vị, biểu cảm và hấp dẫn hơn bằng cách sử dụng các công cụ và công nghệ mà họ đã quen thuộc.
 
-When working with WYSIWYG editors, it is easy to get distracted by the styling options. Slidev remedies that by separating the content and visuals. This allows you to focus on one thing at a time, while also being able to reuse the themes from the community. Slidev does not seek to replace other slide deck builders entirely. Rather, it focuses on catering to the developer community.
+Khi làm việc với các trình soạn thảo WYSIWYG, bạn rất dễ bị phân tâm bởi các tùy chọn tạo kiểu. Slidev khắc phục điều đó bằng cách tách nội dung và hình ảnh. Điều này cho phép bạn tập trung vào một thứ tại một thời điểm, đồng thời có thể sử dụng lại các chủ đề từ cộng đồng. Slidev không tìm cách thay thế hoàn toàn các slide deck builder khác. Thay vào đó, nó tập trung vào việc phục vụ cộng đồng nhà lập trình.
 
 ## Slidev
 
 ![](/screenshots/cover.png)
 
-Here are a few of the coolest features of Slidev:
+Dưới đây là một số tính năng thú vị nhất của Slidev:
 
-## Markdown-based
+## Dựa trên Markdown
 
-Slidev uses an extended Markdown format to store and organize your slides in a single plain text file. This lets you focus on making the content. And since the content and styles are separated, this also made it possible to switch between different themes effortlessly.
+Slidev sử dụng định dạng Markdown mở rộng để lưu trữ và sắp xếp các slide của bạn trong một file văn bản thuần. Điều này cho phép bạn tập trung vào việc tạo nội dung. Và vì nội dung và style được tách biệt, điều này cũng giúp bạn có thể chuyển đổi giữa các chủ đề khác nhau một cách dễ dàng.
 
-Learn more about [Slidev's Markdown Syntax](/guide/syntax).
+Tìm hiểu thêm về [Cú pháp Markdown của Slidev](/guide/syntax).
 
 ## Themable
 
-Themes for Slidev can be shared and installed using npm packages. You then apply them with only one line of config.
+Các chủ đề cho Slidev có thể được chia sẻ và cài đặt bằng cách sử dụng các package npm. Sau đó, bạn áp dụng chúng chỉ với một dòng cấu hình.
 
-Check out the [theme gallery](/themes/gallery) or [learn how to write a theme](/themes/write-a-theme).
+Xem [thư viện chủ đề](/themes/gallery) hoặc [tìm hiểu cách viết chủ đề](/themes/write-a-theme).
 
-## Developer Friendly
+## Thân thiện với nhà lập trình
 
-Slidev provides first-class support for code snippets for developers. It supports both [Prism](https://prismjs.com/) and [Shiki](https://github.com/shikijs/shiki) to get pixel perfect syntax highlighting, while still being able to modify the code at any time. With [Monaco editor](https://microsoft.github.io/monaco-editor/) built-in, it also empowers you to do live coding / demonstration in your presentation with autocompletion, type hovering, and even TypeScript type check support.
+Slidev cung cấp hỗ trợ tốt nhất các đoạn code cho các nhà lập trình. Nó hỗ trợ cả [Prism](https://prismjs.com/) và [Shiki](https://github.com/shikijs/shiki) để làm nổi bật cú pháp pixel hoàn hảo, trong khi vẫn có thể sửa đổi mã bất kỳ lúc nào thời gian. Với [trình soạn thảo Monaco](https://microsoft.github.io/monaco-editor/) được tích hợp sẵn, nó cũng cho phép bạn viết code / trình bày trực tiếp trong bản trình bày của mình với tính năng tự động hoàn thành, gõ di chuột và thậm chí hỗ trợ kiểm tra kiểu TypeScript.
 
-Learn more about [highlighters](/custom/highlighters) and [Monaco configuration](/custom/config-monaco).
+Tìm hiểu thêm về [đánh dấu](/custom/highlighters) và [cấu hình Monaco](/custom/config-monaco).
 
-## Fast
+## Nhanh
 
-Slidev is powered by [Vite](https://vitejs.dev/), [Vue 3](https://v3.vuejs.org/) and [Windi CSS](https://windicss.org/), which give you the most wonderful authoring experience. Every change you made will reflect to your slides **instantly**.
+Slidev được cung cấp bởi [Vite](https://vitejs.dev/), [Vue 3](https://v3.vuejs.org/) và [Windi CSS](https://windicss.org/), cung cấp cho bạn trải nghiệm tác giả tuyệt vời nhất. Mọi thay đổi bạn thực hiện sẽ phản ánh vào các slide của bạn **ngay lập tức**.
 
-Find more about [our tech stack](/guide/#tech-stack).
+Tìm thêm về [our tech stack](/guide/#tech-stack).
 
 ## Interactive & Expressive
 
-You can write custom Vue components and use them directly inside your markdown file. You can also interact with them inside the presentation to express your idea in a more interesting and intuitive way.
+Bạn có thể viết các component Vue tùy chỉnh và sử dụng chúng trực tiếp bên trong file markdown của mình. Bạn cũng có thể tương tác với chúng bên trong bản trình bày để thể hiện ý tưởng của mình theo cách trực quan và thú vị hơn.
 
-## Recording Support
+## Hỗ trợ Recording
 
-Slidev provides built-in recording and camera view. You can share your presentation with your camera view inside, or record and save them separately for your screen and camera. All with one go, no additional tools are needed.
+Slidev cung cấp tính năng record và xem camera tích hợp. Bạn có thể chia sẻ bản trình bày của mình với chế độ xem camera hoặc ghi và lưu chúng riêng cho màn hình và camera của bạn. Tất cả chỉ với một bước, không cần công cụ bổ sung.
 
-Learn more about [recording here](/guide/recording).
+Tìm hiểu thêm về [recording](/guide/recording).
 
 ## Portable
 
-Export your slides into PDF, PNGs, or even a hostable Single-page Application (SPA) with a single command, and share them anywhere.
+Xuất các trang trình bày của bạn thành PDF, PNG hoặc thậm chí là Ứng dụng một trang có thể lưu trữ (SPA) chỉ với một lệnh duy nhất và chia sẻ chúng ở mọi nơi.
 
-Read more about that in the [exporting docs](/guide/exporting).
+Đọc thêm về điều đó trong [tài liệu xuất](/guide/exporting).
 
 ## Hackable
 
-Being powered by web technologies, anything that can be done in a web app is also possible with Slidev. For example, WebGL, API requests, iframes, or even live sharing. It's up to your imagination!
+Được hỗ trợ bởi công nghệ web, bất cứ điều gì có thể được thực hiện trong một ứng dụng web cũng có thể thực hiện được với Slidev. Ví dụ: WebGL, API requests, iframes hoặc thậm chí là chia sẻ trực tiếp. Nó tùy thuộc vào trí tưởng tượng của bạn!
 
-## Give it a Try
+## Hãy thử một lần
 
-Playing around with Slidev will tell you more than a thousand words. You are just one command away:
+Thử với Slidev sẽ cho bạn biết hơn một nghìn từ. Bạn chỉ cần một lệnh:
 
 ```bash
 $ npm init slidev
 ```
 
-Or have a quick preview of it:
+Hoặc xem trước nó:
 
 <div class="aspect-9/16 relative">
 <iframe class="rounded w-full shadow-md border-none" src="https://www.youtube.com/embed/eW7v-2ZKZOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

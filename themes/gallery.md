@@ -1,24 +1,24 @@
-# Themes Gallery
+# Thư viện chủ đề
 
-Browse awesome themes available for Slidev here.
+Duyệt qua các chủ đề tuyệt vời có sẵn cho Slidev tại đây.
 
-Read more about [how to use a theme](/themes/use), or [how to write your own](/themes/write-a-theme) and share with the community!
+Đọc thêm về [cách sử dụng chủ đề](/themes/use), hoặc [cách viết chủ đề của riêng bạn](/themes/write-a-theme) và chia sẻ với cộng đồng!
 
-## Official Themes
+## Chủ đề chính thức
 
 <ClientOnly>
   <ThemeGallery collection="official"/>
 </ClientOnly>
 
-## Community Themes
+## Chủ đề cộng đồng
 
-Here are the curated themes made by the community.
+Dưới đây là các chủ đề được quản lý bởi cộng đồng.
 
-<!-- Edit in ./docs/.vitepress/themes.ts -->
+<!-- Chỉnh sửa trong ./docs/.vitepress/themes.ts -->
 <ClientOnly>
   <ThemeGallery collection="community"/>
 </ClientOnly>
 
-## More Themes
+## Chủ đề khác
 
-Find all the [themes available on NPM](https://www.npmjs.com/search?q=keywords%3Aslidev-theme).
+Tìm tất cả [các chủ đề có sẵn trên NPM](https://www.npmjs.com/search?q=keywords%3Aslidev-theme).

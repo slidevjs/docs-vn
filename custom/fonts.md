@@ -1,10 +1,10 @@
 # Fonts
 
-> Available since v0.20
+> Có hiệu lực từ v0.20
 
-While you can use HTML and CSS to custom the fonts and style for your slides as you want, Slidev also provides a convenient way to use them effortlessly.
+Mặc dù bạn có thể sử dụng HTML và CSS để tùy chỉnh phông chữ và kiểu cho các trang trình bày của mình theo ý muốn, nhưng Slidev cũng cung cấp một cách để sử dụng chúng dễ dàng.
 
-In your fontmatter, configure as following
+Trong phông chữ của bạn, hãy định cấu hình như sau
 
 ```yaml
 ---
@@ -18,13 +18,13 @@ fonts:
 ---
 ```
 
-And that's all.
+Và đó là tất cả.
 
-Fonts will be **imported automatically from [Google Fonts](https://fonts.google.com/)**. That means you can use any fonts available on Google Fonts directly.
+Phông chữ sẽ được **nhập tự động từ [Google Fonts](https://fonts.google.com/)**. Điều đó có nghĩa là bạn có thể sử dụng trực tiếp bất kỳ phông chữ nào có sẵn trên Google Fonts.
 
 ## Local Fonts
 
-By default, Slidev assumes all the fonts specified via `fonts` configurations come from Google Fonts. If you want to use local fonts, specify the `fonts.local` to opt-out the auto-importing. 
+Theo mặc định, Slidev giả định tất cả các phông chữ được chỉ định thông qua cấu hình `fonts` đến từ Google Fonts. Nếu bạn muốn sử dụng font cục bộ, hãy chỉ định `fonts.local` để chọn không tự động nhập.
 
 ```yaml
 ---
@@ -36,9 +36,9 @@ fonts:
 ---
 ```
 
-## Weights & Italic
+## In đậm & In nghiêng
 
-By default, Slidev imports three weights `200`,`400`,`600` for each font. You can configure them by:
+Theo mặc định, Slidev nhập ba trọng số `200`, `400`, `600` cho mỗi font. Bạn có thể cấu hình chúng bằng cách:
 
 ```yaml
 ---
@@ -51,11 +51,11 @@ fonts:
 ---
 ```
 
-This configuration applies to all web fonts. For more fine-grained controls of each font's weights, you will need to manually import them with [HTML](/custom/directory-structure.html#index-html) and CSS.
+Cấu hình này áp dụng cho tất cả các font web. Để có thể chi tiết hơn về trọng số của từng font, bạn cần nhập chúng theo cách thủ công bằng [HTML](/custom/directory-structure.html#index-html) và CSS.
 
-## Fallback Fonts
+## Font dự phòng
 
-For most of the scenarios, you only need to specify the "special font" and Slidev will append the fallback fonts for you, for example:
+Đối với hầu hết các tình huống, bạn chỉ cần chỉ định "special font" và Slidev sẽ thêm các font dự phòng cho bạn, ví dụ:
 
 ```yaml
 ---
@@ -66,7 +66,7 @@ fonts:
 ---
 ```
 
-will result in 
+sẽ cho kết quả
 
 ```css
 .font-sans {
@@ -80,7 +80,7 @@ will result in
 }
 ```
 
-If you want to disable the fallback fonts, configure as following
+Nếu bạn muốn tắt font dự phòng, hãy định cấu hình như sau
 
 ```yaml
 ---
@@ -92,10 +92,10 @@ fonts:
 
 ## Providers
 
-- Options: `google` | `none`
-- Default: `google`
+- Tùy chọn: `google` | `none`
+- Mặc định: `google`
 
-Currently, only Google Fonts is supported, we are planned to add more providers in the future. Specify to `none` will disable the auto-importing feature entirely and treat all the fonts local.
+Hiện tại, chỉ Google Fonts được hỗ trợ, chúng tôi dự kiến sẽ bổ sung thêm nhiều nhà cung cấp khác trong tương lai. Chỉ định thành `none` sẽ vô hiệu hóa hoàn toàn tính năng tự động nhập và xử lý tất cả các font cục bộ.
 
 ```yaml
 ---
@@ -103,5 +103,3 @@ fonts:
   provide: 'none'
 ---
 ```
-
-

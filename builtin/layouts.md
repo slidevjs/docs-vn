@@ -1,15 +1,15 @@
-# Layouts
+# Layout
 
-## Built-in Layouts
+## Tích hợp Layout
 
-> The documentations of this section is still working in progress. Before that, you can take a look at the [source code](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts) directly.
+> Các tài liệu của phần này vẫn đang được hoàn thiện. Trước đó, bạn có thể xem trực tiếp tại [source code](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts).
 
-## Custom Layouts
+## Tùy chỉnh Layout
 
-Create a directory `layouts/` under your project root, and simply put your custom Vue layout components under it.
+Tạo một thư mục `layouts/` trong dự án gốc của bạn và chỉ cần đặt các component layout Vue tùy chỉnh của bạn bên trong nó.
 
-Read more in the [Customization](/custom/directory-structure#layouts) section.
+Đọc thêm trong phần [Các tùy chỉnh](/custom/directory-structure#layouts).
 
-## Theme-provided Layouts
+## Layout do Chủ đề cung cấp
 
-Themes can provide layouts or override existing ones. Please read their documentation for what they have provided.
+Chủ đề có thể cung cấp các layout hoặc ghi đè các layout hiện có. Vui lòng đọc tài liệu về nó để biết những gì nó cung cấp.

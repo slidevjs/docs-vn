@@ -1,22 +1,22 @@
-# Animations
+# Animation
 
-## Click Animations
+## Click Animation
 
 ### `v-click`
 
-To apply "click animations" for elements, you can use the `v-click` directive or `<v-click>` components
+Để áp dụng "click animation" cho các element, bạn có thể sử dụng `v-click` hoặc các component `<v-click>`
 
 ```md
 # Hello
 
-<!-- Component usage: this will be invisible until you press "next" -->
+<!-- Sử dụng Component: cái này sẽ ẩn cho đến khi bạn nhấn "next" -->
 <v-click>
 
 Hello World
 
 </v-click>
 
-<!-- Directive usage: this will be invisible until you press "next" the second time -->
+<!-- Sử dụng Directive: cái này sẽ ẩn cho đến khi bạn nhấn "next" lần thứ hai -->
 <div v-click class="text-xl p-2">
 
 Hey!
@@ -26,18 +26,18 @@ Hey!
 
 ### `v-after`
 
-The usage of `v-after` is similar to `v-click` but it will turn the element visible when the previous `v-click` is triggered.
+Việc sử dụng `v-after` tương tự như `v-click` nhưng nó sẽ hiển thị element khi kích hoạt `v-click` trước đó.
 
 ```md
 <div v-click>Hello</div>
 <div v-after>World</div>
 ```
 
-When you click the "next" button, both `Hello` and `World` will show up together.
+Khi bạn nhấp vào nút "next", cả hai `Hello` và `World` sẽ cùng hiển thị.
 
 ### `v-click-hide`
 
-Same as `v-click` but instead of making the element appear, it makes the element invisible after clicking.
+Tương tự như `v-click` nhưng thay vì làm cho phần tử xuất hiện, nó làm cho element ẩn sau khi nhấn.
 
 ```md
 <div v-click-hide>Hello</div>
@@ -45,7 +45,7 @@ Same as `v-click` but instead of making the element appear, it makes the element
 
 ### `v-clicks`
 
-`v-clicks` is only provided as a component. It's a shorthand to apply the `v-click` directive to all its child elements. It is especially useful when working with lists.
+`v-clicks` chỉ được cung cấp như một component. Đó là một cách viết tắt để áp dụng `v-click` cho tất cả các element con của nó. Nó đặc biệt hữu ích khi làm việc với list.
 
 ```md
 <v-clicks>
@@ -58,22 +58,22 @@ Same as `v-click` but instead of making the element appear, it makes the element
 </v-clicks>
 ```
 
-An item will become visible each time you click "next".
+Một mục sẽ hiển thị mỗi khi bạn nhấn vào "next".
 
-### Custom Clicks Count
+### Custom Số lần Click
 
-By default, Slidev counts how many steps are needed before going to the next slide. You can override this setting by passing the `clicks` frontmatter option:
+Theo mặc định, Slidev đếm số bước cần thiết trước khi chuyển sang trang chiếu tiếp theo. Bạn có thể ghi đè cài đặt này bằng cách chuyển tùy chọn frontmatter `clicks`:
 
 ```yaml
 ---
-# 10 clicks in this slide, before going to the next
+# 10 lần nhấn vào trang trình bày này, trước khi chuyển sang trang tiếp theo
 clicks: 10
 ---
 ```
 
 ### Ordering
 
-Passing the click index to your directives, you can customize the order of the revealing
+Chuyển chỉ số nhấp chuột vào directive của bạn, bạn có thể tùy chỉnh thứ tự của việc revealing
 
 ```md
 <div v-click>1</div>
@@ -82,7 +82,7 @@ Passing the click index to your directives, you can customize the order of the r
 ```
 
 ```md
-<!-- the order is reversed -->
+<!-- thứ tự bị đảo ngược -->
 <div v-click="3">1</div>
 <div v-click="2">2</div>
 <div v-click="1">3</div>
@@ -93,30 +93,30 @@ Passing the click index to your directives, you can customize the order of the r
 clicks: 3
 ---
 
-<!-- visible after 3 clicks -->
+<!-- hiển thị sau 3 lần click -->
 <v-clicks at="3">
   <div>Hi</div>
 </v-clicks>
 ```
 
-### Element Transitions
+### Chuyển đổi Element
 
-When you apply the `v-click` directive to your elements, it will attach the class name `slidev-vclick-target` to it. When the elements are hidden, the class name `slidev-vclick-hidden` will also be attached. For example:
+Khi bạn áp dụng `v-click` cho các element của mình, nó sẽ đính kèm tên class `slidev-vclick-target` vào đó. Khi các element bị ẩn, tên class `slidev-vclick-hidden` cũng sẽ được đính kèm. Ví dụ:
 
 ```html
 <div class="slidev-vclick-target slidev-vclick-hidden">Text</div>
 ```
 
-After a click, it will become
+Sau khi click, nó sẽ trở thành
 
 ```html
 <div class="slidev-vclick-target">Text</div>
 ```
 
-By default, a subtle opacity transition is applied to those classes:
+Theo mặc định, một quá trình chuyển đổi opacity được áp dụng cho các class đó:
 
 ```css
-// the default
+// mặc định
 
 .slidev-vclick-target {
   transition: opacity 100ms ease;
@@ -128,9 +128,9 @@ By default, a subtle opacity transition is applied to those classes:
 }
 ```
 
-You can override them to customize the transition effects in your custom stylesheets. 
+Bạn có thể ghi đè chúng để tùy chỉnh các hiệu ứng chuyển tiếp trong các stylesheet tùy chỉnh của mình. 
 
-For example, you can achieve the scaling up transitions by: 
+Ví dụ: bạn có thể đạt được các chuyển đổi scale bằng cách:
 
 ```css
 // styles.css
@@ -144,7 +144,7 @@ For example, you can achieve the scaling up transitions by:
 }
 ```
 
-To specify animations for only certain slide or layout
+Để chỉ định animation cho một slide hoặc layout nhất định
 
 ```scss
 .slidev-page-7,
@@ -159,11 +159,11 @@ To specify animations for only certain slide or layout
 }
 ```
 
-Learn more about [customizing styles](/custom/directory-structure#style).
+Tìm hiểu thêm về [customizing styles](/custom/directory-structure#style).
 
 ## Motion
 
-Slidev has [@vueuse/motion](https://motion.vueuse.org/) built-in. You can use the `v-motion` directive to any elements to make apply motion on them. For example
+Slidev được tích hợp sẵn [@vueuse/motion](https://motion.vueuse.org/). Bạn có thể sử dụng `v-motion` cho bất kỳ element nào để thực hiện motion áp dụng cho chúng. Ví dụ
 
 ```html
 <div
@@ -174,9 +174,9 @@ Slidev has [@vueuse/motion](https://motion.vueuse.org/) built-in. You can use th
 </div>
 ```
 
-The text `Slidev` will move from `-80px` to its original position on initialization.
+Văn bản `Slidev` sẽ di chuyển từ `-80px` về vị trí ban đầu khi khởi tạo.
 
-> Note: Slidev preloads the next slide for performance, which means the animations might start before you navigate to the page. To get it works properly, you can disable the preloading for the particular slide
+> Lưu ý: Slidev tải trước slide tiếp theo để trình bày, có nghĩa là các animation có thể bắt đầu trước khi bạn điều hướng đến trang. Để làm cho nó hoạt động bình thường, bạn có thể tắt tính năng tải trước cho slide cụ thể
 >
 > ```md
 > ---
@@ -184,7 +184,7 @@ The text `Slidev` will move from `-80px` to its original position on initializat
 > ---
 > ```
 >
-> Or control the element life-cycle with `v-if` to have fine-grained controls
+> Hoặc kiểm soát vòng đời của element bằng `v-if` để có các điều khiển chi tiết
 >
 > ```html
 > <div
@@ -196,8 +196,8 @@ The text `Slidev` will move from `-80px` to its original position on initializat
 > </div>
 > ```
 
-Learn mode: [Demo](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/directive-usage.html) | [Presets](https://motion.vueuse.org/presets.html)
+Tìm hiểu chế độ [Demo](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/directive-usage.html) | [Presets](https://motion.vueuse.org/presets.html)
 
-## Pages Transitions
+## Chuyển trang
 
-> Built-in support for slides is NOT YET provided in the current version. We are planning to add support for them in the next major version. Before that, you can still use your custom styles and libraries to do that.
+> Hỗ trợ tích hợp cho các slide KHÔNG ĐƯỢC cung cấp trong phiên bản hiện tại. Chúng tôi đang có kế hoạch bổ sung hỗ trợ cho họ trong phiên bản chính tiếp theo. Trước đó, bạn vẫn có thể sử dụng các style và librarie tùy chỉnh của mình để làm điều đó.

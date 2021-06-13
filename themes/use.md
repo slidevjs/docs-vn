@@ -1,6 +1,6 @@
-# Use Theme
+# Sử dụng chủ đề
 
-Changing the theme in Slidev is surprisingly easy. All you need to do is to add the `theme:` field in your frontmatter.
+Thay đổi chủ đề trong Slidev dễ dàng một cách đáng ngạc nhiên. Tất cả những gì bạn cần làm là thêm trường `theme:` vào frontmatter của bạn.
 
 ```yaml
 ---
@@ -8,7 +8,7 @@ theme: seriph
 ---
 ```
 
-You can start the server, which will prompt you to install the theme automatically
+Bạn có thể khởi động máy chủ, máy chủ sẽ nhắc bạn cài đặt chủ đề tự động
 
 <div class="language-md">
 <pre>
@@ -16,25 +16,25 @@ You can start the server, which will prompt you to install the theme automatical
 </pre>
 </div>
 
-or install the theme manually via
+hoặc cài đặt chủ đề theo cách thủ công qua
 
 ```bash
 $ npm install @slidev/theme-seriph
 ```
 
-And that's all, enjoy the new theme! For more details about the usage, you can refer to the theme's README.
+Và đó là tất cả, hãy tận hưởng chủ đề mới! Để biết thêm chi tiết về cách sử dụng, bạn có thể tham khảo file README của chủ đề.
 
-Want to share your theme? Learn about [how to write a theme](/themes/write-a-theme).
+Muốn chia sẻ chủ đề của bạn? Tìm hiểu về [cách viết chủ đề](/themes/write-a-theme).
 
-## Eject Theme
+## Eject chủ đề
 
-If you want to get full control of the current theme, you can **eject** it to your local file system and modify it as you want. By running the following command
+Nếu bạn muốn có toàn quyền kiểm soát chủ đề hiện tại, bạn có thể **eject** nó vào hệ thống file cục bộ của bạn và sửa đổi nó theo ý muốn. Bằng cách chạy lệnh sau
 
 ```bash
 $ slidev theme eject
 ```
 
-It will eject the theme you are using currently into `./theme`, and changed your frontmatter to 
+Nó sẽ đẩy chủ đề bạn đang sử dụng hiện tại vào `./theme`, và thay đổi frontmatter của bạn thành 
 
 ```yaml
 ---
@@ -42,11 +42,11 @@ theme: ./theme
 ---
 ```
 
-This could also be helpful if you want to make a theme based on an existing one. If you do, remember to mention the original theme and the author :)
+Điều này cũng có thể hữu ích nếu bạn muốn tạo chủ đề dựa trên chủ đề hiện có. Nếu bạn làm vậy, hãy nhớ đề cập đến chủ đề gốc và tác giả :)
 
-## Local Theme
+## Chủ đề cục bộ
 
-As you probably found out from the previous section, you can have a local theme for your project. By having a **relative path** in your theme field.
+Như bạn có thể đã tìm hiểu từ phần trước, bạn có thể có một chủ đề cục bộ cho dự án của mình. Bằng cách có **đường dẫn tương đối** trong trường chủ đề của bạn.
 
 ```yaml
 ---
@@ -54,4 +54,4 @@ theme: ./path/to/theme
 ---
 ```
 
-Refer to [how to write a theme](/themes/write-a-theme) for more details.
+Tham khảo [cách viết chủ đề](/themes/write-a-theme) để biết thêm chi tiết.

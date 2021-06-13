@@ -1,27 +1,27 @@
-# Exporting
+# Xuất slide
 
 ## PDF
 
-> Exporting to PDF or PNG relies on [Playwright](https://playwright.dev) for rendering. You will therefore need to install [`playwright-chromium`](https://playwright.dev/docs/installation#download-single-browser-binary) to use this feature.
-> If you are doing exporting in a CI environment, [the playwright CI guide](https://playwright.dev/docs/ci) can be helpful.
+> Xuất sang PDF hoặc PNG dựa vào [Playwright](https://playwright.dev) để hiển thị. Do đó, bạn sẽ cần cài đặt [`playwright-chromium`](https://playwright.dev/docs/installation#download-single-browser-binary) để sử dụng tính năng này.
+> Nếu bạn đang xuất trong môi trường CI, [hướng dẫn về CI](https://playwright.dev/docs/ci) có thể hữu ích.
 
-Install `playwright-chromium`
+Cài đặt `playwright-chromium`
 
 ```bash
 $ npm i -D playwright-chromium
 ```
 
-Now export your slides to PDF using the following command
+Bây giờ xuất các slide của bạn sang PDF bằng lệnh sau
 
 ```bash
 $ slidev export
 ```
 
-After a few seconds, your slides will be ready at `./slides-exports.pdf`.
+Sau một vài giây, các slide của bạn sẽ có sẵn tại `./slides-exports.pdf`.
 
 ## PNGs
 
-When passing in the `--format png` option, Slidev will export PNG images for each slide instead of a PDF.
+Khi chuyển vào tùy chọn `--format png`, Slidev sẽ xuất hình ảnh PNG cho từng trang chiếu thay vì PDF.
 
 ```bash
 $ slidev export --format png
@@ -29,27 +29,27 @@ $ slidev export --format png
 
 ## Single-Page Application (SPA)
 
-You can also build the slides into a self-hostable SPA:
+Bạn cũng có thể xây dựng các slide thành một SPA tự lưu trữ:
 
 ```bash
 $ slidev build
 ```
 
-The generated application will be available under `dist/` and then you can host it on [GitHub Pages](https://pages.github.com/), [Netlify](https://netlify.app/), [Vercel](https://vercel.com/), or whatever you want. Now you can share your slides with the rest of the world with a single link.
+Ứng dụng đã tạo sẽ có sẵn trong `dist/` và sau đó bạn có thể lưu trữ nó trên [GitHub](https://pages.github.com/), [Netlify](https://netlify.app/), [Vercel](https://vercel.com/), hoặc bất cứ thứ gì bạn muốn. Giờ đây, bạn có thể chia sẻ các slide của mình với mọi người bằng một liên kết duy nhất.
 
 ### Base Path
 
-To deploy your slides under sub-routes, you will need to pass the `--base` option. For example:
+Để deploy các slide của bạn theo các sub-route, bạn cần phải chuyển tùy chọn `--base`. Ví dụ:
 
 ```bash
 $ slidev build --base /talks/my-cool-talk/
 ```
 
-Refer to [Vite's documentation](https://vitejs.dev/guide/build.html#public-base-path) for more details.
+Tham khảo [Vite's documentation](https://vitejs.dev/guide/build.html#public-base-path) để biết thêm chi tiết.
 
-### Provide Downloadable PDF
+### Cung cấp file PDF cho phép tải xuống
 
-You can provide a downloadable PDF to the viewers of your SPA. You can enable it by the following config:
+Bạn có thể cung cấp một file PDF cho phép tải xuống cho người xem SPA của bạn. Bạn có thể kích hoạt nó bằng cách cấu hình sau:
 
 ```md
 ---
@@ -57,9 +57,9 @@ download: true
 ---
 ```
 
-Now, Slidev will generate a pdf file along with the build and a download button will appear in the SPA.
+Bây giờ, Slidev sẽ tạo một file pdf cùng với bản dựng và một nút tải xuống sẽ xuất hiện trong SPA.
 
-You can also provide a custom url to the PDF. In that case, the rendering process will be skipped.
+Bạn cũng có thể cung cấp một url tùy chỉnh cho PDF. Trong trường hợp đó, quá trình render sẽ bị bỏ qua.
 
 ```md
 ---
@@ -67,9 +67,9 @@ download: 'https://myside.com/my-talk.pdf'
 ---
 ```
 
-### Examples
+### Ví dụ
 
-Here are a few examples of the exported SPA:
+Dưới đây là một số ví dụ về SPA đã xuất:
 
 - [Starter Template](https://sli.dev/demo/starter)
-- [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)
+- [Composable Vue](https://talks.antfu.me/2021/composable-vue) bởi [Anthony Fu](https://github.com/antfu)

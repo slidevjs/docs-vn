@@ -1,17 +1,17 @@
 # Recording
 
-Slidev has a built-in recording and camera view. You can use them to record your presentation easily in one place.
+Slidev được tích hợp chế độ record và chế độ xem camera. Bạn có thể sử dụng chúng để ghi lại bản trình bày của mình một cách dễ dàng ở một nơi.
 
-## Camera View
+## Xem Camera
 
-Click the <carbon-user-avatar class="inline-icon-btn"/> button in the navigation panel to show your camera view in the presentation. You can drag to move it, and use the handler on the right bottom corner to resize it. The size and position will persist in `localStorage` and will therefore be consistent across multiple refreshes, so no need to worry about that.
+Nhấn vào nút <carbon-user-avatar class="inline-icon-btn"/> trong bảng điều hướng để hiển thị chế độ xem camera của bạn trong bản trình bày. Bạn có thể kéo để di chuyển nó và sử dụng trình xử lý ở góc dưới bên phải để thay đổi kích thước. Kích thước và vị trí sẽ tồn tại trong `localStorage` và do đó sẽ nhất quán qua nhiều lần làm mới, vì vậy không cần phải lo lắng về điều đó.
 
 <Tweet id="1395006771027120133" />
 
 ## Recording
 
-Clicking the <carbon-video class="inline-icon-btn"/> button in the navigation panel will bring up a dialog for you. Here you can choose to either record your camera embedded in your slides or to separate them into two video files.
+Nhấn vào nút <carbon-video class="inline-icon-btn"/> trong bảng điều hướng sẽ xuất hiện hộp thoại cho bạn. Tại đây, bạn có thể chọn ghi lại máy ảnh được nhúng vào các slide của bạn hoặc tách chúng thành hai file video.
 
-This feature is powered by [RecordRTC](https://github.com/muaz-khan/RecordRTC) and uses the [WebRTC API](https://webrtc.org/).
+Tính năng này được cung cấp bởi [RecordRTC](https://github.com/muaz-khan/RecordRTC) and uses the [WebRTC API](https://webrtc.org/).
 
 ![](/screenshots/recording.png)

@@ -1,8 +1,8 @@
-# Directory Structure
+# Cấu trúc thư mục
 
-Slidev employs some directory structure conventions to minimize the configuration surface and to make the functionality extensions flexible and intuitive.
+Slidev sử dụng một số quy ước cấu trúc thư mục để thu nhỏ bề mặt cấu hình và làm cho các phần mở rộng chức năng trở nên linh hoạt và trực quan.
 
-The basic structure is as follows:
+Cấu trúc cơ bản như sau:
 
 ```bash
 your-slidev/
@@ -16,15 +16,15 @@ your-slidev/
   └── vite.config.ts   # extending vite config
 ```
 
-All of them are optional.
+Tất cả chúng đều là tùy chọn.
 
-## Components
+## Component
 
-Conventions: `./components/*.{vue,js,ts,jsx,tsx,md}`
+Quy ước: `./components/*.{vue,js,ts,jsx,tsx,md}`
 
-Components inside this directory can be directly used in the slides Markdown with the same component name as the file name.
+Các component bên trong thư mục này có thể được sử dụng trực tiếp trong các slide Markdown với component cùng tên với tên file.
 
-For example:
+Ví dụ:
 
 ```bash
 your-slidev/
@@ -37,7 +37,7 @@ your-slidev/
 ```md
 <!-- slides.md -->
 
-# My Slide
+# Slide của tôi
 
 <MyComponent :count="4"/>
 
@@ -48,13 +48,13 @@ your-slidev/
 </hello-world>
 ```
 
-This feature is powered by [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components), learn more there.
+Tính năng này được cung cấp bởi [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components), hãy tìm hiểu thêm tại đây.
 
-Slidev also provides some [built-in components](/builtin/components) for you to use.
+Slidev cũng cung cấp một số [component tích hợp](/builtin/components) để bạn sử dụng.
 
-## Layouts
+## Layout
 
-Conventions: `./layouts/*.{vue,js,ts,jsx,tsx}`
+Quy ước: `./layouts/*.{vue,js,ts,jsx,tsx}`
 
 ```
 your-slidev/
@@ -64,7 +64,7 @@ your-slidev/
       └── my-cool-theme.vue
 ```
 
-You can use any filename for your layout. You then reference your layout in you YAML header using the filename.
+Bạn có thể sử dụng bất kỳ tên file nào cho layout của mình. Sau đó, bạn tham chiếu layout của mình trong tiêu đề YAML bằng tên file.
 
 ```yaml
 ---
@@ -72,9 +72,9 @@ layout: my-cool-theme
 ---
 ```
 
-If the layout you provide has the same name as a built-in layout or a theme layout, your custom layout will take precedence over the built-in/theme layout. The priority order is `local > theme > built-in`.
+Nếu layout bạn cung cấp có cùng tên với layout cài sẵn hoặc layout chủ đề, layout tùy chỉnh của bạn sẽ được ưu tiên hơn layout tích hợp / layout chủ đề. Thứ tự ưu tiên là `cục bộ > chủ đề > tích hợp sẵn`.
 
-In the layout component, use `<slot/>` for the slide content. For example:
+Trong layout component, sử dụng `<slot/>` cho nội dung trang chiếu. Ví dụ:
 
 ```html
 <!-- default.vue -->
@@ -87,15 +87,15 @@ In the layout component, use `<slot/>` for the slide content. For example:
 
 ## Public
 
-Conventions: `./public/*`
+Quy ước: `./public/*`
 
-Assets in this directory will be served at root path `/` during dev, and copied to the root of the dist directory as-is. Read more about [Vite's `public` directory](https://vitejs.dev/guide/assets.html#the-public-directory).
+Các asset trong thư mục này sẽ được dùng tại đường dẫn gốc `/` trong quá trình dev và được sao chép vào thư mục gốc của thư mục dist nguyên trạng. Đọc thêm về [Thư mục `public` của Vite](https://vitejs.dev/guide/assets.html#the-public-directory).
 
 ## Style
 
-Conventions: `./style.css` | `./styles/index.{css,js,ts}`
+Quy ước: `./style.css` | `./styles/index.{css,js,ts}`
 
-Files following this convention will be injected to the App root. If you need to import multiple css entries, you can create the following structure and managing the import order yourself.
+Các file theo quy ước này sẽ được đưa vào App. Nếu bạn cần import nhiều mục css, bạn có thể tạo cấu trúc sau và tự quản lý thứ tự import.
 
 ```bash
 your-slidev/
@@ -115,7 +115,7 @@ import './code.css'
 import './layouts.css'
 ```
 
-Styles will be processed by [Windi CSS](http://windicss.org/) and [PostCSS](https://postcss.org/), so you can use css nesting and [at-directives](https://windicss.org/features/directives.html) out-of-box. For example:
+Style sẽ được thực thi bởi [Windi CSS](http://windicss.org/) và [PostCSS](https://postcss.org/), vì vậy bạn có thể sử dụng lồng ghép css và [at-directives](https://windicss.org/features/directives.html). Ví dụ:
 
 ```less
 .slidev-layout {
@@ -135,15 +135,15 @@ Styles will be processed by [Windi CSS](http://windicss.org/) and [PostCSS](http
 }
 ```
 
-[Learn more about the syntax](https://windicss.org/features/directives.html).
+[Tìm hiểu thêm về cú pháp](https://windicss.org/features/directives.html).
 
 ## `index.html`
 
-Conventions: `index.html`
+Quy ước: `index.html`
 
-The `index.html` provides the ability to inject meta tags and/or scripts to the main `index.html`
+`index.html` cung cấp khả năng đưa thẻ meta và/hoặc tập lệnh vào `index.html` chính
 
-For example, for the following custom `index.html`:
+Ví dụ: đối với `index.html` tùy chỉnh sau:
 
 ```html
 <!-- ./index.html -->
@@ -157,7 +157,7 @@ For example, for the following custom `index.html`:
 </body>
 ```
 
-The final hosted `index.html` will be:
+`index.html` cuối cùng sẽ là:
 
 ```html
 <!DOCTYPE html>
@@ -181,7 +181,6 @@ The final hosted `index.html` will be:
 
 ## Global Layers
 
-Conventions: `global-top.vue` | `global-bottom.vue`
+Quy ước: `global-top.vue` | `global-bottom.vue`
 
-Learn more: [Global Layers](/custom/global-layers)
-
+Tìm hiểu thêm về: [Global Layers](/custom/global-layers)

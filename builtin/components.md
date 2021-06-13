@@ -1,17 +1,17 @@
-# Components
+# Component
 
-## Built-in Components
+## Tích hợp Component
 
-> The documentations of this section is still working in progress. Before that, you can take a look at the [source code](https://github.com/slidevjs/slidev/blob/main/packages/client/builtin) directly.
+> Các tài liệu của phần này vẫn đang được hoàn thiện. Trước đó, bạn có thể xem trực tiếp tại [source code](https://github.com/slidevjs/slidev/blob/main/packages/client/builtin).
 
-## Custom Components
+## Tùy chỉnh Component
 
-Create a directory `components/` under your project root, and simply put your custom Vue components under it, then you can use it with the same name in your markdown file!
+Tạo một thư mục `components/` trong dự án gốc của bạn và chỉ cần đặt các component Vue tùy chỉnh của bạn bên trong nó, sau đó bạn có thể sử dụng nó với cùng tên trong file markdown của mình!
 
-Read more in the [Customization](/custom/directory-structure#components) section.
+Đọc thêm trong phần [Tùy chỉnh](/custom/directory-structure#components).
 
-## Theme-provided Components
+## Component do Chủ đề cung cấp
 
-Themes can provide components as well. Please read their documentations for what they have provided.
+Chủ đề cũng có thể cung cấp các component. Vui lòng đọc tài liệu về nó để biết những gì nó cung cấp.
 
-Check more in the [directory structure](/custom/directory-structure) section.
+Kiểm tra thêm trong phần [Cấu trúc thư mục](/custom/directory-structure).

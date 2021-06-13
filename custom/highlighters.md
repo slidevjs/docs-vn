@@ -1,22 +1,22 @@
-# Highlighters
+# Đánh dấu
 
-Slidev comes with two syntax highlighter for you to choose from:
+Slidev đi kèm với hai công cụ đánh dấu cú pháp để bạn lựa chọn:
 
 - [Prism](https://prismjs.com/)
 - [Shiki](https://github.com/shikijs/shiki)
 
-**Prism** is one of the most popular syntax highlighters. The highlighting is done by adding token classes to the code and it's colored using CSS. You can browse through their [official themes](https://github.com/PrismJS/prism-themes), or create/customize one yourself very easily using [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars).
+**Prism** là một trong những công cụ đánh dấu cú pháp phổ biến nhất. Việc đánh dấu được thực hiện bằng cách thêm các lớp token vào code và nó được đánh dấu bằng cách sử dụng CSS. Bạn có thể duyệt qua [chủ đề chính thức](https://github.com/PrismJS/prism-themes), hoặc tự tạo/tùy chỉnh một chủ đề rất dễ dàng bằng cách sử dụng [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars).
 
-**Shiki**, on the other hand, is a TextMate grammar-powered syntax highlighter. It generates colored tokens, so there is no additional CSS needed. Since it has great grammar support, the generated colors are very accurate, just like what you will see in VS Code. Shiki also comes with [a bunch of built-in themes](https://github.com/shikijs/shiki/blob/master/docs/themes.md). The downside of Shiki is that it also requires TextMate themes (compatible with VS Code theme) to do the highlighting, which can be a bit harder to customize.
+Mặt khác, **Shiki**, à một công cụ đánh dấu cú pháp hỗ trợ ngữ pháp TextMate. Nó tạo ra các token có màu, vì vậy không cần thêm CSS. Vì nó có hỗ trợ ngữ pháp tuyệt vời, màu sắc được tạo ra rất chính xác, giống như những gì bạn sẽ thấy trong VS Code. Shiki cũng đi kèm với [một loạt các chủ đề cài sẵn](https://github.com/shikijs/shiki/blob/master/docs/themes.md). Nhược điểm của Shiki là nó cũng yêu cầu các chủ đề TextMate (tương thích với chủ đề VS Code) để làm nổi bật, có thể khó tùy chỉnh hơn một chút.
 
-Slidev themes usually support both Prism and Shiki, but depending on the theme you are using, it might only support one of them.
+Chủ đề slidev thường hỗ trợ cả Prism và Shiki, nhưng tùy thuộc vào chủ đề bạn đang sử dụng, nó có thể chỉ hỗ trợ một trong số chúng.
 
-When you have the choice, the tradeoff is basically:
+Khi bạn có sự lựa chọn, sự cân bằng về cơ bản là:
 
-- **Prism** for easier customization
-- **Shiki** for more accurate highlighting
+- **Prism** để tùy chỉnh dễ dàng hơn
+- **Shiki** để đánh dấu chính xác hơn
 
-By default, Slidev uses Prism. You can change it by modifying your frontmatter:
+Theo mặc định, Slidev sử dụng Prism. Bạn có thể thay đổi nó bằng cách sửa đổi frontmatter của mình:
 
 ```yaml
 ---
@@ -24,15 +24,15 @@ highlighter: shiki
 ---
 ```
 
-## Configure Prism
+## Cấu hình Prism
 
-To configure your Prism, you can just import the theme css or use [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars) to configure themes for both light and dark mode. Refer to its docs for more details.
+Để định cấu hình Prism, bạn chỉ có thể nhập css chủ đề hoặc sử dụng [`prism-theme-vars`](https://github.com/antfu/prism-theme-vars) để định cấu hình chủ đề cho cả chế độ sáng và tối. Tham khảo tài liệu của nó để biết thêm chi tiết.
 
-## Configure Shiki
+## Cấu hình Shiki
 
 <Environment type="node" />
 
-Create `./setup/shiki.ts` file with the following content
+Tạo file `./setup/shiki.ts` với nội dung sau
 
 ```ts
 /* ./setup/shiki.ts */
@@ -48,9 +48,9 @@ export default defineShikiSetup(() => {
 })
 ```
 
-Refer to [Shiki's docs](https://github.com/shikijs/shiki/blob/master/docs/themes.md#all-themes) for available theme names.
+Tham khảo [tài liệu của Shiki](https://github.com/shikijs/shiki/blob/master/docs/themes.md#all-themes) để biết các tên chủ đề có sẵn.
 
-Or if you want to use your own theme:
+Hoặc nếu bạn muốn sử dụng chủ đề của riêng mình:
 
 ```ts
 /* ./setup/shiki.ts */

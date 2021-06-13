@@ -1,8 +1,8 @@
-# Configure Mermaid
+# Cấu hình Mermaid
 
 <Environment type="client" />
 
-Create `./setup/mermaid.ts` with the following content:
+Tạo `./setup/mermaid.ts` với nội dung sau:
 
 ```ts
 import { defineMermaidSetup } from '@slidev/types'
@@ -14,4 +14,4 @@ export default defineMermaidSetup(() => {
 })
 ```
 
-With the setup, you can provide a custom default setting for [Mermaid](https://mermaid-js.github.io/). Refer to the type definitions and its documentation for more details.
+Trong quá trình thiết lập, bạn có thể cung cấp cài đặt mặc định tùy chỉnh cho [Mermaid](https://mermaid-js.github.io/). Tham khảo định nghĩa loại và tài liệu của chúng để biết thêm chi tiết.

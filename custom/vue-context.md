@@ -1,17 +1,17 @@
 # Vue Global Context
 
-Slidev injected a [global Vue context](https://v3.vuejs.org/api/application-config.html#globalproperties) `$slidev` for advanced conditions or navigation controls.
+Slidev đã đưa vào [global Vue context](https://v3.vuejs.org/api/application-config.html#globalproperties) `$slidev` cho các điều kiện nâng cao hoặc điều khiển navigation.
 
-## Usage
+## Sử dụng
 
-You can access it anywhere in your markdown and Vue template, with the ["Mustache" syntax](https://v3.vuejs.org/guide/template-syntax.html#interpolations).
+Bạn có thể truy cập nó ở bất kỳ đâu trong markdown và Vue template của mình, với [cú pháp "Mustache"](https://v3.vuejs.org/guide/template-syntax.html#interpolations).
 
 ```md
 <!-- slides.md -->
 
-# Page 1
+# Trang 1
 
-Current page is: {{ $slidev.nav.currentPage }}
+Trang hiện tại là: {{ $slidev.nav.currentPage }}
 ```
 
 ```html
@@ -23,11 +23,11 @@ Current page is: {{ $slidev.nav.currentPage }}
 </template>
 ```
 
-## Properties
+## Thuộc tính
 
 ### `$slidev.nav`
 
-A reactive object holding the properties and controls of the slides navigation. For examples:
+Một đối tượng phản ứng giữ các thuộc tính và điều khiển của điều hướng trang trình bày. Ví dụ như:
 
 ```js
 $slidev.nav.next() // go next step
@@ -45,11 +45,11 @@ $slidev.nav.currentLayout // current layout id
 $slidev.nav.clicks // current clicks count
 ```
 
-For more properties available, refer to the [nav.ts](https://github.com/slidevjs/slidev/blob/main/packages/client/logic/nav.ts) exports.
+Để biết thêm các thuộc tính khả dụng, hãy tham khảo [nav.ts](https://github.com/slidevjs/slidev/blob/main/packages/client/logic/nav.ts).
 
 ### `$slidev.configs`
 
-A reactive object holding the parsed [configurations in the first frontmatter](/custom/#frontmatter-configures) of your `slides.md`. For example
+Một đối tượng phản ứng giữ [các cấu hình đã được phân tích cú pháp](/custom/#frontmatter-configures) trong frontmatter đầu tiên của `slides.md`. Ví dụ
 
 ```yaml
 ---
@@ -63,7 +63,7 @@ title: My First Slidev!
 
 ### `$slidev.themeConfigs`
 
-A reactive object holding the parsed theme configurations.
+Một đối tượng phản ứng giữ các cấu hình chủ đề đã được phân tích cú pháp.
 
 ```yaml
 ---

@@ -1,8 +1,8 @@
-# Markdown Syntax
+# Cú pháp Markdown
 
-Slides are written within **a single markdown file** (by default `./slides.md`). 
+Slide được viết trong **một file markdown duy nhất** (theo mặc định là `./slides.md`). 
 
-You can use [the Markdown features](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) as you normally would, with the additional support of inlined HTML and Vue Components. Styling using [Windi CSS](https://windicss.org) is also supported. Use `---` padded with a new line to separate your slides. 
+Bạn có thể sử dụng [các tính năng Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) như bình thường, với sự hỗ trợ bổ sung của các component HTML và Vue. Tạo style bằng [Windi CSS](https://windicss.org) cũng được hỗ trợ. Sử dụng dấu `---` được đệm bằng một dòng mới để tách các slide của bạn.
 
 ~~~md
 # Slidev
@@ -30,9 +30,9 @@ You can directly use Windi CSS and Vue components to style and enrich your slide
 </div>
 ~~~
 
-## Front Matter & Layouts
+## Front Matter & Layout
 
-You can specify layouts and other metadata for each slide by converting the separators into [front matter blocks](https://jekyllrb.com/docs/front-matter/). Each front matter starts with a triple-dash and ends with another. Texts between them are data objects in [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) format. For example:
+Bạn có thể chỉ định layout và siêu dữ liệu khác cho mỗi slide bằng cách chuyển đổi các dấu phân cách thành [khối front matter](https://jekyllrb.com/docs/front-matter/). Mỗi front matter bắt đầu bằng dấu ba gạch ngang và kết thúc bằng dấu gạch ngang khác. Văn bản giữa chúng là các đối tượng dữ liệu ở định dạng [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/). Ví dụ:
 
 ~~~md
 ---
@@ -60,11 +60,11 @@ This is a page with the layout `center` and a background image.
 This is a default page without any additional metadata.
 ~~~
 
-Refer to [customization](/custom/) for more details.
+Tham khảo [customization](/custom/) để biết thêm chi tiết.
 
 ## Code Blocks
 
-One big reason I am building Slidev is needing to make my code look just right in the slides. So just as you expected, you can use Markdown flavored code block to highlight your code.
+Một lý do lớn mà tôi xây dựng Slidev là làm cho code của tôi trông vừa phải trong các slide. Vì vậy, đúng như bạn mong đợi, bạn có thể sử dụng khối code Markdown để làm nổi bật code của mình.
 
 ~~~ts
 //```ts
@@ -72,9 +72,9 @@ console.log('Hello, World!')
 //```
 ~~~
 
-### Line Highlighting
+### Đánh dấu dòng
 
-To highlight specific lines, simply add line numbers within bracket `{}`. Line numbers start counting from 1.
+Để đánh dấu các dòng cụ thể, chỉ cần thêm số dòng trong dấu ngoặc nhọn `{}`. Số dòng bắt đầu đếm từ 1.
 
 ~~~ts
 //```ts {2,3}
@@ -87,7 +87,7 @@ function add(
 //```
 ~~~
 
-To change the highlight in multiple steps, you can use `|` to separate them. For example
+Để thay đổi vùng đánh dấu trong nhiều bước, bạn có thể sử dụng dấu `|` để tách chúng. Ví dụ
 
 ~~~ts
 //```ts {2-3|5|all}
@@ -100,11 +100,11 @@ function add(
 //```
 ~~~
 
-This will first highlight `a: Ref<number> | number` and `b: Ref<number> | number`, and then `return computed(() => unref(a) + unref(b))` after one click, and lastly, the whole block. Learn more in the [clicks animations guide](/guide/animations).
+Đầu tiên, điều này sẽ làm nổi bật `a: Ref<number> | number` và `b: Ref<number> | number`, và sau đó là `return computed(() => unref(a) + unref(b))` sau một cú nhấp chuột, và cuối cùng là toàn bộ khối. Tìm hiểu thêm trong [hướng dẫn về animation click](/guide/animations).
 
-### Monaco Editor
+### Trình soạn thảo Monaco
 
-Whenever you want to do some modification in the presentation, simply add `{monaco}` after the language id — it turns the block into a fully-featured Monaco editor!
+Bất cứ khi nào bạn muốn thực hiện một số sửa đổi trong bản trình bày, chỉ cần thêm `{monaco}` sau ngôn ngữ id - nó biến khối thành một trình soạn thảo Monaco đầy đủ tính năng!
 
 ~~~ts
 //```ts {monaco}
@@ -112,11 +112,11 @@ console.log('HelloWorld')
 //```
 ~~~
 
-Learn more about [configuring Monaco](/custom/config-monaco).
+Tìm hiểu thêm về [configuring Monaco](/custom/config-monaco).
 
 ## Embedded Styles
 
-You can use `<style>` tag in your Markdown directly to override styles for the **current slide**.
+Bạn có thể sử dụng thẻ `<style>` trong Markdown của mình trực tiếp để ghi đè các kiểu cho **slide hiện tại**.
 
 ```md
 # This is Red
@@ -132,9 +132,9 @@ h1 {
 # Next slide is not affected
 ```
 
-`<style>` tag in Markdown is always [scoped](https://vue-loader.vuejs.org/guide/scoped-css.html). To have global style overrides, check out the [customization section](/custom/directory-structure#style).
+Thẻ `<style>` trong Markdown luôn [scoped](https://vue-loader.vuejs.org/guide/scoped-css.html). TĐể ghi đè kiểu toàn cục, hãy xem [phần tùy chỉnh](/custom/directory-structure#style).
 
-Powered by [Windi CSS](https://windicss.org), you can directly use nested css and [directives](https://windicss.org/features/directives.html) (e.g. `@apply`)
+Được cung cấp bởi [Windi CSS](https://windicss.org), bạn có thể sử dụng trực tiếp css và [directives](https://windicss.org/features/directives.html) lồng nhau (ví dụ: `@apply`)
 
 ```md
 # Slidev
@@ -150,11 +150,11 @@ blockquote {
 </style>
 ```
 
-## Notes
+## Lưu ý
 
-You can also take notes for each slide. They will show up in [Presenter Mode](/guide/presenter-mode) for you to reference during presentations.
+Bạn cũng có thể ghi chú cho mỗi slide. Chúng sẽ hiển thị ở [Chế độ trình bày](/guide/presenter-mode) để bạn tham khảo trong khi thuyết trình.
 
-In Markdown, the last comment block in each slide will be treated as a note.
+Trong Markdown, khối comment cuối cùng trong mỗi slide sẽ được coi là ghi chú.
 
 ~~~md
 ---
@@ -182,22 +182,22 @@ This is another note
 
 ## Icons
 
-Slidev allows you to have the accessing to almost all the popular open-source iconsets **directly** in your markdown. Powered by [`vite-plugin-icons`](https://github.com/antfu/vite-plugin-icons) and [Iconify](https://iconify.design/).
+Slidev cho phép bạn có quyền truy cập vào hầu hết tất cả các bộ icon mã nguồn mở phổ biến **trực tiếp** trong markdown của bạn. Được cung cấp bởi [`vite-plugin-icons`](https://github.com/antfu/vite-plugin-icons) và [Iconify](https://iconify.design/).
 
-The naming follows [Iconify](https://iconify.design/)'s conversion `{collection-name}-{icon-name}`. For example:
+Việc đặt tên theo chuyển đổi của [Iconify](https://iconify.design/) `{collection-name}-{icon-name}`. Ví dụ:
 
-- `<mdi-account-circle />` - <mdi-account-circle /> from [Material Design Icons](https://github.com/Templarian/MaterialDesign)
-- `<carbon-badge />` - <carbon-badge /> from [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons)
-- `<uim-rocket />` - <uim-rocket /> from [Unicons Monochrome](https://github.com/Iconscout/unicons)
-- `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> from [Twemoji](https://github.com/twitter/twemoji)
-- `<logos-vue />` - <logos-vue /> from [SVG Logos](https://github.com/gilbarbara/logos)
-- And much more...
+- `<mdi-account-circle />` - <mdi-account-circle /> từ [Material Design Icons](https://github.com/Templarian/MaterialDesign)
+- `<carbon-badge />` - <carbon-badge /> từ [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons)
+- `<uim-rocket />` - <uim-rocket /> từ [Unicons Monochrome](https://github.com/Iconscout/unicons)
+- `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> từ [Twemoji](https://github.com/twitter/twemoji)
+- `<logos-vue />` - <logos-vue /> từ [SVG Logos](https://github.com/gilbarbara/logos)
+- Và nhiều hơn nữa...
 
-You can browse and search for all the icons available with [Icônes](https://icones.js.org/).
+Bạn có thể duyệt và tìm kiếm tất cả các icon có sẵn với [Icônes](https://icones.js.org/).
 
 ### Styling Icons
 
-You can style the icons just like other HTML elements. For example:
+Bạn có thể tạo kiểu cho các icon giống như các element HTML khác. Ví dụ:
 
 ```html
 <uim-rocket />
@@ -211,11 +211,11 @@ You can style the icons just like other HTML elements. For example:
 
 ## Slots
 
-> Available since v0.18
+> Có hiệu lực từ v0.18
 
-Some layouts can provide multiple contributing points using [Vue's named slots](https://v3.vuejs.org/guide/component-slots.html).
+Một số layout có thể cung cấp nhiều điểm đóng góp bằng cách sử dụng [slot được đặt tên của Vue](https://v3.vuejs.org/guide/component-slots.html).
 
-For example, in [`two-cols` layout](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue), you can have two columns left (`default` slot) and right (`right` slot) side by side.
+Ví dụ, trong [`two-cols` layout](https://github.com/slidevjs/slidev/blob/main/packages/client/layouts/two-cols.vue), bạn có thể có hai cột bên trái (`default` slot) và bên phải (`right` slot) cạnh nhau.
 
 ```md
 ---
@@ -249,7 +249,7 @@ This shows on the right
 </div>
 </div>
 
-We also provide a shorthand syntax sugar `::name::` for slot name. The following example works exactly the same as the previous one.
+Chúng tôi cũng cung cấp cú pháp viết tắt `::name::` cho tên vị trí. Ví dụ sau hoạt động giống hệt như ví dụ trước.
 
 ```md
 ---
@@ -267,7 +267,7 @@ This shows on the left
 This shows on the right
 ```
 
-You can also explicitly specify the default slot and provide in custom order
+Bạn cũng có thể chỉ định rõ ràng vị trí mặc định và cung cấp theo thứ tự tùy chỉnh
 
 ```md
 ---
@@ -287,9 +287,9 @@ This shows on the right
 This shows on the left
 ```
 
-## Configurations
+## Cấu hình
 
-All configurations needed can be defined in the Markdown file. For example:
+Tất cả các cấu hình cần thiết có thể được xác định trong tệp Markdown. Ví dụ:
 
 ```md
 ---
@@ -303,17 +303,17 @@ background: 'https://source.unsplash.com/1600x900/?nature,water'
 This is the cover page.
 ```
 
-Learn more about [frontmatter configurations](/custom/#frontmatter-configures).
+Tìm hiểu thêm về [cấu hình frontmatter](/custom/#frontmatter-configures).
 
 ## LaTeX
 
-Slidev comes with LaTeX support out-of-box, powered by [KaTeX](https://katex.org/).
+Slidev đi kèm với hỗ trợ LaTeX bên ngoài, được cung cấp bởi [KaTeX](https://katex.org/).
 
 <Tweet id="1392246507793915904" />
 
 ### Inline
 
-Surround your LaTeX with a single `$` on each side for inline rendering.
+Bao quanh LaTeX của bạn với một ký tự `$` duy nhất ở mỗi bên để hiển thị trong một dòng.
 
 ```md
 $\sqrt{3x-1}+(1+x)^2$
@@ -321,8 +321,7 @@ $\sqrt{3x-1}+(1+x)^2$
 
 ### Block
 
-Use two (`$$`) for block rendering. This mode uses bigger symbols and centers
-the result.
+Sử dụng hai (`$$`) để hiển thị khối. Chế độ này sử dụng các ký hiệu lớn hơn và căn giữa kết quả.
 
 ```md
 $$
@@ -339,13 +338,13 @@ $$
 $$
 ```
 
-Learn more: [Demo](https://sli.dev/demo/starter/8) | [KaTeX](https://katex.org/) | [`markdown-it-katex`](https://github.com/waylonflinn/markdown-it-katex)
+Tìm hiểu thêm: [Demo](https://sli.dev/demo/starter/8) | [KaTeX](https://katex.org/) | [`markdown-it-katex`](https://github.com/waylonflinn/markdown-it-katex)
 
 ## Diagrams
 
-You can also create diagrams / graphs from textual descriptions in your Markdown, powered by [Mermaid](https://mermaid-js.github.io/mermaid).
+Bạn cũng có thể tạo sơ đồ / đồ thị từ mô tả bằng văn bản trong Markdown của mình, được cung cấp bởi [Mermaid](https://mermaid-js.github.io/mermaid).
 
-Code blocks marked as `mermaid` will be converted to digrams, for example:
+Code block được đánh dấu là `mermaid` sẽ được chuyển đổi thành digram, ví dụ:
 
 ~~~md
 //```mermaid
@@ -355,7 +354,7 @@ sequenceDiagram
 //```
 ~~~
 
-You can further pass an options object to it to specify the scaling and theming. The syntax of the object is a JavaScript object literal, you will need to add quotes (`'`) for strings and use comma (`,`) between keys.
+Bạn có thể chuyển thêm một đối tượng tùy chọn cho nó để chỉ định tỷ lệ và chia tỷ lệ. Cú pháp của đối tượng là một đối tượng JavaScript theo nghĩa đen, bạn sẽ cần thêm dấu nháy (`'`) cho các chuỗi và sử dụng dấu phẩy (`,`) giữa các khóa.
 
 ~~~md
 //```mermaid {theme: 'neutral', scale: 0.8}
@@ -366,13 +365,13 @@ C -->|Two| E[Result 2]
 //```
 ~~~
 
-Learn more: [Demo](https://sli.dev/demo/starter/9) | [Mermaid](https://mermaid-js.github.io/mermaid)
+Tìm hiểu thêm: [Demo](https://sli.dev/demo/starter/9) | [Mermaid](https://mermaid-js.github.io/mermaid)
 
 ## Multiple Entries
 
-> Available since v0.15
+> Có hiệu lực từ v0.15
 
-You can split your `slides.md` into multiple files and organize them as you want.
+Bạn có thể chia `slides.md` của mình thành nhiều file và sắp xếp chúng theo ý muốn.
 
 `slides.md` :
 
@@ -399,7 +398,7 @@ This page is from another file
 
 ### Frontmatter Merging
 
-You can provide frontmatters from both your main entry and external markdown pages. If there are the same keys in them, the ones from the **main entry have the higher priority**. For example
+Bạn có thể cung cấp frontmatters từ cả mục nhập chính và các trang markdown pages. bên ngoài. Nếu có các khóa giống nhau trong chúng, thì những khóa từ **mục nhập chính có mức độ ưu tiên cao hơn**. Ví dụ
 
 `slides.md` :
 

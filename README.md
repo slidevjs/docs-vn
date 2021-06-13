@@ -1,8 +1,8 @@
 # [sli.dev](https://sli.dev)
 
-Documentation for [Slidev](https://github.com/slidevjs/slidev)
+Tài liệu cho [Slidev](https://github.com/slidevjs/slidev)
 
-## Translations
+## Ngôn ngữ
 
 | | Repo | Site | Maintainers |
 |---|---|---:|---|
@@ -21,11 +21,11 @@ pnpm i
 pnpm run dev
 ```
 
-And then visit `http://localhost:3000`
+Và sau đó truy cập `http://localhost:3000`
 
-Or install the [Vite extension for VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) to edit side-by-side.
+Hoặc cài đặt [Vite extension cho VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) để chỉnh sửa song song.
 
-## Help on Translating
+## Trợ giúp về phiên dịch
 
 <!-- For translations maintainers: You don't need to translate this port -->
 

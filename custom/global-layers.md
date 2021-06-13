@@ -1,18 +1,18 @@
 # Global Layers
 
-> Available since v0.17
+> Có hiệu lực từ v0.17
 
-Global layers allow you to have custom components that **persistent** across slides. This could be useful for having footers, cross-slides animations, global effects, etc.
+Các Global layers cho phép bạn có các component tùy chỉnh **liên tục** trên các trang trình bày. Điều này có thể hữu ích để có chân trang, animation trang trình bày chéo, hiệu ứng toàn bộ, v.v...
 
-Slidev provides two layers for this usage, create `global-top.vue` or `global-bottom.vue` under your project root and it will pick up automatically.
+Slidev cung cấp hai layer cho cách sử dụng này, tạo `global-top.vue` hoặc `global-bottom.vue` trong dự án gốc của bạn và nó sẽ tự động nhận.
 
-Layers relationship:
+Mối quan hệ layer:
 
 - Global Top (`global-top.vue`)
 - Slides
 - Global Bottom (`global-bottom.vue`)
 
-## Example
+## Ví dụ
 
 ```html
 <!-- global-top.vue -->
@@ -21,9 +21,9 @@ Layers relationship:
 </template>
 ```
 
-The text `Your Name` will appear to all your slides.
+Dòng chữ `Your Name` sẽ xuất hiện trên tất cả các slide của bạn.
 
-To enabled it conditionally, you can apply it with the [Vue Global Context](/custom/vue-context).
+Để bật nó có điều kiện, bạn có thể áp dụng nó với [Vue Global Context](/custom/vue-context).
 
 ```html
 <!-- hide the footer from Page 4 -->
