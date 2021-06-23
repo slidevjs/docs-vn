@@ -12,6 +12,8 @@ Bạn có thể định cấu hình Slidev trong frontmatter của trang trình 
 theme: 'default'
 # title of your slide, will auto infer from the first header if not specified
 title: ''
+# titleTemplate for the webpage, `%s` will be replaced by the page's title
+titleTemplate: '%s - Slidev'
 
 # enabled pdf downloading in SPA build, can also be a custom url
 download: true
