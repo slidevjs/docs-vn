@@ -19,6 +19,16 @@ $ slidev export
 
 Sau một vài giây, các slide của bạn sẽ có sẵn tại `./slides-exports.pdf`.
 
+### Export Clicks Steps
+
+> Available since v0.21
+
+By default, Slidev exports 1 page per slide with clicks animations disabled. If you want export slides with multiple steps intro multiple pages, pass the `--with-clicks` options.
+
+```bash
+$ slidev export --with-clicks
+```
+
 ## PNGs
 
 Khi chuyển vào tùy chọn `--format png`, Slidev sẽ xuất hình ảnh PNG cho từng trang chiếu thay vì PDF.
