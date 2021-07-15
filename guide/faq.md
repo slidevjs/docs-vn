@@ -122,7 +122,7 @@ canvasWidth: 800
 Chúng tôi cung cấp một component tích hợp sẵn `<Transform />`, là một lớp wrapper của thuộc tính transform CSS.
 
 ```md
-<Tranform :scale="1.4">
+<Transform :scale="1.4">
 
 - Item 1
 - Item 2
