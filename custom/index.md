@@ -12,11 +12,15 @@ Bạn có thể định cấu hình Slidev trong frontmatter của trang trình 
 theme: 'default'
 # title of your slide, will auto infer from the first header if not specified
 title: ''
+# titleTemplate for the webpage, `%s` will be replaced by the page's title
+titleTemplate: '%s - Slidev'
 
 # enabled pdf downloading in SPA build, can also be a custom url
 download: true
 # syntax highlighter, can be 'prism' or 'shiki'
 highlighter: 'prism'
+# show line numbers in code blocks
+lineNumbers: false
 # enable monaco editor, default to dev only
 monaco: 'dev'
 
@@ -48,7 +52,11 @@ info: |
 ---
 ```
 
+<<<<<<< HEAD
 Xem [định nghĩa loại](https://github.com/slidevjs/slidev/blob/main/packages/types/src/types.ts#L29) để có thêm tùy chọn.
+=======
+Check out the [type definitions](https://github.com/slidevjs/slidev/blob/main/packages/types/src/config.ts) for more options.
+>>>>>>> d9b5a2ed4eea5c454b14f823f740a050ef45f079
 
 ## Cấu trúc thư mục
 
