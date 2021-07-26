@@ -19,6 +19,16 @@ $ slidev export
 
 Sau một vài giây, các slide của bạn sẽ có sẵn tại `./slides-exports.pdf`.
 
+### Export Clicks Steps
+
+> Available since v0.21
+
+By default, Slidev exports one page per slide with clicks animations disabled. If you want export slides with multiple steps into multiple pages, pass the `--with-clicks` options.
+
+```bash
+$ slidev export --with-clicks
+```
+
 ## PNGs
 
 Khi chuyển vào tùy chọn `--format png`, Slidev sẽ xuất hình ảnh PNG cho từng trang chiếu thay vì PDF.
@@ -49,7 +59,11 @@ Tham khảo [Vite's documentation](https://vitejs.dev/guide/build.html#public-ba
 
 ### Cung cấp file PDF cho phép tải xuống
 
+<<<<<<< HEAD
 Bạn có thể cung cấp một file PDF cho phép tải xuống cho người xem SPA của bạn. Bạn có thể kích hoạt nó bằng cách cấu hình sau:
+=======
+You can provide a downloadable PDF to the viewers of your SPA with the following config:
+>>>>>>> d9b5a2ed4eea5c454b14f823f740a050ef45f079
 
 ```md
 ---
@@ -57,7 +71,11 @@ download: true
 ---
 ```
 
+<<<<<<< HEAD
 Bây giờ, Slidev sẽ tạo một file pdf cùng với bản dựng và một nút tải xuống sẽ xuất hiện trong SPA.
+=======
+Slidev will generate a pdf file along with the build and a download button will be displayed in the SPA.
+>>>>>>> d9b5a2ed4eea5c454b14f823f740a050ef45f079
 
 Bạn cũng có thể cung cấp một url tùy chỉnh cho PDF. Trong trường hợp đó, quá trình render sẽ bị bỏ qua.
 
