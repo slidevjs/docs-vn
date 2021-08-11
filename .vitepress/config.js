@@ -90,6 +90,18 @@ const Translations = [
     text: 'Việt Nam',
     link: 'https://vn.sli.dev{{pathname}}',
   },
+  {
+    text: 'Deutsch',
+    link: 'https://de.sli.dev{{pathname}}',
+  },
+  {
+    text: 'Português (BR)',
+    link: 'https://br.sli.dev{{pathname}}',
+  },
+  {
+    text: 'Ελληνικά',
+    link: 'https://el.sli.dev{{pathname}}',
+  },
 ]
 
 const Customizations = [
@@ -153,7 +165,15 @@ const Resources = [
     link: '/showcases',
   },
   {
+<<<<<<< HEAD
     text: 'Quản lý slide',
+=======
+    text: 'Learning Resources',
+    link: '/resources/learning',
+  },
+  {
+    text: 'Curated Covers',
+>>>>>>> 9ea35932b94caae076abe8c4e0df6914298d4ebe
     link: '/resources/covers',
   },
 ]

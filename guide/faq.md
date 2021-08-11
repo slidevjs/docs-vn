@@ -21,7 +21,11 @@ The second column
 </div>
 ```
 
+<<<<<<< HEAD
 Hơn nữa, bạn có thể tùy chỉnh kích thước của từng cột như:
+=======
+Go further, you can customize the size of each column like:
+>>>>>>> 9ea35932b94caae076abe8c4e0df6914298d4ebe
 
 ```html
 <div class="grid grid-cols-[200px,1fr,10%] gap-4">
@@ -122,7 +126,7 @@ canvasWidth: 800
 Chúng tôi cung cấp một component tích hợp sẵn `<Transform />`, là một lớp wrapper của thuộc tính transform CSS.
 
 ```md
-<Tranform :scale="1.4">
+<Transform :scale="1.4">
 
 - Item 1
 - Item 2
