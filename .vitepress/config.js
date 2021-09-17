@@ -30,7 +30,15 @@ const Guide = [
     link: '/guide/exporting',
   },
   {
+<<<<<<< HEAD
     text: 'Ghi lại bản trình bày',
+=======
+    text: 'Static Hosting',
+    link: '/guide/hosting',
+  },
+  {
+    text: 'Record Presentation',
+>>>>>>> 7dc63d28be77f9c3b208ece23969befdc0d99204
     link: '/guide/recording',
   },
   {
@@ -38,7 +46,15 @@ const Guide = [
     link: '/guide/presenter-mode',
   },
   {
+<<<<<<< HEAD
     text: 'Tích hợp trình soạn thảo',
+=======
+    text: 'Drawing & Annonations',
+    link: '/guide/drawing',
+  },
+  {
+    text: 'Editor Integrations',
+>>>>>>> 7dc63d28be77f9c3b208ece23969befdc0d99204
     link: '/guide/editors',
   },
   {
@@ -89,6 +105,18 @@ const Translations = [
   {
     text: 'Việt Nam',
     link: 'https://vn.sli.dev{{pathname}}',
+  },
+  {
+    text: 'Deutsch',
+    link: 'https://de.sli.dev{{pathname}}',
+  },
+  {
+    text: 'Português (BR)',
+    link: 'https://br.sli.dev{{pathname}}',
+  },
+  {
+    text: 'Ελληνικά',
+    link: 'https://el.sli.dev{{pathname}}',
   },
 ]
 
@@ -153,7 +181,15 @@ const Resources = [
     link: '/showcases',
   },
   {
+<<<<<<< HEAD
     text: 'Quản lý slide',
+=======
+    text: 'Learning Resources',
+    link: '/resources/learning',
+  },
+  {
+    text: 'Curated Covers',
+>>>>>>> 7dc63d28be77f9c3b208ece23969befdc0d99204
     link: '/resources/covers',
   },
 ]
