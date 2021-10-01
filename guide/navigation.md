@@ -28,6 +28,10 @@ Di chuyển chuột đến góc dưới cùng bên trái của trang Slidev, tha
 
 ## Tổng quan Slide
 
+<<<<<<< HEAD
 Bằng cách nhấn <kbd>o</kbd> hoặc nhấn vào nút <carbon-user-speaker class="inline-icon-btn"/> trong thanh điều hướng, bạn có thể có tổng quan về các slide của mình, vì vậy bạn có thể chuyển đổi giữa chúng một cách dễ dàng.
+=======
+By pressing <kbd>o</kbd> or clicking the <carbon-apps class="inline-icon-btn"/> button in the navigation bar, you can have the overview of your slides so you can jump between them easily. 
+>>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ![](/screenshots/slides-overview.png)

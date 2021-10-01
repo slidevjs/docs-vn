@@ -32,7 +32,11 @@ You can directly use Windi CSS and Vue components to style and enrich your slide
 
 ## Front Matter & Layout
 
+<<<<<<< HEAD
 Bạn có thể chỉ định layout và siêu dữ liệu khác cho mỗi slide bằng cách chuyển đổi các dấu phân cách thành [khối front matter](https://jekyllrb.com/docs/front-matter/). Mỗi front matter bắt đầu bằng dấu ba gạch ngang và kết thúc bằng dấu gạch ngang khác. Văn bản giữa chúng là các đối tượng dữ liệu ở định dạng [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/). Ví dụ:
+=======
+Specify layouts and other metadata for each slide by converting the separators into [front matter blocks](https://jekyllrb.com/docs/front-matter/). Each frontmatter starts with a triple-dash and ends with another. Texts between them are data objects in [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) format. For example:
+>>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ~~~md
 ---
@@ -72,7 +76,13 @@ console.log('Hello, World!')
 //```
 ~~~
 
+<<<<<<< HEAD
 ### Đánh dấu dòng
+=======
+We support [Prism](http://prismjs.com) and [Shiki](https://github.com/shiki/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+
+### Line Highlighting
+>>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 Để đánh dấu các dòng cụ thể, chỉ cần thêm số dòng trong dấu ngoặc nhọn `{}`. Số dòng bắt đầu đếm từ 1.
 
@@ -150,7 +160,33 @@ blockquote {
 </style>
 ```
 
+<<<<<<< HEAD
 ## Lưu ý
+=======
+## Static Assets
+
+Just like you would do in markdown, you can use images pointing to a remote or local url.
+
+For remote assets, the built-in [`vite-plugin-remote-assets`](https://github.com/antfu/vite-plugin-remote-assets) will cache them into the disk at the first run so you can have instant loading even for large images later on.
+
+```md
+![Remote Image](https://sli.dev/favicon.png)
+```
+
+For local assets, put them into the [`public` folder](/custom/directory-structure.html#public) and reference them with **leading slash**.
+
+```md
+![Local Image](/pic.png)
+```
+
+For you want to apply custom sizes or styles, you can convert them to the `<img>` tag 
+
+```html
+<img src="/pic.png" class="m-40 h-40 rounded shadow" />
+```
+
+## Notes
+>>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 Bạn cũng có thể ghi chú cho mỗi slide. Chúng sẽ hiển thị ở [Chế độ trình bày](/guide/presenter-mode) để bạn tham khảo trong khi thuyết trình.
 
@@ -193,7 +229,11 @@ Việc đặt tên theo chuyển đổi của [Iconify](https://iconify.design/)
 - `<logos-vue />` - <logos-vue /> từ [SVG Logos](https://github.com/gilbarbara/logos)
 - Và nhiều hơn nữa...
 
+<<<<<<< HEAD
 Bạn có thể duyệt và tìm kiếm tất cả các icon có sẵn với [Icônes](https://icones.js.org/).
+=======
+Browse and search for all the icons available with [Icônes](https://icones.js.org/).
+>>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ### Styling Icons
 
@@ -235,7 +275,7 @@ This shows on the left
 
 This shows on the right
 
-<template>
+</template>
 ```
 
 <div class="grid grid-cols-2 rounded border border-gray-400 border-opacity-50 px-10 pb-4">
@@ -267,7 +307,11 @@ This shows on the left
 This shows on the right
 ```
 
+<<<<<<< HEAD
 Bạn cũng có thể chỉ định rõ ràng vị trí mặc định và cung cấp theo thứ tự tùy chỉnh
+=======
+You can also explicitly specify the default slot and provide in the custom order
+>>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ```md
 ---
@@ -344,7 +388,11 @@ Tìm hiểu thêm: [Demo](https://sli.dev/demo/starter/8) | [KaTeX](https://kate
 
 Bạn cũng có thể tạo sơ đồ / đồ thị từ mô tả bằng văn bản trong Markdown của mình, được cung cấp bởi [Mermaid](https://mermaid-js.github.io/mermaid).
 
+<<<<<<< HEAD
 Code block được đánh dấu là `mermaid` sẽ được chuyển đổi thành digram, ví dụ:
+=======
+Code blocks marked as `mermaid` will be converted to diagrams, for example:
+>>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ~~~md
 //```mermaid
