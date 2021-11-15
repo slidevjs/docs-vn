@@ -47,9 +47,13 @@ const Guide = [
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     text: 'Tích hợp trình soạn thảo',
 =======
     text: 'Drawing & Annonations',
+=======
+    text: 'Drawing & Annotations',
+>>>>>>> 152e0f6daf66b81d24969bbeae3655f23e93bcc6
     link: '/guide/drawing',
   },
   {
