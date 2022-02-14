@@ -47,9 +47,13 @@ const Guide = [
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     text: 'Tích hợp trình soạn thảo',
 =======
     text: 'Drawing & Annonations',
+=======
+    text: 'Drawing & Annotations',
+>>>>>>> e89a81b443cfb679cd8c86c03daff8f512d98f1d
     link: '/guide/drawing',
   },
   {
@@ -117,6 +121,10 @@ const Translations = [
   {
     text: 'Ελληνικά',
     link: 'https://el.sli.dev{{pathname}}',
+  },
+  {
+    text: '日本語',
+    link: 'https://ja.sli.dev{{pathname}}',
   },
 ]
 
