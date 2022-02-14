@@ -10,7 +10,7 @@
 
 ### `center`
 
-Displays the content in the middle of the sreen.
+Displays the content in the middle of the screen.
 
 ### `cover`
 
@@ -18,7 +18,7 @@ Used to display the cover page for the presentation, may contain the presentatio
 
 ### `default`
 
-The most baisc layout, to display any kind of content.
+The most basic layout, to display any kind of content.
 
 ### `end`
 
