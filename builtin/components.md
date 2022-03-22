@@ -4,7 +4,47 @@
 
 > Các tài liệu của phần này vẫn đang được hoàn thiện. Trước đó, bạn có thể xem trực tiếp tại [source code](https://github.com/slidevjs/slidev/blob/main/packages/client/builtin).
 
+<<<<<<< HEAD
 ## Tùy chỉnh Component
+=======
+### `TOC`
+
+Insert a Table Of Content.
+
+Titles and title levels get automatically retrieved from the first title element of each slides.
+
+You can override this automatic behaviour for a slide by using the front matter syntax:
+```yml
+---
+title: Amazing slide title
+level: 2
+---
+```
+
+Or if you prefer the slide to not appear in the TOC at all, you can use:
+```yml
+---
+hideInToc: true
+---
+```
+
+#### Usage
+~~~md
+<Toc />
+~~~
+
+Parameters:
+
+* `columns` (`string | number`, default: `1`): The number of columns of the display
+* `maxDepth` (`string | number`, default: `Infinity`): The maximum depth level of title to display
+* `minDepth` (`string | number`, default: `1`): The minimum depth level of title to display
+* `mode` (`'all' | 'onlyCurrentTree'| 'onlySiblings'`, default: `'all'`):
+  * `'all'`: Display all items
+  * `'onlyCurrentTree'`: Display only items that are in current tree (active item, parents and children of active item)
+  * `'onlySiblings'`: Display only items that are in current tree and their direct siblings
+
+## Custom Components
+>>>>>>> b18d6f476b18393dabf793d2f08d22f243683948
 
 Tạo một thư mục `components/` trong dự án gốc của bạn và chỉ cần đặt các component Vue tùy chỉnh của bạn bên trong nó, sau đó bạn có thể sử dụng nó với cùng tên trong file markdown của mình!
 
