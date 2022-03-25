@@ -20,6 +20,7 @@ $ slidev export
 Sau một vài giây, các slide của bạn sẽ có sẵn tại `./slides-exports.pdf`.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## PNGs
 
 Khi chuyển vào tùy chọn `--format png`, Slidev sẽ xuất hình ảnh PNG cho từng trang chiếu thay vì PDF.
@@ -28,6 +29,14 @@ Khi chuyển vào tùy chọn `--format png`, Slidev sẽ xuất hình ảnh PNG
 $ slidev export --format png
 ```
 =======
+=======
+In case you want to export your slides using the dark version of the theme, use the `--dark` option:
+
+```bash
+$ slidev export --dark
+```
+
+>>>>>>> d68398ac58d3e8efc2f6d29119938f4a4382f617
 ### Export Clicks Steps
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
