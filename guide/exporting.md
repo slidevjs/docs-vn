@@ -17,7 +17,17 @@ Bây giờ xuất các slide của bạn sang PDF bằng lệnh sau
 $ slidev export
 ```
 
+<<<<<<< HEAD
 Sau một vài giây, các slide của bạn sẽ có sẵn tại `./slides-exports.pdf`.
+=======
+After a few seconds, your slides will be ready at `./slides-export.pdf`.
+
+In case you want to export your slides using the dark version of the theme, use the `--dark` option:
+
+```bash
+$ slidev export --dark
+```
+>>>>>>> 0daa359721a2cdbb0abac8fc5f5e1c00dd7b4452
 
 <<<<<<< HEAD
 ## PNGs
