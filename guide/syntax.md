@@ -77,9 +77,13 @@ console.log('Hello, World!')
 ~~~
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Đánh dấu dòng
 =======
 We support [Prism](http://prismjs.com) and [Shiki](https://github.com/shiki/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+=======
+We support [Prism](http://prismjs.com) and [Shiki](https://github.com/shikijs/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+>>>>>>> 1f593abfecc4e3c936d81017efcc046ecffc2408
 
 ### Line Highlighting
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
