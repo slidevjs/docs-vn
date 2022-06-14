@@ -115,7 +115,11 @@ import './code.css'
 import './layouts.css'
 ```
 
+<<<<<<< HEAD
 Style sẽ được thực thi bởi [Windi CSS](http://windicss.org/) và [PostCSS](https://postcss.org/), vì vậy bạn có thể sử dụng lồng ghép css và [at-directives](https://windicss.org/features/directives.html). Ví dụ:
+=======
+Styles will be processed by [Windi CSS](https://windicss.org/) and [PostCSS](https://postcss.org/), so you can use css nesting and [at-directives](https://windicss.org/features/directives.html) out-of-box. For example:
+>>>>>>> 0d7183dcb5054d1cc1d9af406b951526a92f09b6
 
 ```less
 .slidev-layout {
