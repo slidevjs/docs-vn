@@ -2,7 +2,11 @@
 
 <Environment type="node" />
 
+<<<<<<< HEAD
 Slidev được cung cấp bởi [Vite](http://vitejs.dev/). Điều này có nghĩa là bạn có thể tận dụng hệ thống plugin tuyệt vời của Vite để tùy chỉnh các trang trình bày của mình hơn nữa.
+=======
+Slidev is powered by [Vite](https://vitejs.dev/) under the hood. This means you can leverage Vite's great plugin system to customize your slides even further.
+>>>>>>> 893d0b65c494856dc47a8834adc01480dbf6a161
 
 Nếu có file `vite.config.js` trong dự án, nó sẽ được đọc.
 
