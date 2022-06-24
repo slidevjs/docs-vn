@@ -77,9 +77,13 @@ console.log('Hello, World!')
 ~~~
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Đánh dấu dòng
 =======
 We support [Prism](http://prismjs.com) and [Shiki](https://github.com/shiki/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+=======
+We support [Prism](https://prismjs.com) and [Shiki](https://github.com/shikijs/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+>>>>>>> c8121c161efd5a726d336648d2b101540c346dd2
 
 ### Line Highlighting
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
@@ -110,7 +114,24 @@ function add(
 //```
 ~~~
 
+<<<<<<< HEAD
 Đầu tiên, điều này sẽ làm nổi bật `a: Ref<number> | number` và `b: Ref<number> | number`, và sau đó là `return computed(() => unref(a) + unref(b))` sau một cú nhấp chuột, và cuối cùng là toàn bộ khối. Tìm hiểu thêm trong [hướng dẫn về animation click](/guide/animations).
+=======
+To skip highlighting any lines, you can set the line number to `0`. For example
+
+~~~ts {0}
+//```ts {0}
+function add(
+  a: Ref<number> | number,
+  b: Ref<number> | number
+) {
+  return computed(() => unref(a) + unref(b))
+}
+//```
+~~~
+
+This will first highlight `a: Ref<number> | number` and `b: Ref<number> | number`, and then `return computed(() => unref(a) + unref(b))` after one click, and lastly, the whole block. Learn more in the [clicks animations guide](/guide/animations).
+>>>>>>> c8121c161efd5a726d336648d2b101540c346dd2
 
 ### Trình soạn thảo Monaco
 
@@ -218,7 +239,11 @@ This is another note
 
 ## Icons
 
+<<<<<<< HEAD
 Slidev cho phép bạn có quyền truy cập vào hầu hết tất cả các bộ icon mã nguồn mở phổ biến **trực tiếp** trong markdown của bạn. Được cung cấp bởi [`vite-plugin-icons`](https://github.com/antfu/vite-plugin-icons) và [Iconify](https://iconify.design/).
+=======
+Slidev allows you to have the accessing to almost all the popular open-source iconsets **directly** in your markdown. Powered by [`unplugin-icons`](https://github.com/antfu/unplugin-icons) and [Iconify](https://iconify.design/).
+>>>>>>> c8121c161efd5a726d336648d2b101540c346dd2
 
 Việc đặt tên theo chuyển đổi của [Iconify](https://iconify.design/) `{collection-name}-{icon-name}`. Ví dụ:
 
