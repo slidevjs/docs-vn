@@ -29,4 +29,24 @@ Với việc cài đặt, bạn có thể cung cấp cài đặt tùy chỉnh ch
 
 Hàm cấu hình nhận một đối tượng với một số hàm navigation và trả về một mảng chứa một số cấu hình phím tắt. Tham khảo định nghĩa loại để biết thêm chi tiết.
 
+<<<<<<< HEAD
 Tham khảo [useMagicKeys | VueUse](https://vueuse.org/core/useMagicKeys/) để biết thêm chi tiết về sự kiện được nhấn phím.
+=======
+The `key` type only allows for strings, but you can still bind multiple keys by using following convention:
+
+```ts
+import { defineShortcutsSetup, NavOperations } from '@slidev/types'
+
+export default defineShortcutsSetup((nav: NavOperations) => {
+  return [
+    {
+      key: 'ShiftLeft+ArrowRight',
+      fn: () => nav.next(),
+      autoRepeat: true,
+    }
+  ]
+})
+```
+
+Refer to [useMagicKeys | VueUse](https://vueuse.org/core/useMagicKeys/) for more details about key pressed event.
+>>>>>>> 8b430eefeed2277fc07f273ce000804365333b56
