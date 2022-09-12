@@ -2,7 +2,11 @@
 
 <Environment type="node" />
 
+<<<<<<< HEAD
 Slidev được cung cấp bởi [Vite](http://vitejs.dev/). Điều này có nghĩa là bạn có thể tận dụng hệ thống plugin tuyệt vời của Vite để tùy chỉnh các trang trình bày của mình hơn nữa.
+=======
+Slidev is powered by [Vite](https://vitejs.dev/) under the hood. This means you can leverage Vite's great plugin system to customize your slides even further.
+>>>>>>> 2b46447648e5687da75c541148acdffeeb2de2c6
 
 Nếu có file `vite.config.js` trong dự án, nó sẽ được đọc.
 
@@ -11,9 +15,10 @@ Slidev có các plugin sau được cấu hình sẵn:
 - [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
 - [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
 - [unplugin-icons](https://github.com/antfu/unplugin-icons)
-- [vite-plugin-md](https://github.com/antfu/vite-plugin-md)
-- [vite-plugin-windicss](https://github.com/windicss/vite-plugin-windicss)
+- [vite-plugin-vue-markdown](https://github.com/antfu/vite-plugin-vue-markdown)
 - [vite-plugin-remote-assets](https://github.com/antfu/vite-plugin-remote-assets)
+- [vite-plugin-windicss](https://github.com/windicss/vite-plugin-windicss)
+- [unocss/vite](https://github.com/unocss/unocss/tree/main/packages/vite)
 
 <<<<<<< HEAD
 Tìm hiểu thêm về [Cấu hình trước đó](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/plugins/preset.ts).
