@@ -104,6 +104,6 @@ Hiện tại, chỉ Google Fonts được hỗ trợ, chúng tôi dự kiến s�
 ```yaml
 ---
 fonts:
-  provide: 'none'
+  provider: 'none'
 ---
 ```
