@@ -13,7 +13,7 @@ your-slidev/
   ├── styles/           # custom style
   ├── index.html        # injections to index.html
   ├── slides.md         # the main slides entry
-  └── vite.config.ts   # extending vite config
+  └── vite.config.ts    # extending vite config
 ```
 
 Tất cả chúng đều là tùy chọn.
@@ -48,7 +48,11 @@ your-slidev/
 </hello-world>
 ```
 
+<<<<<<< HEAD
 Tính năng này được cung cấp bởi [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components), hãy tìm hiểu thêm tại đây.
+=======
+This feature is powered by [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components), learn more there.
+>>>>>>> 5cffe3bca749ea2af7b370223f0f442d15d88d8e
 
 Slidev cũng cung cấp một số [component tích hợp](/builtin/components) để bạn sử dụng.
 
@@ -115,7 +119,11 @@ import './code.css'
 import './layouts.css'
 ```
 
+<<<<<<< HEAD
 Style sẽ được thực thi bởi [Windi CSS](http://windicss.org/) và [PostCSS](https://postcss.org/), vì vậy bạn có thể sử dụng lồng ghép css và [at-directives](https://windicss.org/features/directives.html). Ví dụ:
+=======
+Styles will be processed by [Windi CSS](https://windicss.org/) and [PostCSS](https://postcss.org/), so you can use css nesting and [at-directives](https://windicss.org/features/directives.html) out-of-box. For example:
+>>>>>>> 5cffe3bca749ea2af7b370223f0f442d15d88d8e
 
 ```less
 .slidev-layout {
