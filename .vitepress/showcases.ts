@@ -108,6 +108,52 @@ export const showcases: ShowCaseInfo[] = [
     at: 'Thoughtworks Internal Lunch & Learn',
     datetime: '2021-11-12',
   },
+  {
+    title: 'Git\'s Most Wanted',
+    cover: 'https://cdn.jsdelivr.net/gh/alexanderdavide/git-most-wanted@assets/slides-export/01.png',
+    author: {
+      name: 'Alexander Eble',
+      link: 'https://github.com/alexanderdavide',
+    },
+    slidesLink: 'https://git-most-wanted.alex-eble.de',
+    sourceLink: 'https://github.com/alexanderdavide/git-most-wanted',
+    at: 'Internal Tech Talk',
+    datetime: '2022-03-11',
+  },
+  {
+    title: 'OpenFunction 202',
+    cover: 'https://s2.loli.net/2022/05/22/4zsCnkQRFoAU1E5.png',
+    author: {
+      name: 'Haili Zhang',
+      link: 'https://github.com/webup',
+    },
+    slidesLink: 'https://openfunction-talks.netlify.app/2022/202-node-async/',
+    sourceLink: 'https://github.com/webup/openfunction-talks/tree/main/202-node-async',
+    at: 'OpenFunction Tutorial Sharing',
+    datetime: '2022-05-08',
+  },
+    {
+    title: 'Is it Okay to Pursue Functional Programming on Frontend?',
+    author: {
+      name: 'Minsu Kim , Changhui Lee',
+    },
+    at: '2022 JSConf Korea',
+    slidesLink: 'https://moonlit-nougat-422445.netlify.app/1',
+    sourceLink: 'https://github.com/alstn2468/2022-jsconf-presentation',
+    cover: 'https://raw.githubusercontent.com/alstn2468/2022-jsconf-presentation/main/public/images/og.png',
+    datetime: '2022-09-16',
+  },
+  {
+    title: 'Blazing slidev ppt template with naive-ui',
+    author: {
+      name: 'godkun',
+    },
+    at: 'personal sharing',
+    slidesLink: 'https://ppt.godkun.top',
+    sourceLink: 'https://github.com/godkun/ppt-template',
+    cover: 'https://github.com/godkun/ppt-template/raw/main/public/show.gif',
+    datetime: '2022-10-24',
+  },
   // Add yours here!
   {
     title: 'Yours?',
