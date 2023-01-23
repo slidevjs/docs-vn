@@ -120,7 +120,11 @@ Slidev chuyển đổi một class `dark` trên phần tử `html` của trang �
 
 Các màu đánh dấu cú pháp cũng được cung cấp trong chủ đề. Chúng tôi hỗ trợ cả [Prism](https://prismjs.com/) và [Shiki](https://github.com/shikijs/shiki). Để biết thêm thông tin, vui lòng tham khảo [tài liệu đánh dấu cú pháp](/custom/highlighters).
 
+<<<<<<< HEAD
 Bạn có thể hỗ trợ một trong hai hoặc cả hai. Tham khảo chủ đề mặc định để biết các ví dụ về cấu hình [`./styles/prism.css`](https://github.com/slidevjs/slidev/blob/main/packages/theme-default/styles/prism.css) / [`./setup/shiki.ts`](https://github.com/slidevjs/slidev/blob/main/packages/theme-default/setup/shiki.ts).
+=======
+You can support either one of them, or both. Refer to the default theme for configurations examples [`./styles/code.css`](https://github.com/slidevjs/slidev/blob/main/packages/create-theme/template/styles/code.css) / [`./setup/shiki.ts`](https://github.com/slidevjs/slidev/blob/main/packages/create-theme/template/setup/shiki.ts).
+>>>>>>> 8d6e5c8c26cd8e0bdf78481faddcc258dab98b3c
 
 Ngoài ra, hãy nhớ chỉ định các điểm đánh dấu được hỗ trợ trong `package.json` của bạn
 

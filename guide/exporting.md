@@ -1,6 +1,8 @@
 # Xuất slide
 
-## PDF
+## Slides
+
+### PDF
 
 > Xuất sang PDF hoặc PNG dựa vào [Playwright](https://playwright.dev) để hiển thị. Do đó, bạn sẽ cần cài đặt [`playwright-chromium`](https://playwright.dev/docs/installation#download-single-browser-binary) để sử dụng tính năng này.
 > Nếu bạn đang xuất trong môi trường CI, [hướng dẫn về CI](https://playwright.dev/docs/ci) có thể hữu ích.
@@ -17,6 +19,7 @@ Bây giờ xuất các slide của bạn sang PDF bằng lệnh sau
 $ slidev export
 ```
 
+<<<<<<< HEAD
 Sau một vài giây, các slide của bạn sẽ có sẵn tại `./slides-exports.pdf`.
 
 <<<<<<< HEAD
@@ -30,6 +33,17 @@ $ slidev export --format png
 =======
 ### Export Clicks Steps
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
+=======
+After a few seconds, your slides will be ready at `./slides-export.pdf`.
+
+In case you want to export your slides using the dark version of the theme, use the `--dark` option:
+
+```bash
+$ slidev export --dark
+```
+
+#### Export Clicks Steps
+>>>>>>> 8d6e5c8c26cd8e0bdf78481faddcc258dab98b3c
 
 > Available since v0.21
 
@@ -43,6 +57,7 @@ By default, Slidev exports one page per slide with clicks animations disabled. I
 $ slidev export --with-clicks
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Ứng dụng đã tạo sẽ có sẵn trong `dist/` và sau đó bạn có thể lưu trữ nó trên [GitHub](https://pages.github.com/), [Netlify](https://netlify.app/), [Vercel](https://vercel.com/), hoặc bất cứ thứ gì bạn muốn. Giờ đây, bạn có thể chia sẻ các slide của mình với mọi người bằng một liên kết duy nhất.
 
@@ -84,6 +99,9 @@ Dưới đây là một số ví dụ về SPA đã xuất:
 - [Composable Vue](https://talks.antfu.me/2021/composable-vue) bởi [Anthony Fu](https://github.com/antfu)
 =======
 ## PNGs
+=======
+### PNGs
+>>>>>>> 8d6e5c8c26cd8e0bdf78481faddcc258dab98b3c
 
 When passing in the `--format png` option, Slidev will export PNG images for each slide instead of a PDF.
 
@@ -91,7 +109,20 @@ When passing in the `--format png` option, Slidev will export PNG images for eac
 $ slidev export --format png
 ```
 
-## Single-Page Application (SPA)
+### Single-Page Application (SPA)
 
 See [Static Hosting](/guide/hosting).
+<<<<<<< HEAD
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
+=======
+
+## Presenter notes
+
+> Available since v0.36.8
+
+Export only the presenter notes (the last comment block for each slide) into a text document in PDF.
+
+```bash
+$ slidev export-notes
+```
+>>>>>>> 8d6e5c8c26cd8e0bdf78481faddcc258dab98b3c
