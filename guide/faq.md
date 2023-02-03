@@ -47,7 +47,11 @@ The third column (10% width to parent container)
 </div>
 ```
 
+<<<<<<< HEAD
 Tìm hiểu thêm về [Windi CSS Grids](https://windicss.org/utilities/grid.html).
+=======
+Learn more about [Windi CSS Grids](https://windicss.org/utilities/layout/grid.html).
+>>>>>>> 38e076f9a7c55cbd4d7b58579eecb54e77e9723a
 
 ## Positioning
 
