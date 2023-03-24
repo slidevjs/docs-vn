@@ -77,9 +77,13 @@ console.log('Hello, World!')
 ~~~
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Đánh dấu dòng
 =======
 We support [Prism](http://prismjs.com) and [Shiki](https://github.com/shiki/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+=======
+We support [Prism](https://prismjs.com) and [Shiki](https://github.com/shikijs/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+>>>>>>> 1317cbcaae63868c5cfbb66bcf4560be7f9c5fbf
 
 ### Line Highlighting
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
@@ -112,7 +116,40 @@ function add(
 
 Đầu tiên, điều này sẽ làm nổi bật `a: Ref<number> | number` và `b: Ref<number> | number`, và sau đó là `return computed(() => unref(a) + unref(b))` sau một cú nhấp chuột, và cuối cùng là toàn bộ khối. Tìm hiểu thêm trong [hướng dẫn về animation click](/guide/animations).
 
+<<<<<<< HEAD
 ### Trình soạn thảo Monaco
+=======
+To skip highlighting any lines, you can set the line number to `0`. For example
+
+~~~ts {0}
+//```ts {0}
+function add(
+  a: Ref<number> | number,
+  b: Ref<number> | number
+) {
+  return computed(() => unref(a) + unref(b))
+}
+//```
+~~~
+
+If the code doesn't fit into one slide, you can pass an extra maxHeight option which will set fixed height
+and enable scrolling
+
+~~~ts {2|3|7|12}
+//```ts {2|3|7|12} {maxHeight:'100px'}
+function add(
+  a: Ref<number> | number,
+  b: Ref<number> | number
+) {
+  return computed(() => unref(a) + unref(b))
+}
+/// ...as many lines as you want
+const c = add(1, 2)
+//```
+~~~
+
+### Monaco Editor
+>>>>>>> 1317cbcaae63868c5cfbb66bcf4560be7f9c5fbf
 
 Bất cứ khi nào bạn muốn thực hiện một số sửa đổi trong bản trình bày, chỉ cần thêm `{monaco}` sau ngôn ngữ id - nó biến khối thành một trình soạn thảo Monaco đầy đủ tính năng!
 
@@ -123,6 +160,26 @@ console.log('HelloWorld')
 ~~~
 
 Tìm hiểu thêm về [configuring Monaco](/custom/config-monaco).
+
+### Monaco diff
+
+Monaco can also generate a diff between two code blocks. Use `{monaco-diff}` to turn the block into a [diff Monaco editor](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) and use `~~~` to separate both original and modified version of the code!
+
+```md
+//```ts {monaco-diff}
+This line is removed on the right.
+just some text
+abcd
+efgh
+Some more text
+~~~
+just some text
+abcz
+zzzzefgh
+Some more text.
+This line is removed on the left.
+//```
+```
 
 ## Embedded Styles
 
@@ -142,7 +199,11 @@ h1 {
 # Next slide is not affected
 ```
 
+<<<<<<< HEAD
 Thẻ `<style>` trong Markdown luôn [scoped](https://vue-loader.vuejs.org/guide/scoped-css.html). TĐể ghi đè kiểu toàn cục, hãy xem [phần tùy chỉnh](/custom/directory-structure#style).
+=======
+`<style>` tag in Markdown is always [scoped](https://vuejs.org/api/sfc-css-features.html#scoped-css). As an outstanding result, a selector with the child combinator (`.a > .b`) is unusable as such; see the previous link. To have global style overrides, check out the [customization section](/custom/directory-structure#style).
+>>>>>>> 1317cbcaae63868c5cfbb66bcf4560be7f9c5fbf
 
 Được cung cấp bởi [Windi CSS](https://windicss.org), bạn có thể sử dụng trực tiếp css và [directives](https://windicss.org/features/directives.html) lồng nhau (ví dụ: `@apply`)
 
@@ -218,7 +279,11 @@ This is another note
 
 ## Icons
 
+<<<<<<< HEAD
 Slidev cho phép bạn có quyền truy cập vào hầu hết tất cả các bộ icon mã nguồn mở phổ biến **trực tiếp** trong markdown của bạn. Được cung cấp bởi [`vite-plugin-icons`](https://github.com/antfu/vite-plugin-icons) và [Iconify](https://iconify.design/).
+=======
+Slidev allows you to have the accessing to almost all the popular open-source iconsets **directly** in your markdown. Powered by [`unplugin-icons`](https://github.com/antfu/unplugin-icons) and [Iconify](https://iconify.design/).
+>>>>>>> 1317cbcaae63868c5cfbb66bcf4560be7f9c5fbf
 
 Việc đặt tên theo chuyển đổi của [Iconify](https://iconify.design/) `{collection-name}-{icon-name}`. Ví dụ:
 
