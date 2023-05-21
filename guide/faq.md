@@ -28,7 +28,7 @@ Go further, you can customize the size of each column like:
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ```html
-<div class="grid grid-cols-[200px,1fr,10%] gap-4">
+<div class="grid grid-cols-[200px_1fr_10%] gap-4">
 <div>
 
 The first column (200px)
@@ -47,7 +47,11 @@ The third column (10% width to parent container)
 </div>
 ```
 
+<<<<<<< HEAD
 Tìm hiểu thêm về [Windi CSS Grids](https://windicss.org/utilities/grid.html).
+=======
+Learn more about [Windi CSS Grids](https://windicss.org/utilities/layout/grid.html).
+>>>>>>> d29625cb3633171f7cf2087a777e68a1cd76ea6f
 
 ## Positioning
 
