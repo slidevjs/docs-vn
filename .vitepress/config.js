@@ -47,9 +47,13 @@ const Guide = [
   },
   {
 <<<<<<< HEAD
+<<<<<<< HEAD
     text: 'Tích hợp trình soạn thảo',
 =======
     text: 'Drawing & Annonations',
+=======
+    text: 'Drawing & Annotations',
+>>>>>>> c608c011ffbff72d267a0c074a4bfa5ff4b601a7
     link: '/guide/drawing',
   },
   {
@@ -75,6 +79,17 @@ const Theme = [
   {
     text: 'Viết chủ đề mới',
     link: '/themes/write-a-theme',
+  },
+]
+
+const Addon = [
+  {
+    text: 'Use Addon',
+    link: '/addons/use',
+  },
+  {
+    text: 'Write an Addon',
+    link: '/addons/write-an-addon',
   },
 ]
 
@@ -118,6 +133,10 @@ const Translations = [
     text: 'Ελληνικά',
     link: 'https://el.sli.dev{{pathname}}',
   },
+  {
+    text: '日本語',
+    link: 'https://ja.sli.dev{{pathname}}',
+  },
 ]
 
 const Customizations = [
@@ -146,7 +165,15 @@ const Customizations = [
     link: '/custom/config-vite',
   },
   {
+<<<<<<< HEAD
     text: 'Cấu hình Windi CSS',
+=======
+    text: 'Configure UnoCSS',
+    link: '/custom/config-unocss',
+  },
+  {
+    text: 'Configure Windi CSS',
+>>>>>>> c608c011ffbff72d267a0c074a4bfa5ff4b601a7
     link: '/custom/config-windicss',
   },
   {
@@ -162,7 +189,15 @@ const Customizations = [
     link: '/custom/config-mermaid',
   },
   {
+<<<<<<< HEAD
     text: 'Cấu hình Phím tắt',
+=======
+    text: 'Configure Parser',
+    link: '/custom/config-parser',
+  },
+  {
+    text: 'Configure Shortcuts',
+>>>>>>> c608c011ffbff72d267a0c074a4bfa5ff4b601a7
     link: '/custom/config-shortcuts',
   },
   {
@@ -173,6 +208,17 @@ const Customizations = [
     text: 'Global Layers',
     link: '/custom/global-layers',
   }
+]
+
+const BuiltIn = [
+  {
+    text: 'Components',
+    link: '/builtin/components',
+  },
+  {
+    text: 'Layouts',
+    link: '/builtin/layouts',
+  },
 ]
 
 const Resources = [
@@ -204,6 +250,7 @@ const slidebars = [
     children: Theme,
   },
   {
+<<<<<<< HEAD
     text: 'Các tùy chỉnh',
     children: Customizations,
   },
@@ -219,6 +266,18 @@ const slidebars = [
         link: '/builtin/layouts',
       },
     ],
+=======
+    text: 'Addons',
+    children: Addon,
+  },
+  {
+    text: 'Customizations',
+    children: Customizations,
+  },
+  {
+    text: 'Built-in',
+    children: BuiltIn,
+>>>>>>> c608c011ffbff72d267a0c074a4bfa5ff4b601a7
   },
 ]
 
@@ -249,7 +308,8 @@ module.exports = {
     editLinkText: 'Đề xuất các thay đổi cho trang này',
 
     algolia: {
-      apiKey: '1a5c5a504139c58f428974c78c55291d',
+      appId: 'LCBV6MIFS6',
+      apiKey: '1ff173fe73b20edc962c1c24c0b1c160',
       indexName: 'slidev',
       searchParameters: {
         // for translations maintainers: change the filter to your locale code (subdomain name)
@@ -267,11 +327,27 @@ module.exports = {
         items: Theme,
       },
       {
+<<<<<<< HEAD
         text: 'Tùy chỉnh',
         items: Customizations,
       },
       {
         text: 'Tài nguyên',
+=======
+        text: 'Addon',
+        items: Addon,
+      },
+      {
+        text: 'Customize',
+        items: Customizations,
+      },
+      {
+        text: 'Built-in',
+        items: BuiltIn,
+      },
+      {
+        text: 'Resources',
+>>>>>>> c608c011ffbff72d267a0c074a4bfa5ff4b601a7
         items: Resources,
       },
       {
@@ -283,6 +359,7 @@ module.exports = {
     sidebar: {
       '/guide/': slidebars,
       '/themes/': slidebars,
+      '/addons/': slidebars,
       '/custom/': slidebars,
       '/builtin/': slidebars,
       '/resources/': slidebars,
