@@ -2,7 +2,11 @@
 
 ## Tổng quan
 
+<<<<<<< HEAD
 Slidev <sup>(slide + dev, `/slʌɪdɪv/`)</sup> là một trình tạo và trình chiếu slide dựa trên web. Nó được thiết kế để các nhà lập trình tập trung vào việc viết nội dung trong Markdown đồng thời có sự hỗ trợ của các component HTML và Vue để cung cấp layout và thiết kế hoàn hảo trên từng pixel trong bản trình bày của bạn.
+=======
+Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> is a web-based slides maker and presenter. It's designed for developers to focus on writing content in Markdown while also having the power of HTML and Vue components to deliver pixel-perfect layouts and designs with embedded interactive demos in your presentations.
+>>>>>>> 004c016959e71ed605c7b7239842c541c60f1974
 
 Nó sử dụng file markdown giàu tính năng để tạo các slide đẹp với trải nghiệm tải lại tức thì, cùng với nhiều tích hợp tích hợp như code trực tiếp, xuất PDF, ghi bản trình bày, v.v... Vì nó được cung cấp bởi web, bạn có thể làm bất cứ điều gì với Slidev - khả năng là vô tận.
 
@@ -29,7 +33,7 @@ Bạn có thể tìm hiểu thêm về cơ sở lý luận đằng sau dự án 
 - 📝 [**Markdown-based**](/guide/syntax.html) - use your favorite editors and workflow
 - 🧑‍💻 [**Developer Friendly**](/guide/syntax.html#code-blocks) - built-in syntax highlighting, live coding, etc.
 - 🎨 [**Themable**](/themes/gallery.html) - theme can be shared and used with npm packages
-- 🌈 [**Stylish**](/guide/syntax.html#embedded-styles) - [Windi CSS](https://windicss.org/) on-demand utilities, easy-to-use embedded stylesheets
+- 🌈 [**Stylish**](/guide/syntax.html#embedded-styles) - on-demand utilities via [UnoCSS](https://github.com/unocss/unocss) or [Windi CSS](https://windicss.org/).
 - 🤹 [**Interactive**](/custom/directory-structure.html#components) - embedding Vue components seamlessly
 - 🎙 [**Presenter Mode**](/guide/presenter-mode.html) - use another window, or even your phone to control your slides
 - 🎨 [**Drawing**](/guide/drawing.html) - draw and annotate on your slides
@@ -60,7 +64,7 @@ Slidev có thể thực hiện được bằng cách kết hợp các công cụ
 =======
 - [Vite](https://vitejs.dev) - An extremely fast frontend tooling
 - [Vue 3](https://v3.vuejs.org/) powered [Markdown](https://daringfireball.net/projects/markdown/syntax) - Focus on the content while having the power of HTML and Vue components whenever needed
-- [Windi CSS](https://github.com/windicss/windicss) - On-demand utility-first CSS framework, style your slides at ease
+- [Windi CSS](https://github.com/windicss/windicss) or [UnoCSS](https://github.com/unocss/unocss) - On-demand utility-first CSS framework, style your slides at ease
 - [Prism](https://github.com/PrismJS/prism), [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - First-class code snippets support with live coding capability
 - [RecordRTC](https://recordrtc.org) - Built-in recording and camera view
 - [VueUse](https://vueuse.org) family -  [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), etc.
@@ -98,7 +102,17 @@ Với Yarn:
 $ yarn create slidev
 ```
 
+<<<<<<< HEAD
 Làm theo lời nhắc và bắt đầu tạo slide của bạn ngay bây giờ! Để biết thêm chi tiết về cú pháp markdown, hãy đọc qua [hướng dẫn cú pháp](/guide/syntax).
+=======
+With pnpm:
+
+```bash
+$ pnpm create slidev
+```
+
+Follow the prompts and start making your slides now! For more details about the markdown syntax, read through the [syntax guide](/guide/syntax).
+>>>>>>> 004c016959e71ed605c7b7239842c541c60f1974
 
 ### Giao diện Command Line
 
