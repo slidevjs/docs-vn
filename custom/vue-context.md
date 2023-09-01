@@ -25,6 +25,14 @@ Trang hiện tại là: {{ $slidev.nav.currentPage }}
 
 ## Thuộc tính
 
+### `$clicks`
+
+`$clicks` hold a number of clicks on the current slide. Can be used conditionally to show different content on clicks.
+
+```html
+<div v-if="$clicks > 3">Content</div>
+```
+
 ### `$slidev.nav`
 
 Một đối tượng phản ứng giữ các thuộc tính và điều khiển của điều hướng trang trình bày. Ví dụ như:
@@ -41,11 +49,11 @@ $slidev.nav.go(10) // go slide #10
 $slidev.nav.currentPage // current slide number
 
 $slidev.nav.currentLayout // current layout id
-
-$slidev.nav.clicks // current clicks count
 ```
 
 Để biết thêm các thuộc tính khả dụng, hãy tham khảo [nav.ts](https://github.com/slidevjs/slidev/blob/main/packages/client/logic/nav.ts).
+
+> Note: `$slidev.nav.clicks` is a global state while `$clicks` is local to each slide. It's recommended to **use `$clicks` over `$slidev.nav.clicks`** to avoid clicks changed been triggered on page transitions.
 
 ### `$slidev.configs`
 
@@ -76,3 +84,9 @@ themeConfig:
 ```
 {{ $slidev.themeConfigs.primary }} // '#213435'
 ```
+
+### `$nav`
+
+> Available since v0.43.0
+
+A shorthand of `$slidev.nav`.
