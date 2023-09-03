@@ -32,7 +32,11 @@ Tìm hiểu thêm về [đánh dấu](/custom/highlighters) và [cấu hình Mon
 
 ## Nhanh
 
+<<<<<<< HEAD
 Slidev được cung cấp bởi [Vite](https://vitejs.dev/), [Vue 3](https://v3.vuejs.org/) và [Windi CSS](https://windicss.org/), cung cấp cho bạn trải nghiệm tác giả tuyệt vời nhất. Mọi thay đổi bạn thực hiện sẽ phản ánh vào các slide của bạn **ngay lập tức**.
+=======
+Slidev is powered by [Vite](https://vitejs.dev/), [Vue 3](https://v3.vuejs.org/) and [UnoCSS](https://unocss.dev/), which give you the most wonderful authoring experience. Every change you made will reflect to your slides **instantly**.
+>>>>>>> 6e0af1f2744db999dfeb58e8528478dea41a1240
 
 Tìm thêm về [our tech stack](/guide/#tech-stack).
 
