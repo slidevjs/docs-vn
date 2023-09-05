@@ -12,12 +12,21 @@ Sau đó, bạn có thể sửa đổi và thử với nó. Bạn cũng có th�
 
 Một chủ đề có thể đóng góp vào những điểm sau:
 
+<<<<<<< HEAD
 - Style toàn cầu
 - Cung cấp cấu hình mặc định (font, lược đồ màu, đánh dấu, v.v...)
 - Cung cấp layout tùy chỉnh hoặc ghi đè layout hiện có
 - Cung cấp các component tùy chỉnh hoặc ghi đè component hiện có
 - Mở rộng cấu hình CSS Windi
 - Định cấu hình các công cụ như Monaco và Prism
+=======
+- Global styles
+- Provide default configurations (fonts, color schema, highlighters, etc.)
+- Provide custom layouts or override the existing one
+- Provide custom components or override the existing one
+- Extend UnoCSS/Windi CSS configurations
+- Configure tools like Monaco and Prism
+>>>>>>> c3ab95101a7969966fbbe64508636a84d73d63ba
 
 ## Quy ước
 
@@ -64,7 +73,7 @@ Chủ đề có thể cung cấp [cấu hình](/custom/#frontmatter-configures) 
 // package.json
 {
   "slidev": {
-    "default": {
+    "defaults": {
       "aspectRatio": "16/9",
       "canvasWidth": 980,
       "fonts": {
@@ -120,7 +129,11 @@ Slidev chuyển đổi một class `dark` trên phần tử `html` của trang �
 
 Các màu đánh dấu cú pháp cũng được cung cấp trong chủ đề. Chúng tôi hỗ trợ cả [Prism](https://prismjs.com/) và [Shiki](https://github.com/shikijs/shiki). Để biết thêm thông tin, vui lòng tham khảo [tài liệu đánh dấu cú pháp](/custom/highlighters).
 
+<<<<<<< HEAD
 Bạn có thể hỗ trợ một trong hai hoặc cả hai. Tham khảo chủ đề mặc định để biết các ví dụ về cấu hình [`./styles/prism.css`](https://github.com/slidevjs/slidev/blob/main/packages/theme-default/styles/prism.css) / [`./setup/shiki.ts`](https://github.com/slidevjs/slidev/blob/main/packages/theme-default/setup/shiki.ts).
+=======
+You can support either one of them, or both. Refer to the default theme for configurations examples [`./styles/code.css`](https://github.com/slidevjs/slidev/blob/main/packages/create-theme/template/styles/code.css) / [`./setup/shiki.ts`](https://github.com/slidevjs/slidev/blob/main/packages/create-theme/template/setup/shiki.ts).
+>>>>>>> c3ab95101a7969966fbbe64508636a84d73d63ba
 
 Ngoài ra, hãy nhớ chỉ định các điểm đánh dấu được hỗ trợ trong `package.json` của bạn
 
@@ -128,7 +141,7 @@ Ngoài ra, hãy nhớ chỉ định các điểm đánh dấu được hỗ tr�
 // package.json
 {
   "slidev": {
-    "highlighter": "shiki" // or "prism" or "all"
+    "highlighter": "shiki" // or "prism" or "both"
   }
 }
 ```
