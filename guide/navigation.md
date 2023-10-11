@@ -2,7 +2,11 @@
 
 ## Thanh điều hướng
 
+<<<<<<< HEAD
 Di chuyển chuột đến góc dưới cùng bên trái của trang Slidev, thanh điều hướng sẽ hiện ra.
+=======
+Move your mouse to the bottom left corner of Slidev page to make the navigation bar appear.
+>>>>>>> b67d676136c95f0c62ed494856d5c2e15901838e
 
 ![](/screenshots/navbar.png)
 
