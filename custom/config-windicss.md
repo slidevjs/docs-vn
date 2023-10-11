@@ -2,12 +2,27 @@
 
 <Environment type="node" />
 
+<<<<<<< HEAD
 Markdown hỗ trợ các thẻ HTML được nhúng một cách tự nhiên. Do đó, bạn có thể tạo nội dung của mình theo cách bạn muốn. Để mang lại sự tiện lợi, chúng tôi đã tích hợp sẵn [Windi CSS](https://github.com/windicss/windicss) built-in, vì vậy bạn có thể tạo thẻ HTML trực tiếp bằng các class.
+=======
+::: warning
+Since Slidev v0.42.0, [UnoCSS](/custom/config-unocss) become the default CSS framework for Slidev.
+
+You can still use Windi CSS by setting `css: windicss` in the frontmatter.
+```md
+---
+css: windicss
+---
+```
+:::
+
+Markdown naturally supports embedded HTML markups. You can therefore style your content the way you want.
+>>>>>>> b67d676136c95f0c62ed494856d5c2e15901838e
 
 Ví dụ:
 
 ```html
-<div class="grid pt-4 gap-4 grids-cols-[100px,1fr]">
+<div class="grid pt-4 gap-4 grid-cols-[100px,1fr]">
 
 ### Name
 
