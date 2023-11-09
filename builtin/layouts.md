@@ -10,7 +10,7 @@
 
 ### `center`
 
-Displays the content in the middle of the sreen.
+Displays the content in the middle of the screen.
 
 ### `cover`
 
@@ -18,7 +18,7 @@ Used to display the cover page for the presentation, may contain the presentatio
 
 ### `default`
 
-The most baisc layout, to display any kind of content.
+The most basic layout, to display any kind of content.
 
 ### `end`
 
@@ -180,7 +180,38 @@ This shows on the right
 ```
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
+<<<<<<< HEAD
 ## Tùy chỉnh Layout
+=======
+### `two-cols-header`
+
+Separates the upper and lower lines of the page content, and the second line separates the left and right columns.
+
+#### Usage
+
+
+```md
+---
+layout: two-cols-header
+---
+
+This spans both
+
+::left::
+
+# Left
+
+This shows on the left
+
+::right::
+
+# Right
+
+This shows on the right
+```
+
+## Custom Layouts
+>>>>>>> cbaf809403e519ee40e0980dc672c57d90c1dea2
 
 Tạo một thư mục `layouts/` trong dự án gốc của bạn và chỉ cần đặt các component layout Vue tùy chỉnh của bạn bên trong nó.
 
