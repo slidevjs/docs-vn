@@ -60,7 +60,26 @@ Tương tự như `v-click` nhưng thay vì làm cho phần tử xuất hiện, 
 
 Một mục sẽ hiển thị mỗi khi bạn nhấn vào "next".
 
+<<<<<<< HEAD
 ### Custom Số lần Click
+=======
+It accepts a `depth` props for nested list:
+
+```md
+<v-clicks depth="2">
+
+- Item 1
+  - Item 1.1
+  - Item 1.2
+- Item 2
+  - Item 2.1
+  - Item 2.2
+
+</v-clicks>
+```
+
+### Custom Clicks Count
+>>>>>>> cbaf809403e519ee40e0980dc672c57d90c1dea2
 
 Theo mặc định, Slidev đếm số bước cần thiết trước khi chuyển sang trang chiếu tiếp theo. Bạn có thể ghi đè cài đặt này bằng cách chuyển tùy chọn frontmatter `clicks`:
 
@@ -99,7 +118,21 @@ clicks: 3
 </v-clicks>
 ```
 
+<<<<<<< HEAD
 ### Chuyển đổi Element
+=======
+### Enter & Leave
+
+> Available since v0.43.0
+
+You can also specify the enter and leave index for the `v-click` directive by passing an array. The end index is exclusive.
+
+```md
+<div v-click="[2, 4]">This will be shown on the 2nd and 3rd clicks, and hide again after the 4th.</div>
+```
+
+### Element Transitions
+>>>>>>> cbaf809403e519ee40e0980dc672c57d90c1dea2
 
 Khi bạn áp dụng `v-click` cho các element của mình, nó sẽ đính kèm tên class `slidev-vclick-target` vào đó. Khi các element bị ẩn, tên class `slidev-vclick-hidden` cũng sẽ được đính kèm. Ví dụ:
 
@@ -196,8 +229,113 @@ Văn bản `Slidev` sẽ di chuyển từ `-80px` về vị trí ban đầu khi 
 > </div>
 > ```
 
+<<<<<<< HEAD
 Tìm hiểu chế độ [Demo](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/directive-usage.html) | [Presets](https://motion.vueuse.org/presets.html)
 
 ## Chuyển trang
 
 > Hỗ trợ tích hợp cho các slide KHÔNG ĐƯỢC cung cấp trong phiên bản hiện tại. Chúng tôi đang có kế hoạch bổ sung hỗ trợ cho họ trong phiên bản chính tiếp theo. Trước đó, bạn vẫn có thể sử dụng các style và librarie tùy chỉnh của mình để làm điều đó.
+=======
+Learn mode: [Demo](https://sli.dev/demo/starter/7) | [@vueuse/motion](https://motion.vueuse.org/) | [v-motion](https://motion.vueuse.org/features/directive-usage) | [Presets](https://motion.vueuse.org/features/presets)
+
+## Slide Transitions
+
+<div id="pages-transitions" />
+
+> Available since v0.39.0
+
+Slidev supports slide transitions out of the box. You can enable it by setting the `transition` frontmatter option:
+
+```md
+---
+transition: slide-left
+---
+```
+
+This will give you a nice sliding effects on slide switching. Setting it in the frontmatter will apply to all slides. You can also set different transition per slide.
+
+### Builtin Transitions
+
+- `fade` - Crossfade in/out
+- `fade-out` - Fade out and then fade in
+- `slide-left` - Slides to the left (slide to right when going backward)
+- `slide-right` - Slides to the right (slide to left when going backward)
+- `slide-up` - Slides to the top (slide to bottom when going backward)
+- `slide-down` - Slides to the bottom (slide to top when going backward)
+- `view-transition` - Slides with the view transitions API
+
+### View Transitions
+
+> Available since v0.43.0
+
+The **View Transitions API** provides a mechanism for easily creating animated transitions between different DOM states. Learn more how it works in [View Transitions API - MDN Web Docs - Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API).
+
+:::warning
+Experimental: This is not supported by all browsers. Check the [Browser compatibility table](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility) carefully before using this.
+:::
+
+You can use the `view-transition-name` CSS property to name view transitions, which creates connections between different page elements and smooth transitions when switching slides.
+
+You can enable [MDC (Markdown Component) Syntax](https://content.nuxtjs.org/guide/writing/mdc) support to conveniently name view-transitions:
+
+```md
+---
+transition: view-transition
+mdc: true
+---
+# View Transition {.inline-block.view-transition-title}
+---
+# View Transition {.inline-block.view-transition-title}
+```
+
+### Custom Transitions
+
+Slidev's slide transitions are powered by [Vue Transition](https://vuejs.org/guide/built-ins/transition.html). You can provide your custom transitions by:
+
+```md
+---
+transition: my-transition
+---
+```
+
+and then in your custom stylesheets:
+
+```css
+.my-transition-enter-active,
+.my-transition-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.my-transition-enter-from,
+.my-transition-leave-to {
+  opacity: 0;
+}
+```
+
+Learn more how it works in [Vue Transition](https://vuejs.org/guide/built-ins/transition.html).
+
+### Forward & Backward Transitions
+
+You can specify different transitions for forward and backward navigation using `|` as a separator in the transition name:
+
+```md
+---
+transition: go-forward | go-backward
+---
+```
+
+With this, when you go from slide 1 to slide 2, the `go-forward` transition will be applied. When you go from slide 2 to slide 1, the `go-backward` transition will be applied.
+
+### Advanced Usage
+
+The `transition` field accepts an option that will passed to the [`<TransitionGroup>`](https://vuejs.org/api/built-in-components.html#transition) component. For example:
+
+```md
+---
+transition:
+  name: my-transition
+  enterFromClass: custom-enter-from
+  enterActiveClass: custom-enter-active
+---
+```
+>>>>>>> cbaf809403e519ee40e0980dc672c57d90c1dea2
