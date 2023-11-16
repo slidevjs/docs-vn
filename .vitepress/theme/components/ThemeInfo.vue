@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
 import { isClient, useIntervalFn } from '@vueuse/core'
 import type { ThemeInfo } from '../../themes'
 
@@ -12,7 +12,7 @@ const index = ref(0)
 if (props.theme.previews.length > 1 && isClient) {
   const { resume } = useIntervalFn(() => {
     index.value = (index.value + 1) % props.theme.previews.length
-  }, 3000, false)
+  }, 3000, { immediate: false })
   // add random defer so they don't starts together
   setTimeout(resume, Math.round(1000 * Math.random()))
 }
