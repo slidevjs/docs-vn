@@ -4,7 +4,11 @@
 
 Vì Slidev dựa trên Web nên bạn có thể áp dụng bất kỳ bố cục lưới nào tùy thích. [CSS Grids](https://css-tricks.com/snippets/css/complete-guide-grid/), [flexboxes](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), hoặc thậm chí [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/), bạn có toàn quyền kiểm soát.
 
+<<<<<<< HEAD
 Vì chúng tôi đã tích hợp sẵn [Windi CSS](https://windicss.org/), đây là một cách đơn giản để bạn tham khảo:
+=======
+Since we have [UnoCSS](https://unocss.dev/) built-in, here is one simple way for you to reference:
+>>>>>>> 4e57682ec2fe54d52df3a5f3c93d9254da17b926
 
 ```html
 <div class="grid grid-cols-2 gap-4">
@@ -28,7 +32,7 @@ Go further, you can customize the size of each column like:
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ```html
-<div class="grid grid-cols-[200px,1fr,10%] gap-4">
+<div class="grid grid-cols-[200px_1fr_10%] gap-4">
 <div>
 
 The first column (200px)
@@ -47,7 +51,11 @@ The third column (10% width to parent container)
 </div>
 ```
 
+<<<<<<< HEAD
 Tìm hiểu thêm về [Windi CSS Grids](https://windicss.org/utilities/grid.html).
+=======
+Learn more about [Windi CSS Grids](https://windicss.org/utilities/layout/grid.html).
+>>>>>>> 4e57682ec2fe54d52df3a5f3c93d9254da17b926
 
 ## Positioning
 
