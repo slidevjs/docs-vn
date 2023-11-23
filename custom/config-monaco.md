@@ -125,4 +125,34 @@ export default defineMonacoSetup((monaco) => {
 ```
 
 > If you are creating a theme for Slidev, use dynamic `import()` inside the setup function to get better tree-shaking and code-splitting results.
+<<<<<<< HEAD
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
+=======
+
+## Configure the Editor
+
+> Available since v0.43.0
+
+If you would like to customize the Monaco editor you may pass an `editorOptions` object that matches the [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html) definition.
+
+~~~ts
+//```ts {monaco} { editorOptions: { wordWrap:'on'} }
+console.log('HelloWorld')
+//```
+~~~
+
+Alternatively if you would like these options to be applied to every Monaco instance, you can return them in the `defineMonacoSetup` function
+
+```ts
+// ./setup/monaco.ts
+import { defineMonacoSetup } from '@slidev/types'
+
+export default defineMonacoSetup(() => {
+  return {
+    editorOptions: {
+      wordWrap: 'on'
+    }
+  }
+})
+```
+>>>>>>> e041d9f163908ef9fbd5eb7731224b8314fef92a
