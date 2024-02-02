@@ -7,10 +7,9 @@
 =======
 > As themes may override layouts behaviour, the best way to know exactly the usage, parameters and examples is referring their documentation.
 
-
 ### `center`
 
-Displays the content in the middle of the sreen.
+Displays the content in the middle of the screen.
 
 ### `cover`
 
@@ -18,7 +17,7 @@ Used to display the cover page for the presentation, may contain the presentatio
 
 ### `default`
 
-The most baisc layout, to display any kind of content.
+The most basic layout, to display any kind of content.
 
 ### `end`
 
@@ -83,7 +82,6 @@ image: ./path/to/the/image
 ---
 ```
 
-
 ### `iframe-left`
 
 Shows a web page on the left side of the screen, the content will be placed on the right side.
@@ -135,7 +133,6 @@ url: https://github.com/slidevjs/slidev
 ---
 ```
 
-
 ### `intro`
 
 To introduce the presentation, usually with the presentation title, a short description, the author, etc.
@@ -162,7 +159,6 @@ Separates the page content in two columns.
 
 #### Usage
 
-
 ```md
 ---
 layout: two-cols
@@ -180,7 +176,37 @@ This shows on the right
 ```
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
+<<<<<<< HEAD
 ## Tùy chỉnh Layout
+=======
+### `two-cols-header`
+
+Separates the upper and lower lines of the page content, and the second line separates the left and right columns.
+
+#### Usage
+
+```md
+---
+layout: two-cols-header
+---
+
+This spans both
+
+::left::
+
+# Left
+
+This shows on the left
+
+::right::
+
+# Right
+
+This shows on the right
+```
+
+## Custom Layouts
+>>>>>>> 79a4d453cf7d626368487ec247f6becebd0a20d5
 
 Tạo một thư mục `layouts/` trong dự án gốc của bạn và chỉ cần đặt các component layout Vue tùy chỉnh của bạn bên trong nó.
 

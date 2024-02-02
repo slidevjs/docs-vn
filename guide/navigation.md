@@ -2,7 +2,11 @@
 
 ## Thanh điều hướng
 
+<<<<<<< HEAD
 Di chuyển chuột đến góc dưới cùng bên trái của trang Slidev, thanh điều hướng sẽ hiện ra.
+=======
+Move your mouse to the bottom left corner of Slidev page to make the navigation bar appear.
+>>>>>>> 79a4d453cf7d626368487ec247f6becebd0a20d5
 
 ![](/screenshots/navbar.png)
 
@@ -29,9 +33,13 @@ Di chuyển chuột đến góc dưới cùng bên trái của trang Slidev, tha
 ## Tổng quan Slide
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Bằng cách nhấn <kbd>o</kbd> hoặc nhấn vào nút <carbon-user-speaker class="inline-icon-btn"/> trong thanh điều hướng, bạn có thể có tổng quan về các slide của mình, vì vậy bạn có thể chuyển đổi giữa chúng một cách dễ dàng.
 =======
 By pressing <kbd>o</kbd> or clicking the <carbon-apps class="inline-icon-btn"/> button in the navigation bar, you can have the overview of your slides so you can jump between them easily. 
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
+=======
+By pressing <kbd>o</kbd> or clicking the <carbon-apps class="inline-icon-btn"/> button in the navigation bar, you can have the overview of your slides so you can jump between them easily.
+>>>>>>> 79a4d453cf7d626368487ec247f6becebd0a20d5
 
 ![](/screenshots/slides-overview.png)
