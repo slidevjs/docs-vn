@@ -24,28 +24,28 @@ Tìm hiểu nhiều hơn tại [Cấu hình Monaco](https://github.com/Microsoft
 
 Để sử dụng Monaco trong các trang trình bày của bạn, chỉ cần thêm `{monaco}` vào các đoạn code của bạn:
 
-~~~js
-//```js
+~~~md
+```js
 const count = ref(1)
 const plusOne = computed(() => count.value + 1)
 
 console.log(plusOne.value) // 2
 
 plusOne.value++ // error
-//```
+```
 ~~~
 
 Và
 
-~~~js
-//```js {monaco}
+~~~md
+```js {monaco}
 const count = ref(1)
 const plusOne = computed(() => count.value + 1)
 
 console.log(plusOne.value) // 2
 
 plusOne.value++ // error
-//```
+```
 ~~~
 
 ## Xuất trang trình bày
@@ -70,13 +70,13 @@ Khi bạn sử dụng TypeScript với Monaco, các kiểu dependencie sẽ đư
 When use TypeScript with Monaco, types for dependencies will be installed to the client-side automatically.
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
-~~~ts
-//```ts {monaco}
+~~~md
+```ts {monaco}
 import { ref } from 'vue'
 import { useMouse } from '@vueuse/core'
 
 const counter = ref(0)
-//```
+```
 ~~~
 
 <<<<<<< HEAD
@@ -125,4 +125,34 @@ export default defineMonacoSetup((monaco) => {
 ```
 
 > If you are creating a theme for Slidev, use dynamic `import()` inside the setup function to get better tree-shaking and code-splitting results.
+<<<<<<< HEAD
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
+=======
+
+## Configure the Editor
+
+> Available since v0.43.0
+
+If you would like to customize the Monaco editor you may pass an `editorOptions` object that matches the [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html) definition.
+
+~~~md
+```ts {monaco} { editorOptions: { wordWrap:'on'} }
+console.log('HelloWorld')
+```
+~~~
+
+Alternatively if you would like these options to be applied to every Monaco instance, you can return them in the `defineMonacoSetup` function
+
+```ts
+// ./setup/monaco.ts
+import { defineMonacoSetup } from '@slidev/types'
+
+export default defineMonacoSetup(() => {
+  return {
+    editorOptions: {
+      wordWrap: 'on'
+    }
+  }
+})
+```
+>>>>>>> c3c1774bdf48295664f5b30d7ba7bfbda5a0f3d2
