@@ -14,11 +14,11 @@ In your frontmatter, configure as following
 ---
 fonts:
   # basically the text
-  sans: 'Robot'
-  # use with `font-serif` css class from windicss
-  serif: 'Robot Slab'
+  sans: Robot
+  # use with `font-serif` css class from UnoCSS
+  serif: Robot Slab
   # for code blocks, inline code, etc.
-  mono: 'Fira Code'
+  mono: Fira Code
 ---
 ```
 
@@ -28,7 +28,11 @@ Phông chữ sẽ được **nhập tự động từ [Google Fonts](https://fon
 
 ## Local Fonts
 
+<<<<<<< HEAD
 Theo mặc định, Slidev giả định tất cả các phông chữ được chỉ định thông qua cấu hình `fonts` đến từ Google Fonts. Nếu bạn muốn sử dụng font cục bộ, hãy chỉ định `fonts.local` để chọn không tự động nhập.
+=======
+By default, Slidev assumes all the fonts specified via `fonts` configurations come from Google Fonts. If you want to use local fonts, specify the `fonts.local` to opt-out the auto-importing.
+>>>>>>> 1d54c861642c679ca01887a28e187047fedcbc83
 
 ```yaml
 ---
@@ -36,7 +40,7 @@ fonts:
   # like font-family in css, you can use `,` to separate multiple fonts for fallback
   sans: 'Helvetica Neue,Robot'
   # mark 'Helvetica Neue' as local font
-  local: 'Helvetica Neue'
+  local: Helvetica Neue
 ---
 ```
 
@@ -47,7 +51,7 @@ Theo mặc định, Slidev nhập ba trọng số `200`, `400`, `600` cho mỗi 
 ```yaml
 ---
 fonts:
-  sans: 'Robot'
+  sans: Robot
   # default
   weights: '200,400,600'
   # import italic fonts, default `false`
@@ -64,13 +68,17 @@ Cấu hình này áp dụng cho tất cả các font web. Để có thể chi ti
 ```yaml
 ---
 fonts:
-  sans: 'Robot'
-  serif: 'Robot Slab'
-  mono: 'Fira Code'
+  sans: Robot
+  serif: Robot Slab
+  mono: Fira Code
 ---
 ```
 
+<<<<<<< HEAD
 sẽ cho kết quả
+=======
+will result in
+>>>>>>> 1d54c861642c679ca01887a28e187047fedcbc83
 
 ```css
 .font-sans {
@@ -90,7 +98,7 @@ Nếu bạn muốn tắt font dự phòng, hãy định cấu hình như sau
 ---
 fonts:
   mono: 'Fira Code, monospace'
-  fallback: false
+  fallbacks: false
 ---
 ```
 
@@ -104,6 +112,6 @@ Hiện tại, chỉ Google Fonts được hỗ trợ, chúng tôi dự kiến s�
 ```yaml
 ---
 fonts:
-  provide: 'none'
+  provider: none
 ---
 ```
