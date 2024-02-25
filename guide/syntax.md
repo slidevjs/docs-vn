@@ -1,8 +1,20 @@
+<<<<<<< HEAD
 # Cú pháp Markdown
 
 Slide được viết trong **một file markdown duy nhất** (theo mặc định là `./slides.md`). 
 
 Bạn có thể sử dụng [các tính năng Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) như bình thường, với sự hỗ trợ bổ sung của các component HTML và Vue. Tạo style bằng [Windi CSS](https://windicss.org) cũng được hỗ trợ. Sử dụng dấu `---` được đệm bằng một dòng mới để tách các slide của bạn.
+=======
+---
+outline: deep
+---
+
+# Markdown Syntax
+
+Slides are written within **a single markdown file** (by default `./slides.md`).
+
+You can use [the Markdown features](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) as you normally would, with the additional support of inlined HTML and Vue Components. Styling using [UnoCSS](/custom/config-unocss) is also supported. Use `---` padded with a new line to separate your slides.
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
 ~~~md
 # Slidev
@@ -30,6 +42,7 @@ You can directly use Windi CSS and Vue components to style and enrich your slide
 </div>
 ~~~
 
+<<<<<<< HEAD
 ## Front Matter & Layout
 
 <<<<<<< HEAD
@@ -37,6 +50,11 @@ Bạn có thể chỉ định layout và siêu dữ liệu khác cho mỗi slide
 =======
 Specify layouts and other metadata for each slide by converting the separators into [front matter blocks](https://jekyllrb.com/docs/front-matter/). Each frontmatter starts with a triple-dash and ends with another. Texts between them are data objects in [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) format. For example:
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
+=======
+## Frontmatter & Layouts
+
+Specify layouts and other metadata for each slide by converting the separators into [frontmatter blocks](https://jekyllrb.com/docs/front-matter/). Each frontmatter starts with a triple-dash and ends with another. Texts between them are data objects in [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/) format. For example:
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
 ~~~md
 ---
@@ -51,7 +69,7 @@ This is the cover page.
 layout: center
 background: './images/background-1.png'
 class: 'text-white'
----​
+---
 
 # Page 2
 
@@ -66,63 +84,197 @@ This is a default page without any additional metadata.
 
 Tham khảo [customization](/custom/) để biết thêm chi tiết.
 
+> The custom syntax might not be compactible with some formatters like Prettier. To improve that, we also support using a direct `yaml` code block to define the frontmatter:
+>
+> ~~~markdown
+> ---
+> layout: cover
+> ---
+>
+> # Slidev
+>
+> This is the cover page.
+>
+> ---
+>
+> ```yaml
+> # The first yaml block will be treated as the frontmatter of that slide
+> layout: center
+> background: './images/background-1.png'
+> class: 'text-white'
+> ```
+>
+> # Page 2
+>
+> This is a page with the layout `center` and a background image.
+> ~~~
+>
+> (Available since v0.44.0)
+
 ## Code Blocks
 
 Một lý do lớn mà tôi xây dựng Slidev là làm cho code của tôi trông vừa phải trong các slide. Vì vậy, đúng như bạn mong đợi, bạn có thể sử dụng khối code Markdown để làm nổi bật code của mình.
 
-~~~ts
-//```ts
+~~~md
+```ts
 console.log('Hello, World!')
-//```
+```
 ~~~
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### Đánh dấu dòng
 =======
 We support [Prism](http://prismjs.com) and [Shiki](https://github.com/shiki/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+=======
+We support [Prism](https://prismjs.com), [Shiki](https://github.com/shikijs/shiki) as syntax highlighters. Refer to [the highlighters section](/custom/highlighters) for more details.
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
 ### Line Highlighting
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
+<<<<<<< HEAD
 Để đánh dấu các dòng cụ thể, chỉ cần thêm số dòng trong dấu ngoặc nhọn `{}`. Số dòng bắt đầu đếm từ 1.
+=======
+To highlight specific lines, simply add line numbers within bracket `{}`. Line numbers start counting from 1 by default.
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
-~~~ts
-//```ts {2,3}
+~~~md
+```ts {2,3}
 function add(
   a: Ref<number> | number,
   b: Ref<number> | number
 ) {
   return computed(() => unref(a) + unref(b))
 }
-//```
+```
 ~~~
 
+<<<<<<< HEAD
 Để thay đổi vùng đánh dấu trong nhiều bước, bạn có thể sử dụng dấu `|` để tách chúng. Ví dụ
+=======
+You can enable line number to all slides by setting `lineNumbers: true` on the config or enable each code block individually by setting `lines:true`. You can also set the starting line for each code block and highlight the lines accordingly, defaults to 1:
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
-~~~ts
-//```ts {2-3|5|all}
+~~~md
+```ts {6,7}{lines:true, startLine:5}
 function add(
   a: Ref<number> | number,
   b: Ref<number> | number
 ) {
   return computed(() => unref(a) + unref(b))
 }
-//```
+```
 ~~~
 
+<<<<<<< HEAD
 Đầu tiên, điều này sẽ làm nổi bật `a: Ref<number> | number` và `b: Ref<number> | number`, và sau đó là `return computed(() => unref(a) + unref(b))` sau một cú nhấp chuột, và cuối cùng là toàn bộ khối. Tìm hiểu thêm trong [hướng dẫn về animation click](/guide/animations).
+=======
+To change the highlight in multiple clicks, you can use `|` to separate them:
+
+~~~md
+```ts {2-3|5|all}
+function add(
+  a: Ref<number> | number,
+  b: Ref<number> | number
+) {
+  return computed(() => unref(a) + unref(b))
+}
+```
+~~~
+
+This will first highlight `a: Ref<number> | number` and `b: Ref<number> | number`, and then `return computed(() => unref(a) + unref(b))` after one click, and lastly, the whole block.
+
+You can set the line number to `hide` to hide the code block or `none` to not highlight any line:
+
+~~~md
+```ts {hide|none}
+function add(
+  a: Ref<number> | number,
+  b: Ref<number> | number
+) {
+  return computed(() => unref(a) + unref(b))
+}
+```
+~~~
+
+::: tip
+Learn more in the [clicks animations guide](./animations#positioning).
+:::
+
+If the code doesn't fit into one slide, you use the `maxHeight` to set fixed height and enable scrolling:
+
+~~~md
+```ts {2|3|7|12}{maxHeight:'100px'}
+function add(
+  a: Ref<number> | number,
+  b: Ref<number> | number
+) {
+  return computed(() => unref(a) + unref(b))
+}
+/// ...as many lines as you want
+const c = add(1, 2)
+```
+~~~
+
+### TwoSlash Integration
+
+This feature is only available when you [set `highlighter` to `shiki`](/custom/highlighters)
+
+[TwoSlash](https://twoslash.netlify.app/) is a powerful tool for rendering TypeScript code blocks with type information on hover or inlined. It's quite useful for preparing slides for JavaScript/TypeScript-related topics.
+
+To use it, you can add `twoslash` to the code block's language identifier:
+
+~~~md
+```ts twoslash
+import { ref } from 'vue'
+
+const count = ref(0)
+//            ^?
+```
+~~~
+
+It will be rendered as:
+
+```ts twoslash
+import { ref } from 'vue'
+
+const count = ref(0)
+//            ^?
+```
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
 ### Trình soạn thảo Monaco
 
 Bất cứ khi nào bạn muốn thực hiện một số sửa đổi trong bản trình bày, chỉ cần thêm `{monaco}` sau ngôn ngữ id - nó biến khối thành một trình soạn thảo Monaco đầy đủ tính năng!
 
-~~~ts
-//```ts {monaco}
+~~~md
+```ts {monaco}
 console.log('HelloWorld')
-//```
+```
 ~~~
 
 Tìm hiểu thêm về [configuring Monaco](/custom/config-monaco).
+
+#### Monaco Diff
+
+Monaco can also generate a diff between two code blocks. Use `{monaco-diff}` to turn the block into a [diff Monaco editor](https://microsoft.github.io/monaco-editor/playground.html?source=v0.36.1#example-creating-the-diffeditor-multi-line-example) and use `~~~` to separate both original and modified version of the code!
+
+````md
+```ts {monaco-diff}
+This line is removed on the right.
+just some text
+abcd
+efgh
+Some more text
+~~~
+just some text
+abcz
+zzzzefgh
+Some more text.
+This line is removed on the left.
+```
+````
 
 ## Embedded Styles
 
@@ -142,9 +294,15 @@ h1 {
 # Next slide is not affected
 ```
 
+<<<<<<< HEAD
 Thẻ `<style>` trong Markdown luôn [scoped](https://vue-loader.vuejs.org/guide/scoped-css.html). TĐể ghi đè kiểu toàn cục, hãy xem [phần tùy chỉnh](/custom/directory-structure#style).
 
 Được cung cấp bởi [Windi CSS](https://windicss.org), bạn có thể sử dụng trực tiếp css và [directives](https://windicss.org/features/directives.html) lồng nhau (ví dụ: `@apply`)
+=======
+`<style>` tag in Markdown is always [scoped](https://vuejs.org/api/sfc-css-features.html#scoped-css). As an outstanding result, a selector with the child combinator (`.a > .b`) is unusable as such; see the previous link. To have global style overrides, check out the [customization section](/custom/directory-structure#style).
+
+Powered by [UnoCSS](/custom/config-unocss), you can directly use nested css and [directives](https://unocss.dev/transformers/directives) (e.g. `--uno:` or `@apply`)
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
 ```md
 # Slidev
@@ -154,7 +312,7 @@ Thẻ `<style>` trong Markdown luôn [scoped](https://vue-loader.vuejs.org/guide
 <style>
 blockquote {
   code {
-    @apply text-teal-500 dark:text-teal-400;
+    --uno: text-teal-500 dark:text-teal-400;
   }
 }
 </style>
@@ -179,7 +337,7 @@ For local assets, put them into the [`public` folder](/custom/directory-structur
 ![Local Image](/pic.png)
 ```
 
-For you want to apply custom sizes or styles, you can convert them to the `<img>` tag 
+For you want to apply custom sizes or styles, you can convert them to the `<img>` tag
 
 ```html
 <img src="/pic.png" class="m-40 h-40 rounded shadow" />
@@ -218,16 +376,29 @@ This is another note
 
 ## Icons
 
+<<<<<<< HEAD
 Slidev cho phép bạn có quyền truy cập vào hầu hết tất cả các bộ icon mã nguồn mở phổ biến **trực tiếp** trong markdown của bạn. Được cung cấp bởi [`vite-plugin-icons`](https://github.com/antfu/vite-plugin-icons) và [Iconify](https://iconify.design/).
+=======
+Slidev allows you to have the accessing to almost all the popular open-source iconsets **directly** in your markdown after installing the corresponding package. Powered by [`unplugin-icons`](https://github.com/antfu/unplugin-icons) and [Iconify](https://iconify.design/).
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
 Việc đặt tên theo chuyển đổi của [Iconify](https://iconify.design/) `{collection-name}-{icon-name}`. Ví dụ:
 
+<<<<<<< HEAD
 - `<mdi-account-circle />` - <mdi-account-circle /> từ [Material Design Icons](https://github.com/Templarian/MaterialDesign)
 - `<carbon-badge />` - <carbon-badge /> từ [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons)
 - `<uim-rocket />` - <uim-rocket /> từ [Unicons Monochrome](https://github.com/Iconscout/unicons)
 - `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> từ [Twemoji](https://github.com/twitter/twemoji)
 - `<logos-vue />` - <logos-vue /> từ [SVG Logos](https://github.com/gilbarbara/logos)
 - Và nhiều hơn nữa...
+=======
+- `<mdi-account-circle />` - <mdi-account-circle /> from [Material Design Icons](https://github.com/Templarian/MaterialDesign) - [`@iconify-json/mdi`](https://npmjs.com/package/@iconify-json/mdi)
+- `<carbon-badge />` - <carbon-badge /> from [Carbon](https://github.com/carbon-design-system/carbon/tree/main/packages/icons) - [`@iconify-json/carbon`](https://npmjs.com/package/@iconify-json/carbon)
+- `<uim-rocket />` - <uim-rocket /> from [Unicons Monochrome](https://github.com/Iconscout/unicons) - [`@iconify-json/uim`](https://npmjs.com/package/@iconify-json/uim)
+- `<twemoji-cat-with-tears-of-joy />` - <twemoji-cat-with-tears-of-joy /> from [Twemoji](https://github.com/twitter/twemoji) - [`@iconify-json/twemoji`](https://npmjs.com/package/@iconify-json/twemoji)
+- `<logos-vue />` - <logos-vue /> from [SVG Logos](https://github.com/gilbarbara/logos) - [`@iconify-json/logos`](https://npmjs.com/package/@iconify-json/logos)
+- And much more...
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
 <<<<<<< HEAD
 Bạn có thể duyệt và tìm kiếm tất cả các icon có sẵn với [Icônes](https://icones.js.org/).
@@ -331,7 +502,27 @@ This shows on the right
 This shows on the left
 ```
 
+<<<<<<< HEAD
 ## Cấu hình
+=======
+## Import Code Snippets
+
+> Available since v0.47.0
+
+You can import code snippets from existing files via following syntax:
+
+```md
+<<< @/snippets/snippet.js
+```
+
+::: tip
+The value of `@` corresponds to the source root, the directory where the `slides.md` is located.
+:::
+
+This feature is vendored from VitePress, learn more about it in [VitePress's documentation](https://vitepress.dev/guide/markdown#import-code-snippets).
+
+## Configurations
+>>>>>>> aa8c4cadc05aeca1e672a8297d644c558b294402
 
 Tất cả các cấu hình cần thiết có thể được xác định trong tệp Markdown. Ví dụ:
 
@@ -353,7 +544,7 @@ Tìm hiểu thêm về [cấu hình frontmatter](/custom/#frontmatter-configures
 
 Slidev đi kèm với hỗ trợ LaTeX bên ngoài, được cung cấp bởi [KaTeX](https://katex.org/).
 
-<Tweet id="1392246507793915904" />
+<TheTweet id="1392246507793915904" />
 
 ### Inline
 
@@ -367,7 +558,7 @@ $\sqrt{3x-1}+(1+x)^2$
 
 Sử dụng hai (`$$`) để hiển thị khối. Chế độ này sử dụng các ký hiệu lớn hơn và căn giữa kết quả.
 
-```md
+```latex
 $$
 \begin{array}{c}
 
@@ -383,6 +574,25 @@ $$
 ```
 
 Tìm hiểu thêm: [Demo](https://sli.dev/demo/starter/8) | [KaTeX](https://katex.org/) | [`markdown-it-katex`](https://github.com/waylonflinn/markdown-it-katex)
+
+### LaTex line highlighting
+
+> Available since v0.43.1
+
+To highlight specific lines, simply add line numbers within bracket `{}`. Line numbers start counting from 1 by default.
+
+```latex
+$$ {1|3|all}
+\begin{array}{c}
+\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
+= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
+\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
+\nabla \cdot \vec{\mathbf{B}} & = 0
+\end{array}
+$$
+```
+
+The `at` and `finally` options of [code blocks](#line-highlighting) are also available for LaTeX blocks.
 
 ## Diagrams
 
@@ -507,3 +717,27 @@ src: ./content.md
 src: ./content.md
 ---
 ```
+
+## MDC Syntax
+
+> Available since v0.43.0
+
+Slidev supports optional [MDC (Markdown Components) Syntax](https://content.nuxtjs.org/guide/writing/mdc) powered by [`markdown-it-mdc`](https://github.com/antfu/markdown-it-mdc).
+
+You can enable it by adding `mdc: true` to the frontmatter of your markdown file.
+
+```mdc
+---
+mdc: true
+---
+
+This is a [red text]{style="color:red"} :inline-component{prop="value"}
+
+![](/image.png){width=500px lazy}
+
+::block-component{prop="value"}
+The **default** slot
+::
+```
+
+Learn more about [the syntax](https://content.nuxt.com/guide/writing/mdc).
