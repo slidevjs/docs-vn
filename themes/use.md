@@ -8,7 +8,14 @@ theme: seriph
 ---
 ```
 
+<<<<<<< HEAD
 Bạn có thể khởi động máy chủ, máy chủ sẽ nhắc bạn cài đặt chủ đề tự động
+=======
+> **Note**
+> To install a theme from a scoped package, you will have to give the full namespace e.g `@organization/slidev-theme-name`
+
+You can start the server, which will prompt you to install the theme automatically
+>>>>>>> 55df176a16c5693491d5823c68f1af798e1f718f
 
 <div class="language-md">
 <pre>
@@ -34,7 +41,11 @@ Nếu bạn muốn có toàn quyền kiểm soát chủ đề hiện tại, bạ
 $ slidev theme eject
 ```
 
+<<<<<<< HEAD
 Nó sẽ đẩy chủ đề bạn đang sử dụng hiện tại vào `./theme`, và thay đổi frontmatter của bạn thành 
+=======
+It will eject the theme you are using currently into `./theme`, and changed your frontmatter to
+>>>>>>> 55df176a16c5693491d5823c68f1af798e1f718f
 
 ```yaml
 ---

@@ -13,7 +13,7 @@ your-slidev/
   ├── styles/           # custom style
   ├── index.html        # injections to index.html
   ├── slides.md         # the main slides entry
-  └── vite.config.ts   # extending vite config
+  └── vite.config.ts    # extending vite config
 ```
 
 Tất cả chúng đều là tùy chọn.
@@ -48,7 +48,11 @@ your-slidev/
 </hello-world>
 ```
 
+<<<<<<< HEAD
 Tính năng này được cung cấp bởi [`vite-plugin-components`](https://github.com/antfu/vite-plugin-components), hãy tìm hiểu thêm tại đây.
+=======
+This feature is powered by [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components), learn more there.
+>>>>>>> 55df176a16c5693491d5823c68f1af798e1f718f
 
 Slidev cũng cung cấp một số [component tích hợp](/builtin/components) để bạn sử dụng.
 
@@ -115,18 +119,22 @@ import './code.css'
 import './layouts.css'
 ```
 
+<<<<<<< HEAD
 Style sẽ được thực thi bởi [Windi CSS](http://windicss.org/) và [PostCSS](https://postcss.org/), vì vậy bạn có thể sử dụng lồng ghép css và [at-directives](https://windicss.org/features/directives.html). Ví dụ:
+=======
+Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://postcss.org/), so you can use css nesting and [at-directives](https://unocss.dev/transformers/directives#apply) out-of-box. For example:
+>>>>>>> 55df176a16c5693491d5823c68f1af798e1f718f
 
 ```less
 .slidev-layout {
-  @apply px-14 py-10 text-[1.1rem];
+  --uno: px-14 py-10 text-[1.1rem];
 
   h1, h2, h3, h4, p, div {
-    @apply select-none;
+    --uno: select-none;
   }
 
   pre, code {
-    @apply select-text;
+    --uno: select-text;
   }
 
   a {
@@ -135,7 +143,11 @@ Style sẽ được thực thi bởi [Windi CSS](http://windicss.org/) và [Post
 }
 ```
 
+<<<<<<< HEAD
 [Tìm hiểu thêm về cú pháp](https://windicss.org/features/directives.html).
+=======
+[Learn more about the syntax](https://unocss.dev/transformers/directives#apply).
+>>>>>>> 55df176a16c5693491d5823c68f1af798e1f718f
 
 ## `index.html`
 
@@ -181,6 +193,12 @@ Ví dụ: đối với `index.html` tùy chỉnh sau:
 
 ## Global Layers
 
+<<<<<<< HEAD
 Quy ước: `global-top.vue` | `global-bottom.vue`
 
 Tìm hiểu thêm về: [Global Layers](/custom/global-layers)
+=======
+Conventions: `global-top.vue` | `global-bottom.vue`
+
+Learn more: [Global Layers](/custom/global-layers)
+>>>>>>> 55df176a16c5693491d5823c68f1af798e1f718f
