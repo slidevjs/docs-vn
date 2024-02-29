@@ -2,7 +2,11 @@
 
 Có rất nhiều trình tạo slide WYSIWYG đa năng, có mục đích chung, như [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) và [Apple Keynote](https://www.apple.com/keynote/). Chúng hoạt động khá tốt để tạo các slide đẹp với animation, biểu đồ và nhiều thứ khác, đồng thời rất trực quan và dễ học. Vậy tại sao phải làm Slidev?
 
+<<<<<<< HEAD
 Slidev nhằm mục đích cung cấp tính linh hoạt và tính tương tác cho các nhà lập trình để làm cho bản trình bày của họ trở nên thú vị, biểu cảm và hấp dẫn hơn bằng cách sử dụng các công cụ và công nghệ mà họ đã quen thuộc.
+=======
+Slidev aims to provide the flexibility and interactivity for developers to make their presentations even more interesting, expressive, and attractive by using the tools and technologies they are already familiar with.
+>>>>>>> 15820b064d1f419ed06cd798ae4b6dfe0c230e94
 
 Khi làm việc với các trình soạn thảo WYSIWYG, bạn rất dễ bị phân tâm bởi các tùy chọn tạo kiểu. Slidev khắc phục điều đó bằng cách tách nội dung và hình ảnh. Điều này cho phép bạn tập trung vào một thứ tại một thời điểm, đồng thời có thể sử dụng lại các chủ đề từ cộng đồng. Slidev không tìm cách thay thế hoàn toàn các slide deck builder khác. Thay vào đó, nó tập trung vào việc phục vụ cộng đồng nhà lập trình.
 
@@ -32,7 +36,11 @@ Tìm hiểu thêm về [đánh dấu](/custom/highlighters) và [cấu hình Mon
 
 ## Nhanh
 
+<<<<<<< HEAD
 Slidev được cung cấp bởi [Vite](https://vitejs.dev/), [Vue 3](https://v3.vuejs.org/) và [Windi CSS](https://windicss.org/), cung cấp cho bạn trải nghiệm tác giả tuyệt vời nhất. Mọi thay đổi bạn thực hiện sẽ phản ánh vào các slide của bạn **ngay lập tức**.
+=======
+Slidev is powered by [Vite](https://vitejs.dev/), [Vue 3](https://v3.vuejs.org/) and [UnoCSS](https://unocss.dev/), which give you the most wonderful authoring experience. Every change you made will reflect to your slides **instantly**.
+>>>>>>> 15820b064d1f419ed06cd798ae4b6dfe0c230e94
 
 Tìm thêm về [our tech stack](/guide/#tech-stack).
 
@@ -66,6 +74,4 @@ $ npm init slidev
 
 Hoặc xem trước nó:
 
-<div class="aspect-9/16 relative">
-<iframe class="rounded w-full shadow-md border-none" src="https://www.youtube.com/embed/eW7v-2ZKZOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<iframe class="aspect-16/9 rounded-xl w-full shadow-md border-none" src="https://www.youtube.com/embed/eW7v-2ZKZOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
