@@ -6,7 +6,7 @@ Slidev được tích hợp chế độ record và chế độ xem camera. Bạn
 
 Nhấn vào nút <carbon-user-avatar class="inline-icon-btn"/> trong bảng điều hướng để hiển thị chế độ xem camera của bạn trong bản trình bày. Bạn có thể kéo để di chuyển nó và sử dụng trình xử lý ở góc dưới bên phải để thay đổi kích thước. Kích thước và vị trí sẽ tồn tại trong `localStorage` và do đó sẽ nhất quán qua nhiều lần làm mới, vì vậy không cần phải lo lắng về điều đó.
 
-<Tweet id="1395006771027120133" />
+<TheTweet id="1395006771027120133" />
 
 ## Recording
 
