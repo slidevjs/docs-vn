@@ -4,7 +4,11 @@
 
 Vì Slidev dựa trên Web nên bạn có thể áp dụng bất kỳ bố cục lưới nào tùy thích. [CSS Grids](https://css-tricks.com/snippets/css/complete-guide-grid/), [flexboxes](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), hoặc thậm chí [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/), bạn có toàn quyền kiểm soát.
 
+<<<<<<< HEAD
 Vì chúng tôi đã tích hợp sẵn [Windi CSS](https://windicss.org/), đây là một cách đơn giản để bạn tham khảo:
+=======
+Since we have [UnoCSS](https://unocss.dev/) built-in, here is one simple way for you to reference:
+>>>>>>> 948b75ddb1f4429a20b0d68bd24bebbaedf0bcd2
 
 ```html
 <div class="grid grid-cols-2 gap-4">
@@ -28,7 +32,7 @@ Go further, you can customize the size of each column like:
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ```html
-<div class="grid grid-cols-[200px,1fr,10%] gap-4">
+<div class="grid grid-cols-[200px_1fr_10%] gap-4">
 <div>
 
 The first column (200px)
@@ -47,8 +51,11 @@ The third column (10% width to parent container)
 </div>
 ```
 
+<<<<<<< HEAD
 Tìm hiểu thêm về [Windi CSS Grids](https://windicss.org/utilities/grid.html).
 
+=======
+>>>>>>> 948b75ddb1f4429a20b0d68bd24bebbaedf0bcd2
 ## Positioning
 
 Slide được xác định theo kích thước cố định (mặc định `980x552px`) và chia tỷ lệ để vừa với màn hình người dùng. Bạn có thể an toàn sử dụng position absolute trong slide của mình vì chúng sẽ scale cùng với màn hình.
@@ -100,7 +107,7 @@ Tìm hiểu thêm về [Embedded Styles](/guide/syntax.html#embedded-styles)
 Bạn có thể cung cấp các style toàn cục tùy chỉnh bằng cách tạo `./style.css`, ví dụ
 
 ```css
-/* style.css */ 
+/* style.css */
 
 h1 {
   font-size: 10em !important;
