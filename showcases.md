@@ -1,7 +1,3 @@
----
-sidebar: false
----
-
 # Showcases
 
 Nói chuyện / Thuyết trình bằng Slidev.
