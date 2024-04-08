@@ -2,6 +2,7 @@
 
 ## Thanh điều hướng
 
+<<<<<<< HEAD
 Di chuyển chuột đến góc dưới cùng bên trái của trang Slidev, thanh điều hướng sẽ hiện ra.
 
 ![](/screenshots/navbar.png)
@@ -23,15 +24,42 @@ Di chuyển chuột đến góc dưới cùng bên trái của trang Slidev, tha
 | - | <carbon-information class="inline-icon-btn"/> | hiển thị thông tin về các slide |
 | - | <carbon-settings-adjust class="inline-icon-btn"/> | hiển thị menu cài đặt |
 | <kbd>g</kbd> | - | hiển thị goto... |
+=======
+Move your mouse to the bottom left corner of Slidev page to make the navigation bar appear.
+
+![](/screenshots/navbar.png)
+
+| Shortcuts                           | Button                                                                                | Description                                                                                |
+| ----------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| <kbd>f</kbd>                        | <carbon-maximize class="inline-icon-btn"/> <carbon-minimize class="inline-icon-btn"/> | toggle fullscreen                                                                          |
+| <kbd>right</kbd> / <kbd>space</kbd> | <carbon-arrow-right class="inline-icon-btn"/>                                         | next animation or slide                                                                    |
+| <kbd>left</kbd>                     | <carbon-arrow-left class="inline-icon-btn"/>                                          | previous animation or slide                                                                |
+| <kbd>up</kbd>                       | -                                                                                     | previous slide                                                                             |
+| <kbd>down</kbd>                     | -                                                                                     | next slide                                                                                 |
+| <kbd>o</kbd>                        | <carbon-apps class="inline-icon-btn"/>                                                | toggle [slides overview](#slides-overview)                                                 |
+| <kbd>d</kbd>                        | <carbon-sun class="inline-icon-btn"/> <carbon-moon class="inline-icon-btn"/>          | toggle dark mode                                                                           |
+| -                                   | <carbon-user-avatar class="inline-icon-btn"/>                                         | toggle [camera view](/guide/recording#camera-view)                                         |
+| -                                   | <carbon-video class="inline-icon-btn"/>                                               | [recording](/guide/recording#camera-view)                                                  |
+| -                                   | <carbon-user-speaker class="inline-icon-btn"/>                                        | enter [presenter mode](/guide/presenter-mode)                                              |
+| -                                   | <carbon-edit class="inline-icon-btn"/>                                                | toggle [integrated editor](/guide/editors#integrated-editor)                               |
+| -                                   | <carbon-download class="inline-icon-btn"/>                                            | download slides (only appear in [SPA build](/guide/exporting#single-page-application-spa)) |
+| -                                   | <carbon-information class="inline-icon-btn"/>                                         | show information about the slides                                                          |
+| -                                   | <carbon-settings-adjust class="inline-icon-btn"/>                                     | show settings menu                                                                         |
+| <kbd>g</kbd>                        | -                                                                                     | show goto...                                                                               |
+>>>>>>> 69e1142c6f07cb04fb7fea7f396de60cd1f0538f
 
 <br>
 
 ## Tổng quan Slide
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Bằng cách nhấn <kbd>o</kbd> hoặc nhấn vào nút <carbon-user-speaker class="inline-icon-btn"/> trong thanh điều hướng, bạn có thể có tổng quan về các slide của mình, vì vậy bạn có thể chuyển đổi giữa chúng một cách dễ dàng.
 =======
 By pressing <kbd>o</kbd> or clicking the <carbon-apps class="inline-icon-btn"/> button in the navigation bar, you can have the overview of your slides so you can jump between them easily. 
 >>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
+=======
+By pressing <kbd>o</kbd> or clicking the <carbon-apps class="inline-icon-btn"/> button in the navigation bar, you can have the overview of your slides so you can jump between them easily.
+>>>>>>> 69e1142c6f07cb04fb7fea7f396de60cd1f0538f
 
 ![](/screenshots/slides-overview.png)

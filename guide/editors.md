@@ -6,7 +6,11 @@ Nếu bạn muốn một số quản lý hiệu quả cao cho các slide của m
 
 ## Trình soạn thảo tích hợp
 
+<<<<<<< HEAD
 Slidev đi kèm với trình soạn thảo tích hợp [CodeMirror](https://codemirror.net/) sẽ tải lại ngay lập tức và lưu các thay đổi vào file của bạn. 
+=======
+Slidev comes with an integrated [CodeMirror](https://codemirror.net/) editor that will instantly reload and save the changes to your file.
+>>>>>>> 69e1142c6f07cb04fb7fea7f396de60cd1f0538f
 
 Click vào nút <carbon-edit class="inline-icon-btn"/> để mở.
 
@@ -40,4 +44,8 @@ The VS Code extension cung cấp một số tính năng để giúp bạn tổ c
 
 ![](https://user-images.githubusercontent.com/11247099/116809994-cc2caa00-ab73-11eb-879f-60585747c3c9.png)
 
-<Tweet id="1395333405345148930" />
+<TheTweet id="1395333405345148930" />
+
+## Prettier Plugin
+
+Slidev also provides a Prettier plugin to format your slides. You can use it with your favorite editor that supports Prettier. Docs for the plugin can be found [here](https://github.com/slidevjs/prettier-plugin).
