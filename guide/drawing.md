@@ -2,15 +2,15 @@
 
 > Available since v0.23
 
-We have [drauu](https://github.com/antfu/drauu) built-in for drawing and annotation that could enhance your presentation further.
+[drauu](https://github.com/antfu/drauu) is built-in for drawing and annotation, should that help improve your presentation further.
 
-To start, click the <carbon-pen class="inline-icon-btn"/> icon in the toolbar and start drawing. It's also available in the [Presenter Mode](/guide/presenter-mode). Drawings and annotations you created will be **synced up** automatically across all instances in real-time.
+To start, click the <carbon-pen class="inline-icon-btn"/> icon in the toolbar and start drawing. It's also available in the [Presenter Mode](/guide/presenter-mode). Drawings and annotations you created will be **synced** automatically across all instances in real time.
 
-<Tweet id="1424027510342250499" />
+<TheTweet id="1424027510342250499" />
 
 ## Use with Stylus Pen
 
-When using a stylus pen on a tablet (for example, iPad with Apple Pencil), Slidev could smartly detect the input type. You can directly draw on your slides with the pen without turning on the drawing mode, while having your fingers or mouse control the navigation.
+When using a stylus pen on a tablet (for example, iPad with Apple Pencil), Slidev will intelligently detect the input type. You can directly draw on your slides with the pen without turning on the drawing mode, while having your fingers or mouse control the navigation.
 
 ## Persist Drawings
 
@@ -18,7 +18,7 @@ The following frontmatter configuration allows you to persist your drawings as S
 
 ```md
 ---
-drawings: 
+drawings:
   persist: true
 ---
 ```
@@ -29,7 +29,7 @@ Entirely:
 
 ```md
 ---
-drawings: 
+drawings:
   enabled: false
 ---
 ```
@@ -38,7 +38,7 @@ Only in Development:
 
 ```md
 ---
-drawings: 
+drawings:
   enabled: dev
 ---
 ```
@@ -47,22 +47,20 @@ Only in Presenter Mode:
 
 ```md
 ---
-drawings: 
+drawings:
   presenterOnly: true
 ---
 ```
 
 ## Drawing Syncing
 
-By default, Slidev syncs up your drawings across all instances. If you are sharing your slides with others, you might want to disable the syncing by:
+By default, Slidev syncs up your drawings across all instances. If you are sharing your slides with others, you might want to disable the syncing via:
 
 ```md
 ---
-drawings: 
+drawings:
   syncAll: false
 ---
 ```
 
 With this config, only the drawing from the presenter instance will be able to sync with others.
-
-
