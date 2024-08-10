@@ -30,15 +30,7 @@ const Guide = [
     link: '/guide/exporting',
   },
   {
-<<<<<<< HEAD
     text: 'Ghi lại bản trình bày',
-=======
-    text: 'Static Hosting',
-    link: '/guide/hosting',
-  },
-  {
-    text: 'Record Presentation',
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
     link: '/guide/recording',
   },
   {
@@ -46,15 +38,7 @@ const Guide = [
     link: '/guide/presenter-mode',
   },
   {
-<<<<<<< HEAD
     text: 'Tích hợp trình soạn thảo',
-=======
-    text: 'Drawing & Annonations',
-    link: '/guide/drawing',
-  },
-  {
-    text: 'Editor Integrations',
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
     link: '/guide/editors',
   },
   {
@@ -181,15 +165,7 @@ const Resources = [
     link: '/showcases',
   },
   {
-<<<<<<< HEAD
     text: 'Quản lý slide',
-=======
-    text: 'Learning Resources',
-    link: '/resources/learning',
-  },
-  {
-    text: 'Curated Covers',
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
     link: '/resources/covers',
   },
 ]

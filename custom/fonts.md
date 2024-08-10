@@ -4,11 +4,7 @@
 
 Mặc dù bạn có thể sử dụng HTML và CSS để tùy chỉnh phông chữ và kiểu cho các trang trình bày của mình theo ý muốn, nhưng Slidev cũng cung cấp một cách để sử dụng chúng dễ dàng.
 
-<<<<<<< HEAD
 Trong phông chữ của bạn, hãy định cấu hình như sau
-=======
-In your frontmatter, configure as following
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ```yaml
 ---

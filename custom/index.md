@@ -52,11 +52,7 @@ info: |
 ---
 ```
 
-<<<<<<< HEAD
 Xem [định nghĩa loại](https://github.com/slidevjs/slidev/blob/main/packages/types/src/types.ts#L29) để có thêm tùy chọn.
-=======
-Check out the [type definitions](https://github.com/slidevjs/slidev/blob/main/packages/types/src/config.ts) for more options.
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ## Cấu trúc thư mục
 

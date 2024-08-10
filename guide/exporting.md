@@ -19,7 +19,6 @@ $ slidev export
 
 Sau một vài giây, các slide của bạn sẽ có sẵn tại `./slides-exports.pdf`.
 
-<<<<<<< HEAD
 ## PNGs
 
 Khi chuyển vào tùy chọn `--format png`, Slidev sẽ xuất hình ảnh PNG cho từng trang chiếu thay vì PDF.
@@ -27,23 +26,15 @@ Khi chuyển vào tùy chọn `--format png`, Slidev sẽ xuất hình ảnh PNG
 ```bash
 $ slidev export --format png
 ```
-=======
-### Export Clicks Steps
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 > Available since v0.21
 
-<<<<<<< HEAD
 Bạn cũng có thể xây dựng các slide thành một SPA tự lưu trữ:
-=======
-By default, Slidev exports one page per slide with clicks animations disabled. If you want export slides with multiple steps into multiple pages, pass the `--with-clicks` options.
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ```bash
 $ slidev export --with-clicks
 ```
 
-<<<<<<< HEAD
 Ứng dụng đã tạo sẽ có sẵn trong `dist/` và sau đó bạn có thể lưu trữ nó trên [GitHub](https://pages.github.com/), [Netlify](https://netlify.app/), [Vercel](https://vercel.com/), hoặc bất cứ thứ gì bạn muốn. Giờ đây, bạn có thể chia sẻ các slide của mình với mọi người bằng một liên kết duy nhất.
 
 ### Base Path
@@ -82,16 +73,3 @@ Dưới đây là một số ví dụ về SPA đã xuất:
 
 - [Starter Template](https://sli.dev/demo/starter)
 - [Composable Vue](https://talks.antfu.me/2021/composable-vue) bởi [Anthony Fu](https://github.com/antfu)
-=======
-## PNGs
-
-When passing in the `--format png` option, Slidev will export PNG images for each slide instead of a PDF.
-
-```bash
-$ slidev export --format png
-```
-
-## Single-Page Application (SPA)
-
-See [Static Hosting](/guide/hosting).
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c

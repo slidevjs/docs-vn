@@ -21,11 +21,7 @@ The second column
 </div>
 ```
 
-<<<<<<< HEAD
 Hơn nữa, bạn có thể tùy chỉnh kích thước của từng cột như:
-=======
-Go further, you can customize the size of each column like:
->>>>>>> ee7ae42035591cb6565a72f5217129c670a59b0c
 
 ```html
 <div class="grid grid-cols-[200px,1fr,10%] gap-4">
