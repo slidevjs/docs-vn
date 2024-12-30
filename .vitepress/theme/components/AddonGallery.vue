@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { community, official } from '../../themes'
+import { community, official } from '../../addons'
 
 const props = defineProps({
   collection: {
@@ -8,11 +8,11 @@ const props = defineProps({
   },
 })
 
-const themes = computed(() => props.collection === 'official' ? official : community)
+const addons = computed(() => props.collection === 'official' ? official : community)
 </script>
 
 <template>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    <ThemeInfo v-for="theme of themes" :key="theme.id" :theme="theme" />
+    <AddonInfo v-for="addon of addons" :key="addon.id" :addon="addon" />
   </div>
 </template>
