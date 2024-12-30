@@ -1,16 +1,18 @@
-# Cấu hình Phím tắt
-
-> Có hiệu lực từ v0.20
+# Configure Shortcuts
 
 <Environment type="client" />
 
-Tạo `./setup/shortcuts.ts` với nội dung sau:
+## Getting started
 
-```ts
-import { defineShortcutsSetup, NavOperations } from '@slidev/types'
+Create `./setup/shortcuts.ts` with the following content:
 
-export default defineShortcutsSetup((nav: NavOperations) => {
+```ts twoslash
+import type { NavOperations, ShortcutOptions } from '@slidev/types'
+import { defineShortcutsSetup } from '@slidev/types'
+
+export default defineShortcutsSetup((nav: NavOperations, base: ShortcutOptions[]) => {
   return [
+    ...base, // keep the existing shortcuts
     {
       key: 'enter',
       fn: () => nav.next(),
@@ -25,8 +27,10 @@ export default defineShortcutsSetup((nav: NavOperations) => {
 })
 ```
 
-Với việc cài đặt, bạn có thể cung cấp cài đặt tùy chỉnh cho các phím tắt được đề cập trong [Navigation](/guide/navigation#navigation-bar). Cấu hình trên liên kết animation hoặc trang chiếu tiếp theo với <kbd>enter</kbd> và animation hoặc trang chiếu trước đó với <kbd>backspace</kbd>.
+In the setup function, you can customize the keyboard shortcuts by returning a new array of shortcuts. The above example binds the `next` operation to <kbd>enter</kbd> and the `prev` operation to <kbd>backspace</kbd>.
 
-Hàm cấu hình nhận một đối tượng với một số hàm navigation và trả về một mảng chứa một số cấu hình phím tắt. Tham khảo định nghĩa loại để biết thêm chi tiết.
+Please refer to [Navigation Actions](../guide/ui#navigation-actions) section for the default shortcuts and navigation operations.
 
-Tham khảo [useMagicKeys | VueUse](https://vueuse.org/core/useMagicKeys/) để biết thêm chi tiết về sự kiện được nhấn phím.
+## Key Binding Format
+
+The `key` of each shortcut can be either a string (e.g. `'Shift+Ctrl+A'`) or a computed boolean. Please refer to [`useMagicKeys` from VueUse](https://vueuse.org/core/useMagicKeys/) for

@@ -1,71 +1,112 @@
-# Tại sao chọn Slidev
+---
+outline: deep
+---
 
-Có rất nhiều trình tạo slide WYSIWYG đa năng, có mục đích chung, như [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) và [Apple Keynote](https://www.apple.com/keynote/). Chúng hoạt động khá tốt để tạo các slide đẹp với animation, biểu đồ và nhiều thứ khác, đồng thời rất trực quan và dễ học. Vậy tại sao phải làm Slidev?
+# Why Slidev
 
-Slidev nhằm mục đích cung cấp tính linh hoạt và tính tương tác cho các nhà lập trình để làm cho bản trình bày của họ trở nên thú vị, biểu cảm và hấp dẫn hơn bằng cách sử dụng các công cụ và công nghệ mà họ đã quen thuộc.
+There have been lots of feature-rich WYSIWYG slides makers like [Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) and [Apple Keynote](https://www.apple.com/keynote/) _(see [Comparisons](#comparisons))_. They are intuitive and easy to learn. So why bother making Slidev?
 
-Khi làm việc với các trình soạn thảo WYSIWYG, bạn rất dễ bị phân tâm bởi các tùy chọn tạo kiểu. Slidev khắc phục điều đó bằng cách tách nội dung và hình ảnh. Điều này cho phép bạn tập trung vào một thứ tại một thời điểm, đồng thời có thể sử dụng lại các chủ đề từ cộng đồng. Slidev không tìm cách thay thế hoàn toàn các slide deck builder khác. Thay vào đó, nó tập trung vào việc phục vụ cộng đồng nhà lập trình.
+Slidev aims to provide flexibility and interactivity for **developers** to make their presentations much more interesting, expressive, and attractive by using technologies they are familiar with. Slidev is also open source with a strong community.
 
-## Slidev
+Slidev is Markdown-based, which helps you **focus on the content**. Slidev is also Web-based, which means **nothing is impossible** - everything you can do in a web app can apply to your slides.
 
-![](/screenshots/cover.png)
+Slidev is also **progressive**. You can start with a super simple Markdown file, and then use the [built-in features](../features/) when you need them without any configuration. There are also [themes and addons](./theme-addon) you can optionally install to enhance your slides.
 
-Dưới đây là một số tính năng thú vị nhất của Slidev:
+![demo slide](/screenshots/cover.png) {#welcome}
 
-## Dựa trên Markdown
+## Features
 
-Slidev sử dụng định dạng Markdown mở rộng để lưu trữ và sắp xếp các slide của bạn trong một file văn bản thuần. Điều này cho phép bạn tập trung vào việc tạo nội dung. Và vì nội dung và style được tách biệt, điều này cũng giúp bạn có thể chuyển đổi giữa các chủ đề khác nhau một cách dễ dàng.
+### 📝 Markdown-based
 
-Tìm hiểu thêm về [Cú pháp Markdown của Slidev](/guide/syntax).
+Slidev uses an extended Markdown format to organize your slides in a single plain text file. This helps you focus on the content while allowing you to use Git and any editor you like.
 
-## Themable
+> Learn more: <LinkInline link="guide/syntax"/>.
 
-Các chủ đề cho Slidev có thể được chia sẻ và cài đặt bằng cách sử dụng các package npm. Sau đó, bạn áp dụng chúng chỉ với một dòng cấu hình.
+### 🧑‍💻 Developer Friendly
 
-Xem [thư viện chủ đề](/themes/gallery) hoặc [tìm hiểu cách viết chủ đề](/themes/write-a-theme).
+Slidev provides first-class support for code snippets for developers. It uses [Shiki](https://github.com/shikijs/shiki) to get the most accurate syntax highlighting. Slidev also supports <LinkInline link="features/shiki-magic-move"/> and <LinkInline link="features/twoslash"/>. These make Slidev the best choice for tech talks.
 
-## Thân thiện với nhà lập trình
+### 🎨 Themable
 
-Slidev cung cấp hỗ trợ tốt nhất các đoạn code cho các nhà lập trình. Nó hỗ trợ cả [Prism](https://prismjs.com/) và [Shiki](https://github.com/shikijs/shiki) để làm nổi bật cú pháp pixel hoàn hảo, trong khi vẫn có thể sửa đổi mã bất kỳ lúc nào thời gian. Với [trình soạn thảo Monaco](https://microsoft.github.io/monaco-editor/) được tích hợp sẵn, nó cũng cho phép bạn viết code / trình bày trực tiếp trong bản trình bày của mình với tính năng tự động hoàn thành, gõ di chuột và thậm chí hỗ trợ kiểm tra kiểu TypeScript.
+Themes for Slidev can be shared via npm packages. You apply a theme within one line of code.
 
-Tìm hiểu thêm về [đánh dấu](/custom/highlighters) và [cấu hình Monaco](/custom/config-monaco).
+Check out the [Theme Gallery](../resources/theme-gallery) for the beautiful themes made by the official team and the community.
 
-## Nhanh
+### ⚡ Fast
 
-Slidev được cung cấp bởi [Vite](https://vitejs.dev/), [Vue 3](https://v3.vuejs.org/) và [Windi CSS](https://windicss.org/), cung cấp cho bạn trải nghiệm tác giả tuyệt vời nhất. Mọi thay đổi bạn thực hiện sẽ phản ánh vào các slide của bạn **ngay lập tức**.
+Every change you make in the editor will be updated to your slides in the browser **instantly** without reloading, thanks to [Vite's HMR feature](https://vitejs.dev/guide/features.html#hot-module-replacement).
 
-Tìm thêm về [our tech stack](/guide/#tech-stack).
+### 🤹 Interactive & Expressive
 
-## Interactive & Expressive
+You can write Vue components and use them in your slides, which you can then interact with during the presentation to express your idea in a more interesting and intuitive way.
 
-Bạn có thể viết các component Vue tùy chỉnh và sử dụng chúng trực tiếp bên trong file markdown của mình. Bạn cũng có thể tương tác với chúng bên trong bản trình bày để thể hiện ý tưởng của mình theo cách trực quan và thú vị hơn.
+Slidev also has built-in support of <LinkInline link="features/monaco-editor"/>, which empowers you to do live coding in your presentation with auto-completion and hover messages.
 
-## Hỗ trợ Recording
+### 🎥 Recording Support
 
-Slidev cung cấp tính năng record và xem camera tích hợp. Bạn có thể chia sẻ bản trình bày của mình với chế độ xem camera hoặc ghi và lưu chúng riêng cho màn hình và camera của bạn. Tất cả chỉ với một bước, không cần công cụ bổ sung.
+Slidev provides built-in recording and camera view. You can share your presentation with your camera view inside, or record and save your screen and camera separately.
 
-Tìm hiểu thêm về [recording](/guide/recording).
+> Learn more: <LinkInline link="features/recording"/>.
 
-## Portable
+### 📤 Portable
 
-Xuất các trang trình bày của bạn thành PDF, PNG hoặc thậm chí là Ứng dụng một trang có thể lưu trữ (SPA) chỉ với một lệnh duy nhất và chia sẻ chúng ở mọi nơi.
+You can export your slides into PDF, PPTX, PNGs, or even a single-page application (SPA) via a single command. Then you can share or host it anywhere you like.
 
-Đọc thêm về điều đó trong [tài liệu xuất](/guide/exporting).
+> Learn more: <LinkInline link="guide/exporting"/> and <LinkInline link="guide/hosting"/>.
 
-## Hackable
+### 🛠 Hackable
 
-Được hỗ trợ bởi công nghệ web, bất cứ điều gì có thể được thực hiện trong một ứng dụng web cũng có thể thực hiện được với Slidev. Ví dụ: WebGL, API requests, iframes hoặc thậm chí là chia sẻ trực tiếp. Nó tùy thuộc vào trí tưởng tượng của bạn!
+Because Slidev is web-based, everything that can be done in a normal web app can be applied to your slides. For example, WebGL, API requests, iframes, or even live sharing. It's up to your imagination!
 
-## Hãy thử một lần
+> Learn more: [Customization](../custom/).
 
-Thử với Slidev sẽ cho bạn biết hơn một nghìn từ. Bạn chỉ cần một lệnh:
+## Comparisons
 
-```bash
-$ npm init slidev
-```
+::: details Slidev vs. Microsoft PowerPoint / Apple Keynote
 
-Hoặc xem trước nó:
+[Microsoft PowerPoint](https://www.microsoft.com/en-us/microsoft-365/powerpoint) and [Apple Keynote](https://www.apple.com/keynote/) are feature-rich WYSIWYG slides makers. They are intuitive and easy to learn, which makes them one of the best choices for non-developers.
 
-<div class="aspect-9/16 relative">
-<iframe class="rounded w-full shadow-md border-none" src="https://www.youtube.com/embed/eW7v-2ZKZOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+Compared to them, Slidev has the following advantages:
+
+- Developer-friendly: Code snippets are first-class citizens in Slidev.
+- Markdown-based: Focus on the content, and version control your slides with Git.
+- Web-based: Everything you can do in a web app can apply to your slides.
+- Hackable: Customize anything you like with web technologies.
+- Open source: Slidev is completely open source, and has a strong community.
+
+:::
+
+::: details Slidev vs. Reveal.js
+
+[Reveal.js](https://revealjs.com/) is a popular HTML presentation framework. It is also open source and supports Markdown.
+
+Compared to Reveal.js, Slidev has the following advantages:
+
+- More concise: Slidev uses an extended Markdown format, while Reveal.js encourages you to write HTML to organize your slides.
+- Vue support: You can use Vue components in Slidev to make your slides interactive.
+- Vite-based: Slidev is built on top of Vite, which provides instant HMR and flexible plugin API.
+- Atomatic CSS: You can [UnoCSS](https://unocss.dev/) out of the box to style your slides.
+
+:::
+
+::: details Slidev vs. Marp
+
+[Marp](https://marp.app/) is a Markdown presentation tool that focuses on simplicity and portability. It is also open source and supports Markdown.
+
+Compared to Marp, Slidev has the following advantages:
+
+- The same simplicity: Slidev's slides can start as simple as Marp's.
+- More features: Slidev supports many features that Marp doesn't.
+- Vue support: You can use Vue components in Slidev to make your slides interactive.
+- Vite-based: Slidev is built on top of Vite, which provides instant HMR and flexible plugin API.
+- Atomatic CSS: You can [UnoCSS](https://unocss.dev/) out of the box to style your slides.
+
+:::
+
+## Give it a Try
+
+Playing around with Slidev will tell you more than thousands of words. Check the <LinkInline link="guide/"/> guide to create your first Slidev project in one click or one command.
+
+Or you can have a quick preview of it:
+
+<iframe class="aspect-16/9 rounded-xl w-full shadow-md border-none" src="https://www.youtube.com/embed/eW7v-2ZKZOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
