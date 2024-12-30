@@ -1,71 +1,177 @@
-# Các tùy chỉnh
+# Tùy chỉnh
 
-Slidev hoàn toàn có thể tùy chỉnh, từ kiểu dáng đến cấu hình công cụ. Nó cho phép bạn định cấu hình các công cụ bên dưới ([Vite](/custom/config-vite), [Windi CSS](/custom/config-windicss), [Monaco](/custom/config-monaco), v.v...)
+Slidev hoàn toàn có thể tùy chỉnh, từ style đến cấu hình công cụ. Nó cho phép bạn cấu hình các công cụ bên dưới ([Vite](/custom/config-vite), [UnoCSS](/custom/config-unocss), [Monaco](/custom/config-monaco), v.v.).
 
-## Cấu hình Frontmatter
+## Cấu hình Bộ Slide {#headmatter}
 
-Bạn có thể định cấu hình Slidev trong frontmatter của trang trình bày đầu tiên của mình, phần sau hiển thị giá trị mặc định cho mỗi tùy chọn.
+Bạn có thể cấu hình toàn bộ dự án slide trong phần frontmatter của slide **đầu tiên** (tức là headmatter). Dưới đây là các giá trị mặc định cho từng tùy chọn:
 
 ```yaml
 ---
-# theme id or package name
-theme: 'default'
-# title of your slide, will auto infer from the first header if not specified
-title: ''
-# titleTemplate for the webpage, `%s` will be replaced by the page's title
+# theme id, package name, hoặc local path
+# Tìm hiểu thêm: https://sli.dev/guide/theme-addon.html#use-theme
+theme: default
+# addons, có thể là danh sách package names hoặc local paths
+# Tìm hiểu thêm: https://sli.dev/guide/theme-addon.html#use-addon
+addons: []
+# title của slide, sẽ được suy ra từ title đầu tiên nếu không được chỉ định
+title: Slidev
+# titleTemplate cho trang web, `%s` sẽ được thay thế bằng title của bộ slide
 titleTemplate: '%s - Slidev'
+# thông tin về slide của bạn, có thể là Markdown string
+info: false
+# field tác giả cho file PDF hoặc PPTX export
+author: Your Name Here
+# field từ khóa cho file PDF export, cách nhau bởi dấu phẩy
+keywords: keyword1,keyword2
 
-# enabled pdf downloading in SPA build, can also be a custom url
-download: true
-# syntax highlighter, can be 'prism' or 'shiki'
-highlighter: 'prism'
-# show line numbers in code blocks
+# bật chế độ thuyết trình, có thể là boolean, 'dev' hoặc 'build'
+presenter: true
+# bật trình export trình duyệt, có thể là boolean, 'dev' hoặc 'build'
+browserExporter: dev
+# bật tải xuống PDF trong bản build SPA, cũng có thể là một URL tùy chỉnh
+download: false
+# tên file export
+exportFilename: slidev-exported
+# các options export
+# sử dụng CLI options export với định dạng camelCase
+# Tìm hiểu thêm: https://sli.dev/guide/exporting.html
+export:
+  format: pdf
+  timeout: 30000
+  dark: false
+  withClicks: false
+  withToc: false
+# bật twoslash, có thể là boolean, 'dev' hoặc 'build'
+twoslash: true
+# hiển thị số dòng trong các khối code
 lineNumbers: false
-# enable monaco editor, default to dev only
-monaco: 'dev'
+# bật trình chỉnh sửa monaco, có thể là boolean, 'dev' hoặc 'build'
+monaco: true
+# Nguồn load loại monaco, có thể là 'cdn', 'local' hoặc 'none'
+monacoTypesSource: local
+# chỉ định rõ các package local bổ sung để import loại monaco
+monacoTypesAdditionalPackages: []
+# chỉ định rõ các module local bổ sung làm dependencies của monaco có thể chạy
+monacoRunAdditionalDeps: []
+# download các tài sản từ xa vào local bằng vite-plugin-remote-assets, có thể là boolean, 'dev' hoặc 'build'
+remoteAssets: false
+# điều khiển liệu văn bản trong slide có thể được chọn không
+selectable: true
+# bật record slide, có thể là boolean, 'dev' hoặc 'build'
+record: dev
+# bật menu ngữ cảnh của Slidev, có thể là boolean, 'dev' hoặc 'build'
+contextMenu: true
+# bật wake lock, có thể là boolean, 'dev' hoặc 'build'
+wakeLock: true
+# chụp ảnh cho từng slide trong phần tổng quan
+overviewSnapshots: false
 
-# force color schema for the slides, could be 'auto', 'light', or 'dark'
-colorSchema: 'auto'
-# router mode for vue-router, could be "history" or "hash"
-routerMode: 'history'
-# aspect ratio for the slides
-aspectRatio: '16/9'
-# real width of the canvas, unit in px
+# bắt buộc sử dụng bảng màu cho slide, có thể là 'auto', 'light', hoặc 'dark'
+colorSchema: auto
+# chế độ router cho vue-router, có thể là "history" hoặc "hash"
+routerMode: history
+# tỷ lệ khung hình cho slide
+aspectRatio: 16/9
+# chiều rộng thực của canvas, đơn vị px
 canvasWidth: 980
+# được sử dụng để tùy chỉnh theme, sẽ inject các style gốc dưới dạng `--slidev-theme-x` cho thuộc tính `x`
+themeConfig:
+  primary: '#5d8392'
 
-# fonts will be auto imported from Google fonts
-# Learn more: https://sli.dev/custom/fonts
+# favicon, có thể là local file path hoặc URL
+favicon: 'https://cdn.jsdelivr.net/gh/slidevjs/slidev/assets/favicon.png'
+# URL của PlantUML server được sử dụng để render diagrams
+# Tìm hiểu thêm: https://sli.dev/features/plantuml.html
+plantUmlServer: https://www.plantuml.com/plantuml
+# phông chữ sẽ được tự động import từ Google fonts
+# Tìm hiểu thêm: https://sli.dev/custom/config-fonts.html
 fonts:
-  sans: 'Roboto'
-  serif: 'Roboto Slab'
-  mono: 'Fira Code'
+  sans: Roboto
+  serif: Roboto Slab
+  mono: Fira Code
 
-# default frontmatter applies to all slides
+# frontmatter mặc định áp dụng cho tất cả slide
 defaults:
-  layout: 'default'
+  layout: default
   # ...
 
-# information for your slides, can be a markdown string
-info: |
-  ## Slidev
-  Trang trình bày [Slidev](http://sli.dev/) đầu tiên của tôi!
+# options vẽ
+# Tìm hiểu thêm: https://sli.dev/guide/drawing.html
+drawings:
+  enabled: true
+  persist: false
+  presenterOnly: false
+  syncAll: true
+
+# thuộc tính thẻ HTML
+htmlAttrs:
+  dir: ltr
+  lang: en
 ---
 ```
 
-Xem [định nghĩa loại](https://github.com/slidevjs/slidev/blob/main/packages/types/src/types.ts#L29) để có thêm tùy chọn.
+Xem thêm [định nghĩa kiểu](https://github.com/slidevjs/slidev/blob/main/packages/types/src/config.ts) để biết thêm chi tiết.
 
-## Cấu trúc thư mục
+## Cấu hình theo Slide {#frontmatter}
 
-Slidev sử dụng các quy ước cấu trúc thư mục để thu nhỏ bề mặt cấu hình và làm cho các phần mở rộng trong chức năng trở nên linh hoạt và trực quan.
+Mỗi slide cũng có thể nhận cấu hình trong khối frontmatter của nó. Dưới đây là các giá trị mặc định cho từng option:
 
-Tham khảo phần [Cấu trúc thư mục](/custom/directory-structure).
+```yaml
+---
+# tùy chỉnh số lượng nhấp chuột
+# Tìm hiểu thêm: https://sli.dev/guide/animations.html#custom-total-clicks-count
+clicks: 0
+# tùy chỉnh số lượng nhấp chuột ban đầu
+clicksStart: 0
+# hoàn toàn disable và hide slide
+disabled: false
+# giống như `disabled`
+hide: false
+# hide slide trong các <Toc> components
+hideInToc: false
+# xác định layout component được áp dụng cho slide
+layout: <"cover" if the slide is the first slide, otherwise "default">
+# ghi đè cấp độ title cho các components <TitleRenderer> và <Toc>
+# chỉ khi `title` cũng được khai báo
+level: 1
+# mount slide này trước khi vào
+preload: true
+# tạo route alias có thể sử dụng trong URL hoặc với component <Link>
+routeAlias: undefined # hoặc string
+# bao gồm một file markdown
+# Tìm hiểu thêm: https://sli.dev/guide/syntax.html#importing-slides
+src: undefined # hoặc string
+# ghi đè title cho các components <TitleRenderer> và <Toc>
+# chỉ khi `title` cũng được khai báo
+title: undefined # hoặc string
+# định nghĩa transition giữa slide này và slide tiếp theo
+# Tìm hiểu thêm: https://sli.dev/guide/animations.html#slide-transitions
+transition: undefined # hoặc string | TransitionProps
+# tùy chỉnh tỷ lệ zoom
+# hữu ích cho các slide có nhiều nội dung
+zoom: 1
+# sử dụng làm vị trí của các elements kéo được
+# Tìm hiểu thêm: https://sli.dev/features/draggable.html
+dragPos: {} # type: Record<string,string>
+---
+```
 
-## Config Tools
+## Cấu trúc Thư Mục
 
-- [Highlighters](/custom/highlighters)
-- [Configure Vue](/custom/config-vue)
-- [Configure Vite](/custom/config-vite)
-- [Configure Windi CSS](/custom/config-windicss)
-- [Configure Monaco](/custom/config-monaco)
-- [Configure KaTeX](/custom/config-katex)
-- [Configure Mermaid](/custom/config-mermaid)
+Slidev sử dụng các quy ước cấu trúc thư mục để giảm thiểu cấu hình và làm cho việc mở rộng chức năng trở nên linh hoạt và trực quan.
+
+Tham khảo phần [Cấu trúc Thư Mục](/custom/directory-structure).
+
+## Công Cụ Cấu Hình
+
+<script setup>
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
+import customizations from '../.vitepress/customizations'
+</script>
+
+<li v-for="c of customizations.slice(2)" :key="c.text">
+  <VPLink :href="c.link">
+    {{ c.text }}
+  </VPLink>
+</li>
