@@ -1,12 +1,8 @@
 # [sli.dev](https://sli.dev)
 
-> [!WARNING]
->
-> This translation is out-dated and not maintained. Please refer to the [English documentation](https://sli.dev) instead.
+Documentation for [Slidev](https://github.com/slidevjs/slidev)
 
-Tài liệu cho [Slidev](https://github.com/slidevjs/slidev)
-
-## All Translations
+## Translations
 
 > [!WARNING]
 >
@@ -34,10 +30,10 @@ pnpm i
 pnpm run dev
 ```
 
-Và sau đó truy cập `http://localhost:3000`
+And then visit `http://localhost:3000`
 
-Hoặc cài đặt [Vite extension cho VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) để chỉnh sửa song song.
+Or install the [Vite extension for VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) to edit side-by-side.
 
-## Trợ giúp về phiên dịch
+## Help on Translating
 
-See [TRANSLATIONS.md](/TRANSLATIONS.md)
+Please join our [Discord Server](https://chat.sli.dev) and contact the maintainers.

@@ -8,7 +8,7 @@ Các slide của Slidev được viết dưới dạng các file Markdown, đư�
 
 Trong Slidev Markdown, bạn không chỉ có thể sử dụng [các tính năng cơ bản của Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) như thông thường, mà Slidev còn cung cấp thêm các tính năng để nâng cao các slide của bạn. Phần này sẽ đề cập đến cú pháp do Slidev giới thiệu. Vui lòng đảm bảo bạn đã nắm vững cú pháp Markdown cơ bản trước khi đọc hướng dẫn này.
 
-## Dấu phân cách Slide {#slide-separators}
+## Dấu phân cách slide {#slide-separators}
 
 Sử dụng `---` được đệm với một dòng mới để phân tách các slide của bạn.
 
@@ -31,7 +31,7 @@ console.log('Hello, World!')
 
 # Slide 3
 
-Sử dụng các class UnoCSS và các Vue components để style và làm phong phú các slide của bạn:
+Sử dụng các class UnoCSS và các component Vue để style và làm phong phú các slide của bạn:
 
 <div class="p-3">
   <Tweet id="..." />
@@ -40,7 +40,7 @@ Sử dụng các class UnoCSS và các Vue components để style và làm phong
 
 ## Frontmatter & Headmatter {#frontmatter}
 
-Ở đầu mỗi slide, bạn có thể thêm một [frontmatter](https://jekyllrb.com/docs/front-matter/) tùy chọn để cấu hình slide. Khối frontmatter đầu tiên được gọi là **headmatter** và có thể cấu hình toàn bộ bộ slide. Các phần còn lại là **frontmatters** cho từng slide riêng lẻ. Văn bản trong headmatter hoặc frontmatter nên là một object theo định dạng [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/). Ví dụ:
+Ở đầu mỗi slide, bạn có thể thêm một option [frontmatter](https://jekyllrb.com/docs/front-matter/) để cấu hình slide. Khối frontmatter đầu tiên được gọi là **headmatter** và có thể cấu hình toàn bộ bộ slide. Các phần còn lại là **frontmatters** cho từng slide riêng lẻ. Văn bản trong headmatter hoặc frontmatter nên là một object theo định dạng [YAML](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/). Ví dụ:
 
 <!-- eslint-skip -->
 
@@ -85,7 +85,7 @@ Các cấu hình bạn có thể thiết lập được mô tả trong các ph�
 
 <LinkCard link="features/vscode-extension" />
 
-Cũng có một format frontmatter khác có thể sử dụng:
+Cũng có một định dạng frontmatter khác có thể sử dụng:
 
 <LinkCard link="features/block-frontmatter" />
 

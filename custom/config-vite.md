@@ -1,4 +1,4 @@
-# Cấu hình Vite và Plugin
+# Cấu hình Vite và các plugin
 
 <Environment type="node" />
 
@@ -6,7 +6,7 @@ Slidev được hỗ trợ bởi [Vite](https://vitejs.dev/) bên dưới. Đi�
 
 Nếu bạn có file `vite.config.ts`, nó sẽ được sử dụng và merge với cấu hình Vite được cung cấp bởi Slidev, theme và các addon.
 
-## Cấu hình Plugin nội bộ
+## Cấu hình các plugin nội bộ
 
 Slidev tích hợp sẵn các plugin sau vào Vite:
 
@@ -45,7 +45,7 @@ export default defineConfig({
 })
 ```
 
-Xem [khai báo kiểu](https://github.com/slidevjs/slidev/blob/main/packages/types/src/vite.ts#L11) để biết thêm các options.
+Xem [khai báo type](https://github.com/slidevjs/slidev/blob/main/packages/types/src/vite.ts#L11) để biết thêm các option.
 
 ::: warning
 Không được phép thêm lại các plugin đã được Slidev sử dụng nội bộ. Ví dụ, thay vì:
@@ -63,5 +63,5 @@ export default defineConfig({
 })
 ```
 
-Vui lòng chuyển các Vue options vào field `slidev.vue` như đã mô tả ở trên.
+Vui lòng chuyển các option Vue vào field `slidev.vue` như đã mô tả ở trên.
 :::
