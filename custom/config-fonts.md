@@ -1,59 +1,59 @@
-# Configure Fonts
+# Cấu hình phông chữ
 
-While you can use HTML and CSS to customize the fonts and style for your slides as you want, Slidev also provides a convenient way to use them effortlessly.
+Mặc dù bạn có thể sử dụng HTML và CSS để tùy chỉnh phông chữ và style cho các slide theo ý muốn, Slidev cũng cung cấp một cách tiện lợi để sử dụng chúng một cách dễ dàng.
 
-In your frontmatter, configure as the following:
+Trong phần frontmatter, cấu hình như sau:
 
 ```yaml
 ---
 fonts:
-  # basically the text
+  # cơ bản là văn bản
   sans: Robot
-  # use with `font-serif` css class from UnoCSS
+  # sử dụng với class css `font-serif` từ UnoCSS
   serif: Robot Slab
-  # for code blocks, inline code, etc.
+  # cho khối code, inline code, v.v.
   mono: Fira Code
 ---
 ```
 
-And that's all.
+Vậy là xong.
 
-Fonts will be **imported automatically from [Google Fonts](https://fonts.google.com/)**. That means you can use any fonts available on Google Fonts directly.
+Phông chữ sẽ được **tự động import từ [Google Fonts](https://fonts.google.com/)**. Điều này có nghĩa là bạn có thể sử dụng bất kỳ phông chữ nào có sẵn trên Google Fonts trực tiếp.
 
-## Local Fonts
+## Phông chữ cục bộ
 
-By default, Slidev assumes all the fonts specified via `fonts` configurations come from Google Fonts. If you want to use local fonts, specify the `fonts.local` to opt-out the auto-importing.
+Theo mặc định, Slidev giả định tất cả các phông chữ được chỉ định thông qua cấu hình `fonts` đến từ Google Fonts. Nếu bạn muốn sử dụng phông chữ cục bộ, hãy chỉ định `fonts.local` để không tự động import phông chữ.
 
 ```yaml
 ---
 fonts:
-  # like font-family in css, you can use `,` to separate multiple fonts for fallback
+  # giống như font-family trong css, bạn có thể dùng `,` để phân tách nhiều phông chữ dự phòng
   sans: 'Helvetica Neue,Robot'
-  # mark 'Helvetica Neue' as local font
+  # đánh dấu 'Helvetica Neue' là phông chữ cục bộ
   local: Helvetica Neue
 ---
 ```
 
-## Weights & Italic
+## Độ dày & chữ nghiêng
 
-By default, Slidev imports three weights `200`,`400`,`600` for each font. You can configure them by:
+Theo mặc định, Slidev import ba độ dày (weight) `200`,`400`,`600` cho mỗi phông chữ. Bạn có thể cấu hình chúng như sau:
 
 ```yaml
 ---
 fonts:
   sans: Robot
-  # default
+  # mặc định
   weights: '200,400,600'
-  # import italic fonts, default `false`
+  # import phông chữ nghiêng, mặc định là `false`
   italic: false
 ---
 ```
 
-This configuration applies to all web fonts. For more fine-grained controls of each font's weights, you will need to manually import them with [HTML](/custom/directory-structure.html#index-html) and CSS.
+Cấu hình này áp dụng cho tất cả phông chữ web. Để kiểm soát chi tiết hơn độ dày của từng phông chữ, bạn cần nhập thủ công bằng [HTML](/custom/directory-structure.html#index-html) và CSS.
 
-## Fallback Fonts
+## Phông chữ dự phòng
 
-For most of the scenarios, you only need to specify the "special font" and Slidev will append the fallback fonts for you, for example:
+Trong hầu hết các trường hợp, bạn chỉ cần chỉ định "phông chữ đặc biệt" và Slidev sẽ thêm các phông chữ dự phòng cho bạn, ví dụ:
 
 ```yaml
 ---
@@ -64,7 +64,7 @@ fonts:
 ---
 ```
 
-will result in
+sẽ cho kết quả:
 
 <!-- eslint-skip -->
 
@@ -80,7 +80,7 @@ will result in
 }
 ```
 
-If you want to disable the fallback fonts, configure as the following:
+Nếu bạn muốn disable phông chữ dự phòng, hãy cấu hình như sau:
 
 ```yaml
 ---
@@ -90,12 +90,12 @@ fonts:
 ---
 ```
 
-## Providers
+## Nhà cung cấp
 
-- Options: `google` | `none`
-- Default: `google`
+- Các option: `google` | `none`
+- Mặc định: `google`
 
-Currently, only Google Fonts is supported, we are planning to add more providers in the future. Specify to `none` will disable the auto-importing feature entirely and treat all the fonts locally.
+Hiện tại, chỉ có Google Fonts được hỗ trợ, chúng tôi đang có kế hoạch bổ sung thêm nhiều nhà cung cấp trong tương lai. Chỉ định `none` sẽ disable hoàn toàn tính năng tự động import và coi tất cả các phông chữ là cục bộ.
 
 ```yaml
 ---
