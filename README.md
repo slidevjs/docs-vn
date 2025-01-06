@@ -1,12 +1,12 @@
 # [sli.dev](https://sli.dev)
 
-Documentation for [Slidev](https://github.com/slidevjs/slidev)
+Tài liệu [Slidev](https://github.com/slidevjs/slidev)
 
-## Translations
+## Dịch thuật
 
 > [!WARNING]
 >
-> Translations with strikethroughs are no longer maintained. The content is outdated and not encouraged to refer.
+> Các bản dịch có gạch ngang không còn được duy trì. Nội dung đã lỗi thời và không khuyến khích tham khảo.
 
 |                           | Repo                                           |                             Site | Maintainers                                                           |
 | ------------------------- | ---------------------------------------------- | -------------------------------: | --------------------------------------------------------------------- |
@@ -21,7 +21,7 @@ Documentation for [Slidev](https://github.com/slidevjs/slidev)
 | <del>Ελληνικά</del>       | [docs-el](https://github.com/slidevjs/docs-el) | [el.sli.dev](https://el.sli.dev) | [@GeopJr](https://github.com/GeopJr)                                  |
 | <del>日本語</del>         | [docs-ja](https://github.com/slidevjs/docs-el) | [ja.sli.dev](https://ja.sli.dev) | [@IkumaTadokoro](https://github.com/IkumaTadokoro)                    |
 
-## Start Server Locally
+## Khởi động máy chủ cục bộ
 
 ```
 npm i -g pnpm
@@ -30,10 +30,10 @@ pnpm i
 pnpm run dev
 ```
 
-And then visit `http://localhost:3000`
+Sau đó, truy cập vào `http://localhost:3000`
 
-Or install the [Vite extension for VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) to edit side-by-side.
+Hoặc cài đặt [Vite extension for VS Code](https://marketplace.visualstudio.com/items?itemName=antfu.vite) để chỉnh sửa song song.
 
-## Help on Translating
+## Hỗ trợ dịch thuật
 
-Please join our [Discord Server](https://chat.sli.dev) and contact the maintainers.
+Vui lòng tham gia [Discord Server](https://chat.sli.dev) của chúng tôi và liên hệ với những người bảo trì.
