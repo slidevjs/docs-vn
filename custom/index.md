@@ -48,9 +48,9 @@ twoslash: true
 lineNumbers: false
 # enable trình chỉnh sửa monaco, có thể là boolean, 'dev' hoặc 'build'
 monaco: true
-# Nguồn load các type monaco, có thể là 'cdn', 'local' hoặc 'none'
+# Nguồn load các kiểu dữ liệu monaco, có thể là 'cdn', 'local' hoặc 'none'
 monacoTypesSource: local
-# chỉ định rõ các package local bổ sung để import các type monaco
+# chỉ định rõ các package local bổ sung để import các kiểu dữ liệu monaco
 monacoTypesAdditionalPackages: []
 # chỉ định rõ các module local bổ sung làm dependencies của monaco có thể chạy
 monacoRunAdditionalDeps: []
@@ -111,7 +111,7 @@ htmlAttrs:
 ---
 ```
 
-Xem thêm [định nghĩa type](https://github.com/slidevjs/slidev/blob/main/packages/types/src/config.ts) để biết thêm chi tiết.
+Xem thêm [định nghĩa kiểu dữ liệu](https://github.com/slidevjs/slidev/blob/main/packages/types/src/config.ts) để biết thêm chi tiết.
 
 ## Cấu hình theo slide {#frontmatter}
 

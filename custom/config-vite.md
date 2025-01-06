@@ -45,7 +45,7 @@ export default defineConfig({
 })
 ```
 
-Xem [khai báo type](https://github.com/slidevjs/slidev/blob/main/packages/types/src/vite.ts#L11) để biết thêm các option.
+Xem [khai báo kiểu dữ liệu](https://github.com/slidevjs/slidev/blob/main/packages/types/src/vite.ts#L11) để biết thêm các option.
 
 ::: warning
 Không được phép thêm lại các plugin đã được Slidev sử dụng nội bộ. Ví dụ, thay vì:

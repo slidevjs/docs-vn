@@ -8,15 +8,15 @@ Tạo file `./setup/monaco.ts` với nội dung sau:
 import { defineMonacoSetup } from '@slidev/types'
 
 export default defineMonacoSetup(async (monaco) => {
-  // use `monaco` to configure
+  // sử dụng `monaco` để cấu hình
 })
 ```
 
 Tim hiểu thêm về [cấu hình Monaco](https://github.com/Microsoft/monaco-editor).
 
-## TypeScript Types
+## Các kiểu dữ liệu TypeScript
 
-Khi sử dụng TypeScript với Monaco, các types cho các dependencies sẽ được cài đặt tự động trên phía client.
+Khi sử dụng TypeScript với Monaco, các kiểu dữ liệu của các phụ thuộc sẽ được cài đặt tự động ở phía máy khách.
 
 ````md
 ```ts {monaco}
@@ -27,11 +27,11 @@ const counter = ref(0)
 ```
 ````
 
-Trong ví dụ trên, hãy đảm bảo rằng `vue` và `@vueuse/core` được cài đặt là các dependencies / devDependencies trong dự án của bạn. Slidev sẽ xử lý phần còn lại để tự động làm việc với các types cho trình editor. Khi được triển khai dưới dạng SPA, các types này cũng sẽ được đóng gói cho việc static host.
+Trong ví dụ trên, hãy đảm bảo rằng `vue` và `@vueuse/core` được cài đặt là các phụ thuộc (dependencies / devDependencies) trong dự án của bạn. Slidev sẽ xử lý phần còn lại để tự động làm việc với các kiểu dữ liệu cho trình soạn thảo. Khi được triển khai dưới dạng SPA, các kiểu dữ liệu này cũng sẽ được đóng gói cho việc static host.
 
-### Các type bổ sung
+### Các kiểu dữ liệu bổ sung
 
-Slidev sẽ quét tất cả các khối code Monaco trong các slide của bạn và tự động import các type cho những thư viện mà bạn đã sử dụng. Trong trường hợp Slidev bỏ sót một số type, bạn có thể chỉ định rõ ràng các package bổ sung để import các type cho chúng:
+Slidev sẽ quét tất cả các khối code Monaco trong các slide của bạn và tự động import các kiểu dữ liệu cho những thư viện mà bạn đã sử dụng. Trong trường hợp Slidev bỏ sót một số kiểu dữ liệu, bạn có thể chỉ định rõ ràng các package bổ sung để import các kiểu dữ liệu cho chúng:
 
 ```md
 ---
@@ -41,9 +41,9 @@ monacoTypesAdditionalPackages:
 ---
 ```
 
-### Tự động nhận type
+### Tự động nhận kiểu dữ liệu
 
-Bạn có thể tùy chọn chuyển sang load các type từ CDN bằng cách thiết lập headmatter sau:
+Bạn có thể tùy chọn chuyển sang load các kiểu dữ liệu từ CDN bằng cách thiết lập headmatter sau:
 
 ```md
 ---
@@ -51,13 +51,13 @@ monacoTypesSource: ata
 ---
 ```
 
-Tính năng này được hỗ trợ bởi [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) và hoạt động hoàn toàn ở client-side.
+Tính năng này được hỗ trợ bởi [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) và hoạt động hoàn toàn ở phía máy khách.
 
 ## Cấu hình theme
 
 Kể từ v0.48.0, Monaco sẽ tái sử dụng theme Shiki mà bạn đã cấu hình trong [file cấu hình của Shiki](/custom/config-highlighter#configure-shiki), được hỗ trợ bởi [`@shikijs/monaco`](https://shiki.style/packages/monaco). Bạn không cần phải lo lắng về điều này nữa, và nó sẽ có một style nhất quán với phần còn lại của các khối code trong Slidev.
 
-## Cấu hình Trình soạn thảo
+## Cấu hình trình soạn thảo
 
 > Có sẵn từ v0.43.0
 
@@ -94,6 +94,6 @@ monaco: false # cũng có thể là `dev` hoặc `build` để enable có điề
 ---
 ```
 
-## Cấu hình code runners
+## Cấu hình Code Runners
 
-Để cấu hình cách Monaco Runner chạy code hoặc thêm hỗ trợ cho các ngôn ngữ tùy chỉnh, vui lòng tham khảo [Cấu hình code runners](/custom/config-code-runners).
+Để cấu hình cách Monaco Runner chạy code hoặc thêm hỗ trợ cho các ngôn ngữ tùy chỉnh, vui lòng tham khảo [Cấu hình Code Runners](/custom/config-code-runners).
