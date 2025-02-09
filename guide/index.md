@@ -2,13 +2,13 @@
 outline: deep
 ---
 
-# Getting Started
+# Bắt đầu
 
-Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> is a web-based slides maker and presenter. It's designed for developers to focus on writing content in Markdown. With the power of web technologies like Vue, you are able to deliver pixel-perfect designs with interactive demos to your presentation.
+Slidev <sup>(slide + dev, **/slaɪdɪv/**)</sup> là một công cụ tạo và trình bày slide trên web. Được thiết kế cho các nhà phát triển, Slidev tập trung vào việc viết nội dung bằng Markdown. Với sức mạnh của các công nghệ web như Vue, bạn có thể tạo ra các thiết kế chính xác đến từng pixel và các bản trình bày tương tác.
 
 ::: tip
 
-You can learn more about the rationale behind this project in <LinkInline link="guide/why" />.
+Bạn có thể tìm hiểu thêm về lý do đằng sau dự án này tại <LinkInline link="guide/why" />.
 
 :::
 
@@ -32,17 +32,17 @@ You can learn more about the rationale behind this project in <LinkInline link="
 
 <!-- <FeaturesAnimation /> -->
 
-## Create Slides
+## Tạo slide
 
-### Try it Online
+### Dùng thử trực tuyến
 
-Start Slidev right in your browser with StackBlitz: [sli.dev/new](https://sli.dev/new)
+Bắt đầu Slidev ngay trong trình duyệt với StackBlitz: [sli.dev/new](https://sli.dev/new)
 
-### Create Locally
+### Tạo tại máy cục bộ
 
-> Requires [Node.js](https://nodejs.org) >= 18.0 installed.
+> Yêu cầu cài đặt [Node.js](https://nodejs.org) >= 18.0.
 
-Run the following command to create a new Slidev project locally:
+Chạy lệnh sau để tạo dự án Slidev mới tại máy cục bộ:
 
 ::: code-group
 
@@ -60,11 +60,11 @@ yarn create slidev
 
 :::
 
-Follow the prompts to start your slides project. The slides content is in `slides.md`, which initially includes demos of most the Slidev features. For more information about the Markdown syntax, please check <LinkInline link="guide/syntax" />.
+Làm theo hướng dẫn để bắt đầu dự án slide của bạn. Nội dung slide nằm trong file `slides.md`, ban đầu bao gồm các bản demo của hầu hết các tính năng của Slidev. Để biết thêm thông tin về cú pháp Markdown, hãy kiểm tra <LinkInline link="guide/syntax" />.
 
-:::: details Single file usage (not recommended)
+:::: details Sử dụng file đơn (không khuyến nghị)
 
-If you prefer to have a single Markdown file as your slides, you can install the Slidev CLI globally:
+Nếu bạn thích sử dụng một file Markdown duy nhất làm slide, bạn có thể cài đặt CLI của Slidev global:
 
 ::: code-group
 
@@ -82,7 +82,7 @@ yarn global add @slidev/cli
 
 :::
 
-Then, you can create and start a single file slides via:
+Sau đó, bạn có thể tạo và bắt đầu một file slide đơn bằng:
 
 ```bash
 slidev slides.md
@@ -90,17 +90,17 @@ slidev slides.md
 
 ::::
 
-## Basic Commands
+## Các lệnh cơ bản
 
-Slidev provides a set of commands in its CLI. Here are some common ones:
+Slidev cung cấp một tập lệnh trong CLI của nó. Dưới đây là một số lệnh phổ biến:
 
-- `slidev` - Start the dev server. See [the dev command](../builtin/cli#dev).
-- `slidev export` - Export the slides to PDF, PPTX, or PNGs. See <LinkInline link="guide/exporting" />.
-- `slidev build` - Build the slides as a static web application. See <LinkInline link="guide/hosting" />.
-- `slidev format` - Format the slides. See [the format command](../builtin/cli#format).
-- `slidev --help` - Show the help message
+- `slidev` - Start server dev. Xem [lệnh dev](../builtin/cli#dev).
+- `slidev export` - Export slide thành PDF, PPTX hoặc PNG. Xem <LinkInline link="guide/exporting" />.
+- `slidev build` - Build slide thành một ứng dụng web tĩnh. Xem <LinkInline link="guide/hosting" />.
+- `slidev format` - Format slide. Xem [lệnh format](../builtin/cli#format).
+- `slidev --help` - Hiển thị thông báo trợ giúp.
 
-To run these commands, you can add them to your `package.json` scripts (which has been done for you if the project was created via `npm init slidev`):
+Để chạy các lệnh này, bạn có thể thêm chúng vào các script trong `package.json` (điều này đã được thiết lập sẵn nếu dự án được tạo bằng `npm init slidev`):
 
 ```json
 {
@@ -112,35 +112,35 @@ To run these commands, you can add them to your `package.json` scripts (which ha
 }
 ```
 
-Then, you can simply run `npm run dev`, `npm run build`, and `npm run export`.
+Sau đó, bạn chỉ cần chạy `npm run dev`, `npm run build`, và `npm run export`.
 
-For more information about the CLI, please check the [CLI guide](../builtin/cli).
+Để biết thêm thông tin về CLI, vui lòng xem [hướng dẫn CLI](../builtin/cli).
 
-## Setup Your Editor {#editor}
+## Thiết lập trình soạn thảo {#editor}
 
-Since Slidev uses Markdown as the source entry, you can use any editor you prefer to create your slides. We also provide tools to help you edit you slides more conveniently:
+Vì Slidev sử dụng Markdown làm nguồn nhập liệu, bạn có thể sử dụng bất kỳ trình soạn thảo nào mà bạn thích để tạo slide. Chúng tôi cũng cung cấp các công cụ giúp bạn chỉnh sửa slide thuận tiện hơn:
 
 <LinkCard link="features/vscode-extension" />
 <LinkCard link="features/side-editor" />
 <LinkCard link="features/prettier-plugin" />
 
-## Join the Community
+## Tham gia cộng đồng
 
-It's recommended to join our official [Discord Server](https://chat.sli.dev/) to get help, share your slides, or discuss anything about Slidev.
+Chúng tôi khuyến khích bạn tham gia [Discord Server](https://chat.sli.dev/) chính thức để nhận hỗ trợ, chia sẻ slide hoặc thảo luận về bất kỳ vấn đề nào liên quan đến Slidev.
 
-If you're encountering bugs, feel free to open an issue on [GitHub](https://github.com/slidevjs/slidev/issues/new/choose).
+Nếu bạn gặp lỗi, hãy thoải mái tạo một issue trên [GitHub](https://github.com/slidevjs/slidev/issues/new/choose).
 
-## Tech Stack
+## Tech stack
 
-Slidev is made possible by combining these tools and technologies.
+Slidev được tạo ra nhờ sự kết hợp của các công cụ và công nghệ sau:
 
-- [Vite](https://vitejs.dev) - An extremely fast frontend tooling
-- [Vue 3](https://v3.vuejs.org/) powered [Markdown](https://daringfireball.net/projects/markdown/syntax) - Focus on the content while having the power of HTML and Vue components whenever needed
-- [UnoCSS](https://github.com/unocss/unocss) - On-demand utility-first CSS framework, style your slides at ease
-- [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - First-class code snippets support with live coding capability
-- [RecordRTC](https://recordrtc.org) - Built-in recording and camera view
-- [VueUse](https://vueuse.org) family - [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), etc.
-- [Iconify](https://iconify.design/) - Iconsets collection.
-- [Drauu](https://github.com/antfu/drauu) - Drawing and annotations support
-- [KaTeX](https://katex.org/) - LaTeX math rendering.
-- [Mermaid](https://mermaid-js.github.io/mermaid) - Textual Diagrams.
+- [Vite](https://vitejs.dev) - Công cụ frontend cực kỳ nhanh.
+- [Vue 3](https://v3.vuejs.org/) kết hợp với [Markdown](https://daringfireball.net/projects/markdown/syntax) - Tập trung vào nội dung nhưng vẫn có sức mạnh của HTML và các component Vue khi cần.
+- [UnoCSS](https://github.com/unocss/unocss) - Framework CSS utility-first theo yêu cầu, dễ dàng style cho slide.
+- [Shiki](https://github.com/shikijs/shiki), [Monaco Editor](https://github.com/Microsoft/monaco-editor) - Hỗ trợ code tuyệt vời với khả năng code trực tiếp.
+- [RecordRTC](https://recordrtc.org) - Ghi âm và chế độ xem camera tích hợp.
+- Dòng công cụ [VueUse](https://vueuse.org) - [`@vueuse/core`](https://github.com/vueuse/vueuse), [`@vueuse/head`](https://github.com/vueuse/head), [`@vueuse/motion`](https://github.com/vueuse/motion), v.v.
+- [Iconify](https://iconify.design/) - Bộ sưu tập các icon.
+- [Drauu](https://github.com/antfu/drauu) - Hỗ trợ vẽ và chú thích.
+- [KaTeX](https://katex.org/) - Hiển thị toán học LaTeX.
+- [Mermaid](https://mermaid-js.github.io/mermaid) - Sơ đồ dạng văn bản.

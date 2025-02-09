@@ -2,77 +2,77 @@
 outline: deep
 ---
 
-# Building and Hosting
+# Build và host
 
-Slidev is designed to run as a web server when you are editing or presenting your slides. However, after the presentation, you may still want to share your **interactive** slides with others. This guide will show you how to build and host your slides.
+Slidev được thiết kế để chạy dưới dạng máy chủ web khi bạn chỉnh sửa hoặc trình bày slide của mình. Tuy nhiên, sau buổi thuyết trình, bạn có thể muốn chia sẻ slide **tương tác** với người khác. Hướng dẫn này sẽ chỉ bạn cách build và host slide.
 
-## Build as a SPA {#spa}
+## Build thành SPA {#spa}
 
-You can build the slides into a static [Single-page application (SPA)](https://developer.mozilla.org/en-US/docs/Glossary/SPA) via the following command:
+Bạn có thể build slide thành một [Single-page application (SPA)](https://developer.mozilla.org/en-US/docs/Glossary/SPA) tĩnh bằng lệnh sau:
 
 ```bash
 $ slidev build
 ```
 
-By default, the generated files are placed in the `dist` folder. You can test the built version of you slides by running: `npx vite preview` or any other static server.
+Theo mặc định, các file được tạo ra sẽ nằm trong thư mục `dist`. You can test the built version of you slides by running: `npx vite preview` or any other static server.
 
-### Base Path {#base}
+### Đường dẫn gốc {#base}
 
-To deploy your slides under sub-routes, you need to pass the `--base` option. The `--base` path **must begin and end with a slash `/`**. For example:
+Để deploy slide dưới các sub-route, bạn cần sử dụng option `--base` option. Đường dẫn `--base` **phải bắt đầu và kết thúc bằng dấu gạch chéo `/`**. Ví dụ:
 
 ```bash
 $ slidev build --base /talks/my-cool-talk/
 ```
 
-Refer to [Vite's documentation](https://vitejs.dev/guide/build.html#public-base-path) for more details.
+Tham khảo [tài liệu của Vite](https://vitejs.dev/guide/build.html#public-base-path) để biết thêm chi tiết.
 
-### Output directory {#output-directory}
+### Thư mục đầu ra {#output-directory}
 
-You can change the output directory using `--out`.
+Bạn có thể thay đổi thư mục đầu ra bằng `--out`.
 
 ```bash
 $ slidev build --out my-build-folder
 ```
 
-### Multiple Builds {#multiple-builds}
+### Build nhiều file {#multiple-builds}
 
-You can build multiple slide decks in one go by passing multiple markdown files as arguments:
+Bạn có thể build nhiều bộ slide cùng lúc bằng cách đưa nhiều file markdown làm tham số:
 
 ```bash
 $ slidev build slides1.md slides2.md
 ```
 
-Or if your shell supports it, you can use a glob pattern:
+Hoặc nếu shell của bạn hỗ trợ, bạn có thể sử dụng glob pattern:
 
 ```bash
 $ slidev build *.md
 ```
 
-In this case, each input file will generate a folder containing the build in the output directory.
+Trong trường hợp này, mỗi file đầu vào sẽ tạo ra một thư mục chứa bản build trong thư mục đầu ra.
 
-### Examples {#examples}
+### Ví dụ {#examples}
 
-Here are a few examples of the exported SPA:
+Dưới đây là một số ví dụ về SPA đã export:
 
 - [Demo Slides](https://sli.dev/demo/starter)
-- [Composable Vue](https://talks.antfu.me/2021/composable-vue) by [Anthony Fu](https://github.com/antfu)
-- More in [Showcases](../resources/showcases)
+- [Composable Vue](https://talks.antfu.me/2021/composable-vue) bởi [Anthony Fu](https://github.com/antfu)
+- Nhiều hơn trong [Showcases](../resources/showcases)
 
-### Options {#options}
+### Các option {#options}
 
 <LinkCard link="features/build-with-pdf" />
 <LinkCard link="features/bundle-remote-assets" />
 
-## Hosting {#hosting}
+## Host {#hosting}
 
-We recommend using `npm init slidev@latest` to scaffold your project, which contains the necessary configuration files for hosting services out-of-the-box.
+Chúng tôi khuyến nghị sử dụng `npm init slidev@latest` để khởi tạo dự án của bạn, nó bao gồm các file cấu hình cần thiết để lưu trữ dễ dàng.
 
 ### GitHub Pages {#github-pages}
 
-To deploy your slides on [GitHub Pages](https://pages.github.com/) via GitHub Actions, follow these steps:
+Để deploy slide trên [GitHub Pages](https://pages.github.com/) bằng GitHub Actions, thực hiện các bước sau:
 
-1. In your repository, go to `Settings` > `Pages`. Under `Build and deployment`, select `GitHub Actions`. (Do not choose `Deploy from a branch` and upload the `dist` directory, which is not recommended.)
-2. Create `.github/workflows/deploy.yml` with the following content to deploy your slides to GitHub Pages via GitHub Actions.
+1. Trong repository của bạn, vào `Settings` > `Pages`. Dưới `Build and deployment`, chọn `GitHub Actions`. (Không chọn `Deploy from a branch` và upload thư mục `dist`, việc này không được khuyến nghị.)
+2. Tạo `.github/workflows/deploy.yml` với nội dung sau để deploy slide qua GitHub Actions.
 
 ::: details deploy.yml
 
@@ -135,12 +135,12 @@ jobs:
 
 :::
 
-3. Commit and push the changes to your repository. The GitHub Actions workflow will automatically deploy your slides to GitHub Pages every time you push to the `main` branch.
-4. You can access your slides at `https://<username>.github.io/<repository-name>/`.
+3. Commit và push thay đổi vào repository của bạn. Workflow GitHub Actions sẽ tự động deploy slide mỗi khi bạn đẩy lên nhánh `main`.
+4. Bạn có thể truy cập slide tại `https://<username>.github.io/<repository-name>/`.
 
 ### Netlify
 
-Create `netlify.toml` in your project root with the following content:
+Tạo file `netlify.toml` trong thư mục root dự án với nội dung sau:
 
 ::: details netlify.toml
 
@@ -160,11 +160,11 @@ status = 200
 
 :::
 
-Then go to your [Netlify dashboard](https://netlify.com/) and create a new site with the repository.
+Sau đó, vào [Netlify dashboard](https://netlify.com/) và tạo một trang web mới từ repository.
 
 ### Vercel
 
-Create `vercel.json` in your project root with the following content:
+Tạo file `vercel.json` trong thư mục root dự án với nội dung sau:
 
 ::: details vercel.json
 
@@ -178,15 +178,15 @@ Create `vercel.json` in your project root with the following content:
 
 :::
 
-Then go to your [Vercel dashboard](https://vercel.com/) and create a new site with the repository.
+Sau đó, vào [Vercel dashboard](https://vercel.com/) và tạo một trang web mới từ repository.
 
-### Host on Docker {#docker}
+### Host với Docker {#docker}
 
-If you need a rapid way to run a presentation with containers, you can use the prebuilt [docker image](https://hub.docker.com/r/tangramor/slidev) maintained by [tangramor](https://github.com/tangramor), or build your own.
+Nếu bạn cần cách nhanh chóng để chạy bài thuyết trình với container, bạn có thể sử dụng [docker image](https://hub.docker.com/r/tangramor/slidev) do [tangramor](https://github.com/tangramor) duy trì, hoặc tự build.
 
-::: details Use the Docker Image
+::: details Sử dụng Docker Image
 
-Just run the following command in your work folder:
+Chỉ cần chạy lệnh sau trong thư mục đang làm việc:
 
 ```bash
 docker run --name slidev --rm -it \
@@ -197,13 +197,13 @@ docker run --name slidev --rm -it \
     tangramor/slidev:latest
 ```
 
-**_Note_**: You can use `NPM_MIRROR` to specify a npm mirror to speed up the installation process.
+**_Lưu ý_**: Bạn có thể sử dụng `NPM_MIRROR`để chỉ định một npm mirror nhằm tăng tốc quá trình cài đặt.
 
-If your work folder is empty, it will generate a template `slides.md` and other related files under your work folder, and launch the server on port `3030`.
+Nếu thư mục đang làm việc trống, nó sẽ tạo file template `slides.md` và các file liên quan khác trong thư mục đang làm việc, sau đó khởi chạy máy chủ trên port `3030`.
 
-You can access your slides from `http://localhost:3030/`
+Bạn có thể truy cập slide từ `http://localhost:3030/`
 
-To create an Docker Image for your slides, you can use the following Dockerfile:
+Để tạo một Docker Image cho slide của bạn, bạn có thể sử dụng Dockerfile sau:
 
 ```Dockerfile
 FROM tangramor/slidev:latest
@@ -211,10 +211,10 @@ FROM tangramor/slidev:latest
 ADD . /slidev
 ```
 
-Create the docker image: `docker build -t myslides .`
+Tạo docker image: `docker build -t myslides .`
 
-And run the container: `docker run --name myslides --rm --user node -p 3030:3030 myslides`
+Và chạy container: `docker run --name myslides --rm --user node -p 3030:3030 myslides`
 
-You can visit your slides at `http://localhost:3030/`
+Bạn có thể truy cập slide tại `http://localhost:3030/`
 
 :::
