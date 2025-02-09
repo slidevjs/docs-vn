@@ -59,7 +59,7 @@ Kể từ v0.48.0, Monaco sẽ tái sử dụng theme Shiki mà bạn đã cấu
 
 ## Cấu hình trình soạn thảo
 
-> Có sẵn từ v0.43.0
+> Có sẵn từ phiên bản v0.43.0
 
 Nếu bạn muốn tùy chỉnh trình soạn thảo Monaco, bạn có thể truyền một object `editorOptions` tương thích với định nghĩa [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html).
 
