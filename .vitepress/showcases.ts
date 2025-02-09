@@ -238,6 +238,30 @@ export const showcases: ShowCaseInfo[] = [
     cover: 'https://raw.githubusercontent.com/hdm/decks-2024-lascon-numerology/refs/heads/main/screenshot.png',
     datetime: '2024-10-25',
   },
+  {
+    title: 'Python Zero To Hero - Episode 1',
+    author: {
+      name: 'Kareim Tarek',
+      link: 'https://kareimgazer.github.io/',
+    },
+    at: 'Kareem Kreates YouTube Channel',
+    slidesLink: 'https://kareimgazer.github.io/py-intro/',
+    sourceLink: 'https://github.com/KareimGazer/py-intro',
+    cover: 'https://i.ytimg.com/vi/hVMaPBrWvAo/hqdefault.jpg',
+    datetime: '2025-01-12',
+  },
+  {
+    title: 'Single Image Super-Resolution Based on Capsule Neural Networks',
+    author: {
+      name: 'George Corrêa de Araújo',
+      link: 'https://george-gca.github.io/',
+    },
+    at: 'Brazilian Conference on Intelligent Systems 2023',
+    slidesLink: 'https://george-gca.github.io/bracis_2023_srcaps/',
+    sourceLink: 'https://github.com/george-gca/bracis_2023_srcaps',
+    cover: 'https://raw.githubusercontent.com/george-gca/bracis_2023_srcaps/refs/heads/main/cover.png',
+    datetime: '2023-09-27',
+  },
   // Add yours here!
   {
     title: 'Yours?',

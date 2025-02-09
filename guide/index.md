@@ -46,12 +46,19 @@ Chạy lệnh sau để tạo dự án Slidev mới tại máy cục bộ:
 
 ::: code-group
 
-```bash [npm]
-npm init slidev@latest
+```bash [pnpm]
+# Nếu bạn chưa cài đặt pnpm
+npm i -g pnpm
+
+pnpm create slidev
 ```
 
-```bash [pnpm]
-pnpm create slidev
+```bash [npm]
+# Không khuyến khích -
+# NPM sẽ download các package mỗi lần bạn tạo một dự án mới,
+# điều này sẽ chậm và chiếm nhiều không gian lưu trữ.
+
+npm init slidev@latest
 ```
 
 ```bash [yarn]
@@ -60,7 +67,7 @@ yarn create slidev
 
 :::
 
-Làm theo hướng dẫn để bắt đầu dự án slide của bạn. Nội dung slide nằm trong file `slides.md`, ban đầu bao gồm các bản demo của hầu hết các tính năng của Slidev. Để biết thêm thông tin về cú pháp Markdown, hãy kiểm tra <LinkInline link="guide/syntax" />.
+Làm theo các hướng dẫn để bắt đầu dự án slide của bạn. Nội dung slide nằm trong file `slides.md`, ban đầu chứa các ví dụ về hầu hết các tính năng của Slidev. Để biết thêm thông tin về cú pháp Markdown, vui lòng tham khảo <LinkInline link="guide/syntax" />.
 
 :::: details Sử dụng file đơn (không khuyến nghị)
 
@@ -68,12 +75,12 @@ Nếu bạn thích sử dụng một file Markdown duy nhất làm slide, bạn 
 
 ::: code-group
 
-```bash [npm]
-npm i -g @slidev/cli
-```
-
 ```bash [pnpm]
 pnpm i -g @slidev/cli
+```
+
+```bash [npm]
+npm i -g @slidev/cli
 ```
 
 ```bash [yarn]
