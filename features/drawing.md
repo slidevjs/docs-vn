@@ -8,21 +8,21 @@ description: |
   Draw and annotate your slides with ease.
 ---
 
-# Drawing & Annotations
+# Vẽ và chú thích
 
-Slidev comes with a built-in drawing and annotation feature powered by [drauu](https://github.com/antfu/drauu). It allows you to draw and annotate your slides with ease.
+Slidev tích hợp sẵn tính năng vẽ và chú thích được cung cấp bởi [drauu](https://github.com/antfu/drauu). Tính năng này cho phép bạn vẽ và chú thích trên slide của mình một cách dễ dàng.
 
-To start, click the <carbon-pen class="inline-icon-btn"/> icon in the [navigation bar](../guide/ui#navigation-bar) to open the drawing toolbar. It's also available in the [Presenter Mode](/guide/ui#presenter-mode). Drawings and annotations you created will be **synced** automatically across all instances in real-time.
+Để bắt đầu, nhấn vào biểu tượng <carbon-pen class="inline-icon-btn"/> trong [thanh điều hướng](../guide/ui#navigation-bar) để mở thanh công cụ vẽ. Tính năng này cũng khả dụng trong [Chế độ trình bày](/guide/ui#presenter-mode). Các bản vẽ và chú thích bạn tạo sẽ được **đồng bộ** tự động trên tất cả các phiên bản theo thời gian thực.
 
 <TheTweet id="1424027510342250499" />
 
-## Use with Stylus Pen
+## Sử dụng với bút Stylus
 
-When using a stylus pen on a tablet (for example, iPad with Apple Pencil), Slidev will intelligently detect the input type. You can directly draw on your slides with the pen without turning on the drawing mode while having your fingers or mouse control the navigation.
+Khi sử dụng bút stylus trên máy tính bảng (ví dụ: iPad với Apple Pencil), Slidev sẽ tự động nhận diện loại đầu vào. Bạn có thể trực tiếp vẽ trên slide của mình bằng bút mà không cần bật chế độ vẽ, trong khi ngón tay hoặc chuột sẽ kiểm soát việc điều hướng.
 
-## Persist Drawings
+## Lưu trữ bản vẽ
 
-The following frontmatter configuration allows you to persist your drawings as SVGs under `.slidev/drawings` directory and have them inside your exported PDF or hosted site.
+Cấu hình frontmatter sau cho phép bạn lưu trữ bản vẽ dưới dạng SVG trong thư mục `.slidev/drawings` và bao gồm chúng trong file PDF đã export hoặc trang web được host.
 
 ```md
 ---
@@ -31,9 +31,9 @@ drawings:
 ---
 ```
 
-## Disable Drawings
+## Disable tính năng vẽ
 
-Entirely:
+Hoàn toàn:
 
 ```md
 ---
@@ -42,7 +42,7 @@ drawings:
 ---
 ```
 
-Only in Development:
+Chỉ trong chế độ phát triển:
 
 ```md
 ---
@@ -51,7 +51,7 @@ drawings:
 ---
 ```
 
-Only in Presenter Mode:
+Chỉ trong chế độ trình bày:
 
 ```md
 ---
@@ -60,9 +60,9 @@ drawings:
 ---
 ```
 
-## Drawing Syncing
+## Đồng bộ hóa bản vẽ
 
-By default, Slidev syncs up your drawings across all instances. If you are sharing your slides with others, you might want to disable the syncing via:
+Theo mặc định, Slidev đồng bộ hóa bản vẽ của bạn trên tất cả các phiên bản. Nếu bạn đang chia sẻ slide của mình với người khác, bạn có thể muốn tắt tính năng đồng bộ hóa bằng cách:
 
 ```md
 ---
@@ -71,4 +71,4 @@ drawings:
 ---
 ```
 
-With this config, only the drawing from the presenter instance will be able to sync with others.
+Với cấu hình này, chỉ bản vẽ từ phiên bản trình bày mới có thể đồng bộ với những người khác.
