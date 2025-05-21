@@ -1,32 +1,28 @@
-# Configure Pre-Parser
+# Cấu hình và Mở rộng Bộ Phân tích cú pháp (Parser)
 
-::: info
-Custom pre-parsers are not supposed to be used too often. Usually you can use [Transformers](./config-transformers) for custom syntaxes.
+Slidev phân tích file trình chiếu của bạn (ví dụ: `slides.md`) qua ba bước:
+
+1. Bước "chuẩn bị phân tích" (preparsing) được thực hiện: file được tách thành các slide sử dụng dấu phân cách `---`, đồng thời xét đến các khối frontmatter có thể có.
+2. Mỗi slide được phân tích cú pháp bởi một thư viện bên ngoài.
+3. Slidev xử lý thuộc tính frontmatter đặc biệt `src: ....`, cho phép chèn thêm các file md khác.
+
+## Bộ Phân tích Markdown
+
+Việc cấu hình bộ phân tích markdown dùng ở bước 2 có thể thực hiện bằng cách [cấu hình các plugin nội bộ của Vite](/custom/config-vite#configure-internal-plugins).
+
+## Mở rộng Bộ Phân tích Chuẩn bị (Preparser)
+
+> Có từ phiên bản v0.37.0 trở đi.
+
+:::warning
+Quan trọng: khi thay đổi cấu hình preparser, bạn cần dừng và khởi động lại slidev hoàn toàn (chỉ restart có thể không đủ).
 :::
 
-Slidev parses your presentation file (e.g. `slides.md`) in three steps:
+Bộ preparser (bước 1 ở trên) rất dễ mở rộng và cho phép bạn triển khai các cú pháp tùy chỉnh cho file md của mình. Việc mở rộng preparser được xem là **một tính năng nâng cao** và có thể làm hỏng [tích hợp trình soạn thảo](/guide/editors) do thay đổi cú pháp ngầm.
 
-1. A "preparsing" step is carried out: the file is split into slides using the `---` separator, and considering the possible frontmatter blocks.
-2. Each slide is parsed with an external library.
-3. Slidev resolves the special frontmatter property `src: ....`, which allows to include other md files.
+Để tùy chỉnh, bạn tạo file `./setup/preparser.ts` với nội dung sau:
 
-## Markdown Parser
-
-Configuring the markdown parser used in step 2 can be done by [configuring Vite internal plugins](/custom/config-vite#configure-internal-plugins).
-
-## Preparser Extensions
-
-> Available since v0.37.0.
-
-::: warning
-Important: when modifying the preparser configuration, you need to stop and start Slidev again (restart might not be sufficient).
-:::
-
-The preparser (step 1 above) is highly extensible and allows you to implement custom syntaxes for your md files. Extending the preparser is considered **an advanced feature** and is susceptible to breaking [editor integrations](../features/side-editor) due to implicit changes in the syntax.
-
-To customize it, create a `./setup/preparser.ts` file with the following content:
-
-```ts twoslash
+```ts
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(({ filepath, headmatter, mode }) => {
@@ -43,21 +39,21 @@ export default definePreparserSetup(({ filepath, headmatter, mode }) => {
 })
 ```
 
-This example systematically replaces any `@@@` line with a line with `hello`. It illustrates the structure of a preparser configuration file and some of the main concepts the preparser involves:
+Ví dụ này sẽ thay thế hệ thống mỗi dòng có `@@@` thành một dòng chứa chữ `hello`. Nó minh họa cấu trúc file cấu hình preparser và một số khái niệm chính mà preparser sử dụng:
 
-- `definePreparserSetup` must be called with a function as parameter.
-- The function receives the file path (of the root presentation file), the headmatter (from the md file) and, since v0.48.0, a mode (dev, build or export). It could use this information (e.g., enable extensions based on the presentation file or whether we are exporting a PDF).
-- The function must return a list of preparser extensions.
-- An extension can contain:
-  - a `transformRawLines(lines)` function that runs just after parsing the headmatter of the md file and receives a list of all lines (from the md file). The function can mutate the list arbitrarily.
-  - a `transformSlide(content, frontmatter)` function that is called for each slide, just after splitting the file, and receives the slide content as a string and the frontmatter of the slide as an object. The function can mutate the frontmatter and must return the content string (possibly modified, possibly `undefined` if no modifications have been done).
-  - a `name`
+- `definePreparserSetup` phải được gọi với một hàm làm tham số.
+- Hàm này nhận vào đường dẫn file (của file trình chiếu gốc), phần headmatter (trong file md) và, kể từ phiên bản v0.48.0, một mode (dev, build hoặc export). Hàm có thể sử dụng thông tin này (ví dụ: kích hoạt extension dựa trên file trình chiếu hoặc khi xuất PDF).
+- Hàm phải trả về một danh sách các extension cho preparser.
+- Mỗi extension có thể bao gồm:
+  - một hàm `transformRawLines(lines)` chạy ngay sau khi phân tích headmatter của file md, nhận một danh sách tất cả các dòng (từ file md). Hàm có thể thay đổi danh sách này tùy ý.
+  - một hàm `transformSlide(content, frontmatter)` được gọi cho mỗi slide, ngay sau khi tách file thành các slide, nhận nội dung slide dưới dạng chuỗi và frontmatter của slide dưới dạng object. Hàm có thể sửa đổi frontmatter và phải trả về chuỗi nội dung (có thể đã chỉnh sửa hoặc `undefined` nếu không có thay đổi).
+  - một thuộc tính `name`
 
-## Example Preparser Extensions
+## Ví dụ các extension Preparser
 
-### Use case 1: compact syntax top-level presentation
+### Trường hợp sử dụng 1: cú pháp gọn cho phần trình chiếu ở cấp cao nhất
 
-Imagine a situation where (part of) your presentation is mainly showing cover images and including other md files. You might want a compact notation where for instance (part of) `slides.md` is as follows:
+Giả sử bạn có một phần hoặc toàn bộ bài trình chiếu chủ yếu dùng để hiển thị ảnh bìa và chèn các file md khác. Bạn có thể muốn một cách viết gọn, ví dụ (một phần) file `slides.md` như sau:
 
 <!-- eslint-skip -->
 
@@ -68,14 +64,14 @@ Imagine a situation where (part of) your presentation is mainly showing cover im
 @src: page2.md
 @cover: /break.jpg
 @src: pages3-4.md
-@cover: https://cover.sli.dev
+@cover: https://source.unsplash.com/collection/94734566/1920x1080
 # Questions?
 see you next time
 ```
 
-To allow these `@src:` and `@cover:` syntaxes, create a `./setup/preparser.ts` file with the following content:
+Để cho phép các cú pháp `@src:` và `@cover:`, bạn tạo một file `./setup/preparser.ts` với nội dung sau:
 
-```ts twoslash
+```ts
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(() => {
@@ -116,12 +112,12 @@ export default definePreparserSetup(() => {
 })
 ```
 
-And that's it.
+Vậy là xong.
 
-### Use case 2: using custom frontmatter to wrap slides
+### Trường hợp sử dụng 2: dùng frontmatter tùy chỉnh để bao quanh các slide
 
-Imagine a case where you often want to scale some of your slides but still want to use a variety of existing layouts so creating a new layout would not be suited.
-For instance, you might want to write your `slides.md` as follows:
+Hãy tưởng tượng một trường hợp bạn thường muốn phóng to một số slide nhưng vẫn muốn sử dụng nhiều layout có sẵn, nên việc tạo một layout mới không phù hợp.
+Ví dụ, bạn có thể viết file `slides.md` như sau:
 
 <!-- eslint-skip -->
 
@@ -152,17 +148,17 @@ _scale: 2.5
 see you next time
 ```
 
-Here we used an underscore in `_scale` to avoid possible conflicts with existing frontmatter properties (indeed, the case of `scale`, without underscore would cause potential problems).
+Ở đây chúng ta dùng dấu gạch dưới `_scale` để tránh xung đột có thể xảy ra với các thuộc tính frontmatter hiện có (thực tế, nếu dùng `scale` không có gạch dưới sẽ gây ra vấn đề tiềm ẩn).
 
-To handle this `_scale: ...` syntax in the frontmatter, create a `./setup/preparser.ts` file with the following content:
+Để xử lý cú pháp `_scale: ...` trong frontmatter, bạn tạo file `./setup/preparser.ts` với nội dung như sau:
 
-```ts twoslash
+```ts
 import { definePreparserSetup } from '@slidev/types'
 
 export default definePreparserSetup(() => {
   return [
     {
-      async transformSlide(content, frontmatter) {
+      transformSlide(content, frontmatter) {
         if ('_scale' in frontmatter) {
           return [
             `<Transform :scale=${frontmatter._scale}>`,
@@ -178,4 +174,4 @@ export default definePreparserSetup(() => {
 })
 ```
 
-And that's it.
+Và thế là xong.

@@ -1,24 +1,22 @@
----
-outline: deep
----
+# Hosting tĩnh
 
-# Build và host
+## Xây dựng Ứng dụng một trang (SPA)
 
-Slidev được thiết kế để chạy dưới dạng máy chủ web khi bạn chỉnh sửa hoặc trình bày slide của mình. Tuy nhiên, sau buổi thuyết trình, bạn có thể muốn chia sẻ slide **tương tác** với người khác. Hướng dẫn này sẽ chỉ bạn cách build và host slide.
-
-## Build thành SPA {#spa}
-
-Bạn có thể build slide thành một [Single-page application (SPA)](https://developer.mozilla.org/en-US/docs/Glossary/SPA) tĩnh bằng lệnh sau:
+Bạn có thể xây dựng các slide thành một SPA có thể tự host:
 
 ```bash
 $ slidev build
 ```
 
-Theo mặc định, các file được tạo ra sẽ nằm trong thư mục `dist`. You can test the built version of you slides by running: `npx vite preview` or any other static server.
+Ứng dụng được tạo sẽ có sẵn trong thư mục `dist/`.
 
-### Đường dẫn gốc {#base}
+Bạn có thể kiểm tra bản build đã tạo bằng cách sử dụng một server web (Apache, NGINX, Caddy... v.v.) hoặc trong dự án bạn có thể chạy trực tiếp: `npx vite preview`.
 
-Để deploy slide dưới các sub-route, bạn cần sử dụng option `--base` option. Đường dẫn `--base` **phải bắt đầu và kết thúc bằng dấu gạch chéo `/`**. Ví dụ:
+Sau đó bạn có thể host nó trên [GitHub Pages](https://pages.github.com/), [Netlify](https://netlify.app/), [Vercel](https://vercel.com/), hoặc bất kỳ server web hay dịch vụ nào bạn muốn. Giờ đây bạn có thể chia sẻ slide của mình với cả thế giới chỉ bằng một liên kết duy nhất.
+
+### Đường dẫn cơ sở
+
+Để deploy slide dưới các đường dẫn phụ, bạn sẽ cần truyền tùy chọn `--base`. Đường dẫn `--base` **phải bắt đầu và kết thúc** bằng dấu gạch chéo `/`; ví dụ:
 
 ```bash
 $ slidev build --base /talks/my-cool-talk/
@@ -26,123 +24,87 @@ $ slidev build --base /talks/my-cool-talk/
 
 Tham khảo [tài liệu của Vite](https://vitejs.dev/guide/build.html#public-base-path) để biết thêm chi tiết.
 
-### Thư mục đầu ra {#output-directory}
+### Cung cấp PDF có thể tải xuống
 
-Bạn có thể thay đổi thư mục đầu ra bằng `--out`.
+Bạn có thể cung cấp một file PDF có thể tải xuống cho người xem SPA của bạn bằng cách cấu hình như sau:
+
+```md
+---
+download: true
+---
+```
+
+Slidev sẽ tạo một file PDF cùng với bản build, và một button tải xuống sẽ được hiển thị trong SPA.
+
+Bạn cũng có thể cung cấp một URL tùy chỉnh cho file PDF. Trong trường hợp đó, quá trình tạo file sẽ được bỏ qua.
+
+```md
+---
+download: 'https://myside.com/my-talk.pdf'
+---
+```
+
+Điều này cũng có thể thực hiện bằng tùy chọn CLI `--download` (chỉ nhận giá trị type `boolean`).
+
+```bash
+$ slidev build --download
+```
+
+Khi sử dụng tùy chọn download, bạn cũng có thể cung cấp các tùy chọn export:
+
+- Bằng cách sử dụng [các tùy chọn export CLI](/guide/exporting.html)
+- Hoặc [các tùy chọn export frontmatter](/custom/#frontmatter-configures)
+
+### Thư mục export
+
+Bạn có thể thay đổi thư mục export bằng cách dùng `--out`.
 
 ```bash
 $ slidev build --out my-build-folder
 ```
 
-### Build nhiều file {#multiple-builds}
+### Chế độ theo dõi
 
-Bạn có thể build nhiều bộ slide cùng lúc bằng cách đưa nhiều file markdown làm tham số:
+Bằng cách truyền tùy chọn `--watch`, quá trình build sẽ chạy ở chế độ theo dõi và sẽ tự động build lại mỗi khi source thay đổi.
+
+```bash
+$ slidev build --watch
+```
+
+### Nhiều mục nhập
+
+Bạn có thể xây dựng nhiều bộ slide cùng lúc.
 
 ```bash
 $ slidev build slides1.md slides2.md
 ```
 
-Hoặc nếu shell của bạn hỗ trợ, bạn có thể sử dụng glob pattern:
+Hoặc
 
 ```bash
 $ slidev build *.md
 ```
 
-Trong trường hợp này, mỗi file đầu vào sẽ tạo ra một thư mục chứa bản build trong thư mục đầu ra.
+Trong trường hợp này, mỗi file đầu vào sẽ tạo ra một thư mục chứa bản build trong thư mục xuất.
 
-### Ví dụ {#examples}
+## Ví dụ
 
-Dưới đây là một số ví dụ về SPA đã export:
+Dưới đây là một số ví dụ về SPA được export:
 
-- [Demo Slides](https://sli.dev/demo/starter)
-- [Composable Vue](https://talks.antfu.me/2021/composable-vue) bởi [Anthony Fu](https://github.com/antfu)
-- Nhiều hơn trong [Showcases](../resources/showcases)
+- [Starter Template](https://sli.dev/demo/starter)
+- [Composable Vue](https://talks.antfu.me/2021/composable-vue) của [Anthony Fu](https://github.com/antfu)
 
-### Các option {#options}
+Để xem thêm, tham khảo [Showcases](/showcases).
 
-<LinkCard link="features/build-with-pdf" />
-<LinkCard link="features/bundle-remote-assets" />
+## Hosting
 
-## Host {#hosting}
-
-Chúng tôi khuyến nghị sử dụng `npm init slidev@latest` để khởi tạo dự án của bạn, nó bao gồm các file cấu hình cần thiết để lưu trữ dễ dàng.
-
-### GitHub Pages {#github-pages}
-
-Để deploy slide trên [GitHub Pages](https://pages.github.com/) bằng GitHub Actions, thực hiện các bước sau:
-
-1. Trong repository của bạn, vào `Settings` > `Pages`. Dưới `Build and deployment`, chọn `GitHub Actions`. (Không chọn `Deploy from a branch` và upload thư mục `dist`, việc này không được khuyến nghị.)
-2. Tạo `.github/workflows/deploy.yml` với nội dung sau để deploy slide qua GitHub Actions.
-
-::: details deploy.yml
-
-```yaml
-name: Deploy pages
-
-on:
-  workflow_dispatch:
-  push:
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-
-      - name: Setup @antfu/ni
-        run: npm i -g @antfu/ni
-
-      - name: Install dependencies
-        run: nci
-
-      - name: Build
-        run: nr build --base /${{github.event.repository.name}}/
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-:::
-
-3. Commit và push thay đổi vào repository của bạn. Workflow GitHub Actions sẽ tự động deploy slide mỗi khi bạn đẩy lên nhánh `main`.
-4. Bạn có thể truy cập slide tại `https://<username>.github.io/<repository-name>/`.
+Chúng tôi khuyến nghị sử dụng `npm init slidev@latest` để tạo dự án, bao gồm các file cấu hình cần thiết cho các dịch vụ hosting sẵn sàng sử dụng.
 
 ### Netlify
 
-Tạo file `netlify.toml` trong thư mục root dự án với nội dung sau:
+- [Netlify](https://netlify.com/)
 
-::: details netlify.toml
+Tạo file `netlify.toml` trong thư mục gốc dự án với nội dung sau:
 
 ```toml
 [build]
@@ -158,15 +120,13 @@ to = '/index.html'
 status = 200
 ```
 
-:::
-
-Sau đó, vào [Netlify dashboard](https://netlify.com/) và tạo một trang web mới từ repository.
+Sau đó truy cập vào dashboard Netlify của bạn và tạo một site mới với repository.
 
 ### Vercel
 
-Tạo file `vercel.json` trong thư mục root dự án với nội dung sau:
+- [Vercel](https://vercel.com/)
 
-::: details vercel.json
+Tạo file `vercel.json` trong thư mục gốc dự án với nội dung sau:
 
 ```json
 {
@@ -176,45 +136,62 @@ Tạo file `vercel.json` trong thư mục root dự án với nội dung sau:
 }
 ```
 
-:::
+Sau đó truy cập vào dashboard Vercel của bạn và tạo một site mới với repository.
 
-Sau đó, vào [Vercel dashboard](https://vercel.com/) và tạo một trang web mới từ repository.
+### GitHub Pages
 
-### Host với Docker {#docker}
+- [GitHub Pages](https://pages.github.com/)
 
-Nếu bạn cần cách nhanh chóng để chạy bài thuyết trình với container, bạn có thể sử dụng [docker image](https://hub.docker.com/r/tangramor/slidev) do [tangramor](https://github.com/tangramor) duy trì, hoặc tự build.
+Để deploy slides của bạn trên GitHub Pages:
 
-::: details Sử dụng Docker Image
+- tải lên tất cả các file của dự án vào repository của bạn (ví dụ đặt tên `name_of_repo`)
+- tạo file `.github/workflows/deploy.yml` với nội dung sau để deploy slides lên GitHub Pages qua GitHub Actions.
 
-Chỉ cần chạy lệnh sau trong thư mục đang làm việc:
+```yaml
+name: Deploy pages
 
-```bash
-docker run --name slidev --rm -it \
-    --user node \
-    -v ${PWD}:/slidev \
-    -p 3030:3030 \
-    -e NPM_MIRROR="https://registry.npmmirror.com" \
-    tangramor/slidev:latest
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build -- --base /${{github.event.repository.name}}/
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
 ```
 
-**_Lưu ý_**: Bạn có thể sử dụng `NPM_MIRROR`để chỉ định một npm mirror nhằm tăng tốc quá trình cài đặt.
-
-Nếu thư mục đang làm việc trống, nó sẽ tạo file template `slides.md` và các file liên quan khác trong thư mục đang làm việc, sau đó khởi chạy máy chủ trên port `3030`.
-
-Bạn có thể truy cập slide từ `http://localhost:3030/`
-
-Để tạo một Docker Image cho slide của bạn, bạn có thể sử dụng Dockerfile sau:
-
-```Dockerfile
-FROM tangramor/slidev:latest
-
-ADD . /slidev
-```
-
-Tạo docker image: `docker build -t myslides .`
-
-Và chạy container: `docker run --name myslides --rm --user node -p 3030:3030 myslides`
-
-Bạn có thể truy cập slide tại `http://localhost:3030/`
-
-:::
+- Trong repository của bạn, vào mục Settings > Pages. Ở phần "Build and deployment", chọn "GitHub Actions".
+- Cuối cùng, sau khi tất cả workflows được thực thi, một liên kết đến slides sẽ export hiện ở dưới Settings > Pages.

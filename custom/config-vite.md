@@ -1,31 +1,31 @@
-# Cấu hình Vite và các plugin
+# Cấu hình Vite
 
 <Environment type="node" />
 
-Slidev được hỗ trợ bởi [Vite](https://vitejs.dev/) bên dưới. Điều này có nghĩa là bạn có thể tận dụng hệ thống plugin mạnh mẽ của Vite để tùy chỉnh slide của mình hơn nữa.
+Slidev được xây dựng dựa trên [Vite](https://vitejs.dev/). Điều này có nghĩa là bạn có thể tận dụng hệ thống plugin mạnh mẽ của Vite để tùy chỉnh các slide của mình một cách linh hoạt hơn.
 
-Nếu bạn có file `vite.config.ts`, nó sẽ được sử dụng và merge với cấu hình Vite được cung cấp bởi Slidev, theme và các addon.
+file `vite.config.ts` sẽ được Slidev tự động nhận diện nếu bạn tạo nó.
 
-## Cấu hình các plugin nội bộ
+Slidev đã cấu hình sẵn các plugin sau:
 
-Slidev tích hợp sẵn các plugin sau vào Vite:
-
-- [@vitejs/plugin-vue](https://github.com/vitejs/vite-plugin-vue)
-- [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components)
-- [unplugin-icons](https://github.com/unplugin/unplugin-icons)
-- [vite-plugin-vue-markdown](https://github.com/unplugin/unplugin-vue-markdown)
+- [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
+- [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+- [unplugin-icons](https://github.com/antfu/unplugin-icons)
+- [vite-plugin-vue-markdown](https://github.com/antfu/vite-plugin-vue-markdown)
 - [vite-plugin-remote-assets](https://github.com/antfu/vite-plugin-remote-assets)
 - [unocss/vite](https://github.com/unocss/unocss/tree/main/packages/vite)
 
-Để cấu hình các plugin tích hợp sẵn như trên, hãy tạo một file `vite.config.ts` với nội dung sau. Lưu ý rằng Slidev đã có [các cấu hình mặc định](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/vite/index.ts) cho các plugin này, việc sử dụng này sẽ ghi đè một số cấu hình, điều này có thể gây lỗi ứng dụng. Vui lòng xem đây là một **tính năng nâng cao** và đảm bảo bạn hiểu rõ trước khi tiếp tục.
+Tìm hiểu thêm về [các cấu hình sẵn tại đây](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/plugins/preset.ts).
 
-<!-- eslint-disable import/first -->
+## Cấu hình Plugin Nội bộ
 
-```ts twoslash
-/// <reference types="@slidev/types" />
-import type MarkdownIt from 'markdown-it'
-declare const MyPlugin: (md: any) => void
-// ---cut---
+> Có sẵn từ phiên bản v0.21
+
+Để cấu hình các plugin tích hợp sẵn ở trên, hãy tạo file `vite.config.ts` với nội dung như sau.  
+Lưu ý rằng Slidev đã có sẵn một số tùy chọn được cấu hình trước cho các plugin này — việc ghi đè có thể gây ra lỗi hoặc làm ứng dụng không hoạt động như mong đợi.  
+Vì vậy, hãy coi đây là một **tính năng nâng cao** và đảm bảo bạn hiểu rõ trước khi thực hiện.
+
+```ts
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -37,7 +37,7 @@ export default defineConfig({
       /* markdown-it options */
       markdownItSetup(md) {
         /* custom markdown-it plugins */
-        md.use(MyPlugin)
+        md.use(/* ... */)
       },
     },
     /* options for other plugins */
@@ -45,23 +45,4 @@ export default defineConfig({
 })
 ```
 
-Xem [khai báo kiểu dữ liệu](https://github.com/slidevjs/slidev/blob/main/packages/types/src/vite.ts#L11) để biết thêm các option.
-
-::: warning
-Không được phép thêm lại các plugin đã được Slidev sử dụng nội bộ. Ví dụ, thay vì:
-
-```ts twoslash
-import Vue from '@vitejs/plugin-vue'
-import { defineConfig } from 'vite'
-
-export default defineConfig({
-  plugins: [
-    Vue({
-      /* vue options */
-    })
-  ],
-})
-```
-
-Vui lòng chuyển các option Vue vào field `slidev.vue` như đã mô tả ở trên.
-:::
+Xem [khai báo kiểu dữ liệu](https://github.com/slidevjs/slidev/blob/main/packages/slidev/node/options.ts#L50) để biết thêm các tùy chọn khác.

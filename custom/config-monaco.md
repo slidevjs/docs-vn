@@ -4,19 +4,34 @@
 
 Tạo file `./setup/monaco.ts` với nội dung sau:
 
-```ts twoslash
+```ts
 import { defineMonacoSetup } from '@slidev/types'
 
 export default defineMonacoSetup(async (monaco) => {
-  // sử dụng `monaco` để cấu hình
+  // use `monaco` to configure
 })
 ```
 
-Tim hiểu thêm về [cấu hình Monaco](https://github.com/Microsoft/monaco-editor).
+Tìm hiểu thêm về [cách cấu hình Monaco](https://github.com/Microsoft/monaco-editor).
 
-## Các kiểu dữ liệu TypeScript
+## Cách sử dụng
 
-Khi sử dụng TypeScript với Monaco, các kiểu dữ liệu của các phụ thuộc sẽ được cài đặt tự động ở phía máy khách.
+Để sử dụng Monaco trong các slide của bạn, chỉ cần thêm `{monaco}` vào cuối đoạn code của bạn:
+
+````md
+```js {monaco} // [!code ++]
+const count = ref(1)
+const plusOne = computed(() => count.value + 1)
+
+console.log(plusOne.value) // 2
+
+plusOne.value++ // error
+```
+````
+
+## Type TypeScript
+
+Khi sử dụng TypeScript với Monaco, các type cho các dependencies sẽ được cài đặt tự động ở phía client.
 
 ````md
 ```ts {monaco}
@@ -27,11 +42,11 @@ const counter = ref(0)
 ```
 ````
 
-Trong ví dụ trên, hãy đảm bảo rằng `vue` và `@vueuse/core` được cài đặt là các phụ thuộc (dependencies / devDependencies) trong dự án của bạn. Slidev sẽ xử lý phần còn lại để tự động làm việc với các kiểu dữ liệu cho trình soạn thảo. Khi được triển khai dưới dạng SPA, các kiểu dữ liệu này cũng sẽ được đóng gói cho việc static host.
+Trong ví dụ trên, hãy chắc chắn rằng `vue` và `@vueuse/core` đã được cài đặt cục bộ dưới dạng dependencies / devDependencies, Slidev sẽ tự động xử lý phần còn lại để các type hoạt động cho editor một cách tự động. Khi deploy dưới dạng SPA, các type này cũng sẽ được bundle để phục vụ cho việc static hosting.
 
-### Các kiểu dữ liệu bổ sung
+### Type bổ sung
 
-Slidev sẽ quét tất cả các khối code Monaco trong các slide của bạn và tự động import các kiểu dữ liệu cho những thư viện mà bạn đã sử dụng. Trong trường hợp Slidev bỏ sót một số kiểu dữ liệu, bạn có thể chỉ định rõ ràng các package bổ sung để import các kiểu dữ liệu cho chúng:
+Slidev sẽ quét tất cả các đoạn code Monaco trong các slide của bạn và tự động import các type cho các thư viện đã sử dụng. Trong trường hợp nó bỏ sót một số thư viện, bạn có thể chỉ định rõ ràng các package bổ sung để import type như sau:
 
 ```md
 ---
@@ -41,9 +56,9 @@ monacoTypesAdditionalPackages:
 ---
 ```
 
-### Tự động nhận kiểu dữ liệu
+### Tự động nhận dạng type
 
-Bạn có thể tùy chọn chuyển sang load các kiểu dữ liệu từ CDN bằng cách thiết lập headmatter sau:
+Bạn có thể tùy chọn chuyển sang load các type từ CDN bằng cách thiết lập phần headmatter sau:
 
 ```md
 ---
@@ -51,17 +66,17 @@ monacoTypesSource: ata
 ---
 ```
 
-Tính năng này được hỗ trợ bởi [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) và hoạt động hoàn toàn ở phía máy khách.
+Tính năng này được hỗ trợ bởi [`@typescript/ata`](https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata) và chạy hoàn toàn phía client.
 
-## Cấu hình theme
+## Cấu hình Theme
 
-Kể từ v0.48.0, Monaco sẽ tái sử dụng theme Shiki mà bạn đã cấu hình trong [file cấu hình của Shiki](/custom/config-highlighter#configure-shiki), được hỗ trợ bởi [`@shikijs/monaco`](https://shiki.style/packages/monaco). Bạn không cần phải lo lắng về điều này nữa, và nó sẽ có một style nhất quán với phần còn lại của các khối code trong Slidev.
+Kể từ phiên bản v0.48.0, Monaco sẽ tái sử dụng theme Shiki mà bạn đã cấu hình trong [file cài đặt Shiki](/custom/highlighters#configure-shiki), được hỗ trợ bởi [`@shikijs/monaco`](https://shiki.style/packages/monaco). Bạn không cần phải lo lắng nữa vì nó sẽ giữ cho style nhất quán với các khối code khác của bạn.
 
-## Cấu hình trình soạn thảo
+## Cấu hình Editor
 
-> Có sẵn từ phiên bản v0.43.0
+> Có từ phiên bản v0.43.0 trở đi
 
-Nếu bạn muốn tùy chỉnh trình soạn thảo Monaco, bạn có thể truyền một object `editorOptions` tương thích với định nghĩa [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html).
+Nếu bạn muốn tùy chỉnh editor Monaco, bạn có thể truyền một object `editorOptions` phù hợp với định nghĩa [Monaco IEditorOptions](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IEditorOptions.html).
 
 ````md
 ```ts {monaco} { editorOptions: { wordWrap:'on'} }
@@ -69,9 +84,9 @@ console.log('HelloWorld')
 ```
 ````
 
-Ngoài ra, nếu bạn muốn những option này được áp dụng cho mọi thực thể Monaco, bạn có thể return chúng trong hàm `defineMonacoSetup`.
+Ngoài ra, nếu bạn muốn các tuỳ chọn này được áp dụng cho mọi instance của Monaco, bạn có thể trả về chúng trong hàm `defineMonacoSetup`.
 
-```ts twoslash
+```ts
 // ./setup/monaco.ts
 import { defineMonacoSetup } from '@slidev/types'
 
@@ -84,16 +99,12 @@ export default defineMonacoSetup(() => {
 })
 ```
 
-## Disable
+## Vô hiệu hóa
 
-Từ v0.48.0, trình chỉnh sửa Monaco được enable mặc định và chỉ được đóng gói khi bạn sử dụng nó. Nếu bạn muốn disable nó, bạn có thể đặt `monaco` thành `false` trong frontmatter của slide:
+Kể từ phiên bản v0.48.0, editor Monaco được enable theo mặc định và chỉ được bundle khi bạn sử dụng nó. Nếu bạn muốn disable, bạn có thể đặt `monaco` thành `false` trong phần frontmatter của slide:
 
 ```yaml
 ---
-monaco: false # cũng có thể là `dev` hoặc `build` để enable có điều kiện
+monaco: false # can also be `dev` or `build` tp conditionally enable it
 ---
 ```
-
-## Cấu hình Code Runners
-
-Để cấu hình cách Monaco Runner chạy code hoặc thêm hỗ trợ cho các ngôn ngữ tùy chỉnh, vui lòng tham khảo [Cấu hình Code Runners](/custom/config-code-runners).

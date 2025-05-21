@@ -1,20 +1,20 @@
-# Configure UnoCSS
+# Cấu hình UnoCSS
 
 <Environment type="node" />
 
-[UnoCSS](https://unocss.dev) is now the default CSS framework for Slidev since v0.42.0. UnoCSS is a fast atomic CSS engine that has full flexibility and extensibility. Most of the Tailwind CSS classes are supported **out-of-box**, and you can also extend it with your own configurations.
+[UnoCSS](https://unocss.dev) hiện là framework CSS mặc định cho Slidev kể từ phiên bản v0.42.0. UnoCSS là một công cụ CSS dạng nguyên tử (atomic CSS) nhanh, linh hoạt và dễ mở rộng.
 
-By default, Slidev enables the following presets out-of-box:
+Theo mặc định, Slidev kích hoạt sẵn các preset sau:
 
-- [@unocss/preset-uno](https://unocss.dev/presets/uno) - Tailwind / Windi CSS compatible utilities
-- [@unocss/preset-attributify](https://unocss.dev/presets/attributify) - Attributify mode
-- [@unocss/preset-icons](https://unocss.dev/presets/icons) - Use any icons as class
-- [@unocss/preset-web-fonts](https://unocss.dev/presets/web-fonts) - Use web fonts at ease
-- [@unocss/transformer-directives](https://unocss.dev/transformers/directives) - Use `@apply` in CSS
+- [@unocss/preset-uno](https://unocss.dev/presets/uno) - Các tiện ích tương thích với Tailwind / Windi CSS
+- [@unocss/preset-attributify](https://unocss.dev/presets/attributify) - Chế độ Attributify
+- [@unocss/preset-icons](https://unocss.dev/presets/icons) - Sử dụng bất kỳ biểu tượng nào như class
+- [@unocss/preset-web-fonts](https://unocss.dev/presets/web-fonts) - Dễ dàng sử dụng font chữ từ web
+- [@unocss/transformer-directives](https://unocss.dev/transformers/directives) - Sử dụng `@apply` trong CSS
 
-Slidev also adds shortcuts as can be seen in its [source code](https://github.com/slidevjs/slidev/blob/main/packages/client/uno.config.ts).
+Slidev cũng bổ sung các phím tắt (shortcuts) như bạn có thể thấy trong [mã nguồn](https://github.com/slidevjs/slidev/blob/main/packages/client/uno.config.ts).
 
-You can therefore style your content the way you want. For example:
+Do đó, bạn có thể tự do style nội dung theo cách bạn muốn. Ví dụ:
 
 ```html
 <div class="grid pt-4 gap-4 grid-cols-[100px,1fr]">
@@ -27,11 +27,11 @@ You can therefore style your content the way you want. For example:
 </div>
 ```
 
-## Configurations
+## Cấu hình
 
-You can create `uno.config.ts` under the root of your project to extend the builtin configurations
+Bạn có thể tạo file `uno.config.ts` tại thư mục gốc của dự án để mở rộng các cấu hình có sẵn.
 
-```ts twoslash
+```ts
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
@@ -43,4 +43,4 @@ export default defineConfig({
 })
 ```
 
-Learn more about [UnoCSS configurations](https://unocss.dev/guide/config-file)
+Tìm hiểu thêm về [cấu hình UnoCSS](https://unocss.dev/guide/config-file)

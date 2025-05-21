@@ -24,9 +24,6 @@ const loaded = ref(false)
 
 async function create() {
   // @ts-expect-error Global variable
-  if (!window.twttr?.widgets?.createTweet)
-    return
-  // @ts-expect-error Global variable
   await window.twttr.widgets.createTweet(
     props.id.toString(),
     tweet.value,
@@ -40,7 +37,7 @@ async function create() {
 
 if (isClient) {
   // @ts-expect-error Global variable
-  if (window?.twttr?.widgets?.createTweet) {
+  if (window?.twttr?.widgets) {
     onMounted(create)
   }
   else {
@@ -63,7 +60,7 @@ if (isClient) {
     <div ref="tweet" class="mx-auto w-140">
       <div v-if="!loaded" class="w-30 h-30 my-10px bg-gray-400 bg-opacity-10 rounded-lg flex opacity-50">
         <div class="m-auto animate-pulse text-4xl">
-          <div class="i-carbon:logo-twitter" />
+          <carbon:logo-twitter />
         </div>
       </div>
     </div>
