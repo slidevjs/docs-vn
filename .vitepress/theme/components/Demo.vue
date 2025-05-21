@@ -1,22 +1,25 @@
 <script setup lang="ts">
-import type { SlidevMarkdown } from '@slidev/types'
-import Center from '@slidev/client/layouts/center.vue'
-import Default from '@slidev/client/layouts/default.vue'
-import { parseSync } from '@slidev/parser'
-import Cover from '@slidev/theme-default/layouts/cover.vue'
-import Markdown from 'markdown-it'
-import TypeIt from 'typeit'
 import { onMounted, ref, watch } from 'vue'
-import DemoEditor from './DemoEditor.vue'
-import DemoSlide from './DemoSlide.vue'
-import SlideContainer from './SlideContainer.vue'
 
+// @ts-expect-error missing types
+import TypeIt from 'typeit'
+import Markdown from 'markdown-it'
+import type { SlidevMarkdown } from '@slidev/types'
+
+// @ts-expect-error missing types
+import { parse } from '@slidev/parser'
+import Cover from '@slidev/theme-default/layouts/cover.vue'
+import Default from '@slidev/client/layouts/default.vue'
+import Center from '@slidev/client/layouts/center.vue'
+import SlideContainer from '@slidev/client/internals/SlideContainer.vue'
 import '@slidev/client/styles/layouts-base.css'
 import '@slidev/theme-default/styles/layouts.css'
 
+import DemoEditor from './DemoEditor.vue'
+import DemoSlide from './DemoSlide.vue'
+
 const page = ref(0)
 const paused = ref(false)
-const completed = ref(false)
 const code = ref('')
 const info = ref<SlidevMarkdown>()
 const block = ref<HTMLPreElement>()
@@ -36,9 +39,10 @@ watch([code, paused], () => {
   if (paused.value)
     return
   try {
-    info.value = parseSync(code.value, '')
+    info.value = parse(code.value)
   }
-  catch {
+  catch (e) {
+
   }
 })
 
@@ -66,10 +70,7 @@ if (typeof window !== 'undefined') {
   img1.src = COVER_URL
 }
 
-function play() {
-  code.value = ''
-  block.value!.innerHTML = ''
-  completed.value = false
+onMounted(() => {
   // @ts-expect-error wrong types provided by TypeIt
   new TypeIt(block.value!, {
     speed: 50,
@@ -77,9 +78,6 @@ function play() {
     afterStep: () => {
       // eslint-disable-next-line unicorn/prefer-dom-node-text-content
       code.value = JSON.parse(JSON.stringify(block.value!.innerText.replace('|', '')))
-    },
-    afterComplete: () => {
-      setTimeout(() => completed.value = true, 300)
     },
   })
     .type('<br><span class="token title"># Welcome to Slidev!</span><br><br>', { delay: 400 })
@@ -115,9 +113,7 @@ function play() {
     .type('- 😎 Read the docs to learn more!', { delay: 800 })
     .exec(() => setTimeout(() => page.value = 0))
     .go()
-}
-
-onMounted(play)
+})
 </script>
 
 <template>
@@ -125,10 +121,6 @@ onMounted(play)
     <DemoEditor>
       <div class="text-sm opacity-50 text-center">
         ./slides.md
-      </div>
-
-      <div v-if="completed" class="absolute text-xs right-1 top-1 icon-btn opacity-50" title="Replay" @click="play()">
-        <div class="i-carbon:reset" />
       </div>
 
       <div class="language-md !bg-transparent px4 py1">
@@ -154,14 +146,14 @@ onMounted(play)
         </SlideContainer>
       </div>
       <div
-        class="absolute left-2 bottom-1 flex text-gray-200"
+        class="absolute left-2 bottom-1 flex text-gray-400"
         opacity="0 hover:100"
       >
         <div class="icon-btn" :class="{ disabled: page === 0 }" @click="page = 0">
-          <div class="i-carbon:chevron-left" />
+          <carbon:chevron-left />
         </div>
         <div class="icon-btn" :class="{ disabled: page === 1 }" @click="page = 1">
-          <div class="i-carbon:chevron-right" />
+          <carbon:chevron-right />
         </div>
       </div>
     </DemoSlide>

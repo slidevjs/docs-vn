@@ -1,134 +1,129 @@
----
-outline: deep
----
+# FAQ
 
-# Câu hỏi thường gặp
+## Grids
 
-## Xử lý assets {#assets-handling}
+Vì Slidev được xây dựng dựa trên Web, bạn có thể áp dụng bất kỳ layout grid nào tùy thích. [CSS Grids](https://css-tricks.com/snippets/css/complete-guide-grid/), [flexboxes](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), hoặc thậm chí [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/), bạn có toàn quyền kiểm soát.
 
-Bạn có thể sử dụng các static assets như hình ảnh và video trong các slide của mình. Vì Slidev dựa trên Vite, bạn có thể import chúng trực tiếp vào các file markdown.
+Vì [UnoCSS](https://unocss.dev/) đã được tích hợp sẵn, đây là một cách bạn có thể tham khảo:
 
-Các URL có thể được phân tích static như assets có thể sử dụng đường dẫn tương đối:
-
-```md
-![alt](./image.png)
-<img src="./image.png" />
-```
-
-Trong trường hợp trên, các URL sẽ được resolve thành `/BASE_URL/assets/image.png` sau khi build.
-
-Tuy nhiên, các đường dẫn tương đối trong frontmatter và các component khác sẽ bị hỏng sau khi build:
-
-```md
----
-background: ./image.png  # Broken after build
----
-
-<Comp src="./image.png" />
-```
-
-Trong trường hợp trên, các URL không thể phân tích static và sẽ được giữ nguyên như vậy, dẫn đến lỗi 404 sau khi build.
-
-Để giải quyết điều này, bạn có thể đặt các assets này vào [thư mục public](../custom/directory-structure#public) và sử dụng đường dẫn tuyệt đối để nhập chúng:
-
-```md
----
-background: /image.png
----
-
-<Comp src="/image.png" />
-```
-
-Để biết thêm chi tiết, tham khảo [tài liệu của Vite](https://vitejs.dev/guide/assets.html).
-
-## Định vị {#positioning}
-
-Vì Slidev là ứng dụng web, CSS là cách chính để định vị các element. Dưới đây là một số mẹo hữu ích để định vị các element:
-
-### Grid và Flexbox
-
-Bạn có thể sử dụng CSS Grids để tạo các layout phức tạp:
-
-::: code-group
-
-```md [Two columns]
+```html
 <div class="grid grid-cols-2 gap-4">
-  <div>
-    Cột đầu tiên
-  </div>
-  <div>
-    Cột thứ hai
-  </div>
+<div>
+
+The first column
+
+</div>
+<div>
+
+The second column
+
+</div>
 </div>
 ```
 
-```md [Complex case]
+Tiếp tục, bạn có thể tùy chỉnh kích thước của từng cột như sau:
+
+```html
 <div class="grid grid-cols-[200px_1fr_10%] gap-4">
-  <div>
-    Cột đầu tiên (200px)
-  </div>
-  <div>
-    Cột thứ hai (auto fit)
-  </div>
-  <div>
-    Cột thứ ba (Chiều rộng 10% phần tử cha)
-  </div>
+<div>
+
+The first column (200px)
+
+</div>
+<div>
+
+The second column (auto fit)
+
+</div>
+<div>
+
+The third column (10% width to parent container)
+
+</div>
 </div>
 ```
 
-:::
+## Position
 
-Sử dụng Flexbox để tạo layout responsive tốt hơn:
+Các slide được xác định với kích thước cố định (mặc định là `980x552px`) và sẽ co giãn để phù hợp với màn hình người dùng. Bạn có thể sử dụngposition absolute một cách an toàn trong các slide vì chúng sẽ tỉ lệ theo màn hình.
 
-::: code-group
+Ví dụ:
 
-```md [Horizontal]
-<div class="flex items-center">
-  <div>
-    Khối đầu tiên
-  </div>
-  <div>
-    Khối thứ hai
-  </div>
+```html
+<div class="absolute left-30px bottom-30px">
+This is a left-bottom aligned footer
 </div>
 ```
 
-```md [Vertical]
-<div class="flex flex-col items-center">
-  <div>
-    Nội dung được căn giữa
-  </div>
-</div>
+Để thay đổi kích thước thực tế của canvas, bạn có thể truyền tùy chọn `canvasWidth` trong phần frontmatter đầu tiên:
+
+```yaml
+---
+canvasWidth: 800
+---
 ```
 
-:::
+## Cỡ chữ
 
-Tìm hiểu thêm: [CSS Grids](https://css-tricks.com/snippets/css/complete-guide-grid/), [flexboxes](https://css-tricks.com/snippets/css/a-guide-to-flexbox/), hoặc thậm chí [Masonry](https://css-tricks.com/native-css-masonry-layout-in-css-grid/).
+Nếu bạn cảm thấy cỡ chữ trong các slide quá nhỏ, bạn có thể điều chỉnh theo một vài cách:
 
-### Vị trí tuyệt đối
+### Ghi đè style cục bộ
 
-Bạn có thể sử dụng UnoCSS để định vị các element theo vị trí tuyệt đối:
+Bạn có thể ghi đè các style cho từng slide bằng thẻ `<style>` được chèn trực tiếp.
 
 ```md
-<div class="absolute left-30px bottom-30px">
-  Đây là một footer căn ở góc dưới bên trái
-</div>
+# Page 1
+
+<style>
+h1 {
+  font-size: 10em;
+}
+</style>
+
+---
+
+# Page 2
+
+This will not be affected.
 ```
 
-Hoặc sử dụng tính năng kéo thả các element:
+Tìm hiểu thêm: [Style nhúng](/guide/syntax.html#embedded-styles)
 
-<LinkCard link="features/draggable" />
+### Ghi đè style toàn cục
 
-## Điều chỉnh kích thước {#adjust-size}
+Bạn có thể cung cấp các style tùy chỉnh toàn cục bằng cách tạo file `./style.css`, ví dụ:
 
-- Điều chỉnh kích thước của tất cả slide:
+```css
+/* style.css */
 
-<LinkCard link="features/canvas-size" />
+h1 {
+  font-size: 10em !important;
+}
+```
 
-- Điều chỉnh kích thước của nhiều slide:
+Tìm hiểu thêm: [Style Toàn Cục](/custom/directory-structure.html#style)
 
-<LinkCard link="features/zoom-slide" />
+### Phóng To Canvas
 
-- Điều chỉnh kích thước của một số element:
+Thay đổi kích thước thực tế của canvas sẽ phóng to toàn bộ nội dung của bạn (văn bản, hình ảnh, component, v.v.) và các slide.
 
-<LinkCard link="features/transform-component" />
+```yaml
+---
+# default: 980
+# since the canvas gets smaller, the visual size will become larger
+canvasWidth: 800
+---
+```
+
+### Sử dụng Transform
+
+Chúng tôi cung cấp một component tích hợp sẵn `<Transform />`, là một lớp bao bọc nhẹ của thuộc tính CSS transform.
+
+```md
+<Transform :scale="1.4">
+
+- Item 1
+- Item 2
+
+</Transform>
+```

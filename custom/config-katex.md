@@ -2,7 +2,7 @@
 
 <Environment type="node" />
 
-Tạo `./setup/katex.ts` với nội dung sau:
+Tạo file `./setup/katex.ts` với nội dung sau:
 
 ```ts
 import { defineKatexSetup } from '@slidev/types'
@@ -14,4 +14,4 @@ export default defineKatexSetup(() => {
 })
 ```
 
-Trong quá trình thiết lập, bạn có thể cung cấp cài đặt tùy chỉnh cho [Các lựa chọn KaTex](https://katex.org/docs/options.html). Tham khảo định nghĩa loại và tài liệu của chúng để biết thêm chi tiết.
+Với cấu hình này, bạn có thể cung cấp các thiết lập tùy chỉnh cho [KaTex Options](https://katex.org/docs/options.html). Tham khảo định nghĩa type và tài liệu của họ để biết thêm chi tiết.

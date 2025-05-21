@@ -1,14 +1,16 @@
-## Các component
+---
+outline: [2, 3]
+---
 
-Trang này liệt kê tất cả các component tích hợp sẵn do Slidev cung cấp. Những component này có thể được **sử dụng trực tiếp** trong slide của bạn.
+# Các component
 
-Lưu ý rằng <LinkInline link="guide/theme-addon" /> có thể cung cấp các component bổ sung. Để thêm các component của riêng bạn, xem thêm tại <LinkInline link="guide/component#write" />.
+## Các component tích hợp sẵn
 
-## `Arrow`
+### `Arrow`
 
 Vẽ một mũi tên.
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <Arrow x1="10" y1="20" x2="100" y2="200" />
@@ -20,60 +22,60 @@ Hoặc:
 <Arrow v-bind="{ x1:10, y1:10, x2:200, y2:200 }" />
 ```
 
-Thuộc tính:
+Các tham số:
 
-- `x1` (`string | number`, bắt buộc): vị trí điểm bắt đầu x
-- `y1` (`string | number`, bắt buộc): vị trí điểm bắt đầu y
-- `x2` (`string | number`, bắt buộc): vị trí điểm kết thúc x
-- `y2` (`string | number`, bắt buộc): vị trí điểm kết thúc y
-- `width` (`string | number`, mặc định: `2`): độ rộng của đường thẳng
-- `color` (`string`, mặc định: `'currentColor'`): màu của đường thẳng
+- `x1` (`string | number`, bắt buộc): tọa độ x điểm bắt đầu
+- `y1` (`string | number`, bắt buộc): tọa độ y điểm bắt đầu
+- `x2` (`string | number`, bắt buộc): tọa độ x điểm kết thúc
+- `y2` (`string | number`, bắt buộc): tọa độ y điểm kết thúc
+- `width` (`string | number`, mặc định: `2`): độ dày đường kẻ
+- `color` (`string`, mặc định: `'currentColor'`): màu đường kẻ
 - `two-way` (`boolean`, mặc định: `false`): vẽ mũi tên hai chiều
 
-## `VDragArrow`
+### `VDragArrow`
 
-Một component `Arrow` có thể kéo di chuyển.
+Một component `Arrow` có thể kéo thả được.
 
-### Cách sử dụng
+#### Cách sử dụng
 
-<LinkCard link="features/draggable#draggable-arrow" />
+Xem tại https://sli.dev/guide/draggable.html#draggable-arrow
 
-Các thuộc tính không liên quan đến vị trí giống như [component `Arrow`](#arrow).
+Các tham số không liên quan đến vị trí giống như [component `Arrow`](#arrow).
 
-## `AutoFitText`
+### `AutoFitText`
 
-> Experimental
+> Thử nghiệm
 
-Một hộp mà kích thước font chữ sẽ tự động điều chỉnh để phù hợp với nội dung. Giống như TextBox trong PowerPoint hoặc Keynote.
+Hộp chứa bên trong mà kích thước chữ sẽ tự động điều chỉnh để vừa với nội dung. Tương tự như TextBox trong PowerPoint hoặc Keynote.
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <AutoFitText :max="200" :min="100" modelValue="Some text"/>
 ```
 
-Thuộc tính:
+Các tham số:
 
-- `max` (`string | number`, mặc định `100`): Kích thước font tối đa
-- `min` (`string | number`, mặc định `30`): Kích thước font tối thiểu
+- `max` (`string | number`, mặc định `100`): Kích thước chữ tối đa
+- `min` (`string | number`, mặc định `30`): Kích thước chữ tối thiểu
 - `modelValue` (`string`, mặc định `''`): nội dung văn bản
 
-## `LightOrDark`
+### `LightOrDark`
 
-Sử dụng để hiển thị một thứ này hoặc thứ khác tùy theo chế độ sáng tối đang hoạt động.
+Sử dụng để hiển thị nội dung khác nhau tùy theo theme đang dùng là sáng (light) hay tối (dark).
 
-### Cách sử dụng
+#### Cách sử dụng
 
-Sử dụng với hai slot được đặt tên `#dark` và `#light`:
+Dùng với hai named Slots `#dark` và `#light`:
 
 ```md
 <LightOrDark>
-  <template #dark>Chế độ tối đã được bật</template>
-  <template #light>Chế độ sáng đã được bật</template>
+  <template #dark>Dark mode is on</template>
+  <template #light>Light mode is on</template>
 </LightOrDark>
 ```
 
-Các thuộc tính được cung cấp trong component `LightOrDark` sẽ có sẵn qua các thuộc tính scoped slot:
+Các props được cung cấp trên component `LightOrDark` sẽ có sẵn thông qua scoped slot props:
 
 ```md
 <LightOrDark width="100" alt="some image">
@@ -86,7 +88,7 @@ Các thuộc tính được cung cấp trong component `LightOrDark` sẽ có s�
 </LightOrDark>
 ```
 
-Bạn có thể cung cấp markdown trong các slot, nhưng bạn sẽ cần bao quanh nội dung với các dòng trống:
+Bạn có thể cung cấp markdown trong các slot, nhưng bạn cần phải để trống một dòng ở trên và dưới nội dung đó:
 
 ```md
 <LightOrDark>
@@ -103,24 +105,24 @@ Bạn có thể cung cấp markdown trong các slot, nhưng bạn sẽ cần bao
 </LightOrDark>
 ```
 
-## `Link`
+### `Link`
 
-Chèn một liên kết mà bạn có thể sử dụng để điều hướng đến một slide cụ thể.
+Chèn một liên kết bạn có thể dùng để điều hướng đến slide cụ thể.
 
-### Cách sử dụng
+#### Cách dùng
 
 ```md
-<Link to="42">Đi đến slide 42</Link>
-<Link to="42" title="Đi đến slide 42"/>
-<Link to="solutions" title="Đi đến các giải pháp"/>
+<Link to="42">Go to slide 42</Link>
+<Link to="42" title="Go to slide 42"/>
+<Link to="solutions" title="Go to solutions"/>
 ```
 
-Thuộc tính:
+Các tham số:
 
-- `to` (`string | number`): Đường dẫn của slide cần điều hướng tới (đường dẫn slide bắt đầu từ `1`)
-- `title` (`string`): Tiêu đề hiển thị
+- `to` (`string | number`): Đường dẫn của slide muốn điều hướng đến (slide bắt đầu từ số `1`)
+- `title` (`string`): Tiêu đề sẽ hiển thị
 
-Bạn có thể sử dụng một chuỗi làm `to`, miễn là route tương ứng tồn tại, ví dụ:
+Bạn có thể dùng một chuỗi làm `to`, với điều kiện route tương ứng đã tồn tại, ví dụ:
 
 ```md
 ---
@@ -130,96 +132,84 @@ routeAlias: solutions
 # Now some solutions!
 ```
 
-## `PoweredBySlidev`
+### `PoweredBySlidev`
 
-Hiển thị "Powered by Slidev" với liên kết đến trang web của Slidev.
+Hiển thị dòng "Powered by Slidev" kèm theo liên kết đến trang web của Slidev.
 
-## `RenderWhen`
+### `RenderWhen`
 
-Hiển thị các slot phụ thuộc vào việc ngữ cảnh có khớp hay không (ví dụ như khi chúng ta đang ở chế độ trình bày).
+Chỉ render slot khi điều kiện context thỏa mãn (ví dụ khi đang ở chế độ presenter view).
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
-<RenderWhen context="presenter">Chỉ hiển thị trong chế độ trình bày.</RenderWhen>
+<RenderWhen context="presenter">This will only be rendered in presenter view.</RenderWhen>
 ```
 
-Loại ngữ cảnh: `'main' | 'visible' | 'print' | 'slide' | 'overview' | 'presenter' | 'previewNext'`
+Kiểu context: `'main' | 'slide' | 'overview' | 'presenter' | 'previewNext'`
 
-Thuộc tính:
+Tham số:
 
-- `context` (`Context | Context[]`): một ngữ cảnh hoặc mảng các ngữ cảnh mà bạn muốn kiểm tra
-  - `'main'`: Hiển thị trong cả chế độ slide và trình bày (tương đương với ['slide', 'presenter']),
-  - `'visible'`: Hiển thị nội dung nếu nó đang hiển thị
-  - `'print'`: Hiển thị trong chế độ in ấn
-  - `'slide'`: Hiển thị trong chế độ slide
-  - `'overview'`: Hiển thị trong chế độ tổng quan
-  - `'presenter'`: Hiển thị trong chế độ trình bày
-  - `'previewNext'`: Hiển thị trong chế độ xem slide tiếp theo của người trình bày
+- `context` (`Context | Context[]`): context hoặc mảng các context mà bạn muốn slot được render
 
-Slots:
+### `SlideCurrentNo`
 
-- `#default`: Hiển thị khi ngữ cảnh khớp
-- `#fallback`: Hiển thị khi ngữ cảnh không khớp
+Số thứ tự slide hiện tại.
 
-## `SlideCurrentNo`
-
-Số slide hiện tại.
-
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <SlideCurrentNo />
 ```
 
-## `SlidesTotal`
+### `SlidesTotal`
 
-Tổng số slide.
+Tổng số lượng slide.
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <SlidesTotal />
 ```
 
-## `TitleRenderer`
+### `Titles`
 
-Chèn tiêu đề chính từ một slide được phân tích dưới dạng HTML.
+Chèn tiêu đề chính từ một slide đã được phân tích cú pháp thành HTML.
 
-Tiêu đề và cấp độ tiêu đề tự động được lấy từ phần tử tiêu đề đầu tiên của mỗi slide.
+Tiêu đề và cấp độ tiêu đề được tự động lấy từ phần tử tiêu đề đầu tiên của mỗi slide.
 
 Bạn có thể ghi đè hành vi tự động này cho một slide bằng cách sử dụng cú pháp front matter:
 
 ```yml
 ---
-title: Tiêu đề slide tuyệt vời
+title: Amazing slide title
 level: 2
 ---
 ```
 
-### Cách sử dụng
+#### Cách sử dụng
 
-Thành phần `<TitleRenderer>` là một component ảo mà bạn có thể nhập với:
+`<Titles>` là một component ảo mà bạn có thể import bằng cách:
 
 ```js
-import TitleRenderer from '#slidev/title-renderer'
+import Titles from '/@slidev/titles.md'
 ```
 
-Sau đó, bạn có thể sử dụng nó với:
+Sau đó bạn có thể sử dụng nó với:
 
 ```md
-<TitleRenderer no="42" />
+<Titles no="42" />
 ```
 
-Thuộc tính:
+Các tham số:
 
-- `no` (`string | number`): Số của slide mà bạn muốn hiển thị tiêu đề (slides bắt đầu từ `1`)
+- `no` (`string | number`): Số thứ tự của slide để hiển thị tiêu đề (slide bắt đầu từ `1`)
 
-## `Toc`
+### `Toc`
 
-Chèn một mục lục.
+Chèn một Mục Lục (Table Of Content).
 
-Nếu bạn muốn một slide không xuất hiện trong component `<Toc>`, bạn có thể sử dụng tùy chọn `hideInToc` trong frontmatter của slide:
+Nếu bạn muốn một slide không xuất hiện trong thành phần `<Toc>`, bạn có thể sử dụng trong khối front matter của slide:
 
 ```yml
 ---
@@ -227,30 +217,30 @@ hideInToc: true
 ---
 ```
 
-Tiêu đề được hiển thị bằng cách sử dụng component [`<Titles>`](#titles).
+Tiêu đề được hiển thị bằng cách sử dụng [`<Titles>` component](#titles)
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <Toc />
 ```
 
-Thuộc tính:
+Tham số:
 
 - `columns` (`string | number`, mặc định: `1`): Số cột hiển thị
-- `listClass` (`string | string[]`, mặc định: `''`): Lớp CSS áp dụng cho danh sách mục lục
-- `maxDepth` (`string | number`, mặc định: `Infinity`): Cấp độ tối đa của tiêu đề cần hiển thị
-- `minDepth` (`string | number`, mặc định: `1`): Cấp độ tối thiểu của tiêu đề cần hiển thị
+- `listClass` (`string | string[]`, mặc định: `''`): Các lớp CSS áp dụng cho danh sách mục lục
+- `maxDepth` (`string | number`, mặc định: `Infinity`): Mức độ sâu tối đa của tiêu đề để hiển thị
+- `minDepth` (`string | number`, mặc định: `1`): Mức độ sâu tối thiểu của tiêu đề để hiển thị
 - `mode` (`'all' | 'onlyCurrentTree'| 'onlySiblings'`, mặc định: `'all'`):
   - `'all'`: Hiển thị tất cả các mục
-  - `'onlyCurrentTree'`: Hiển thị chỉ các mục trong cây hiện tại (mục đang hoạt động, các mục cha và con của mục đang hoạt động)
-  - `'onlySiblings'`: Hiển thị chỉ các mục trong cây hiện tại và các anh chị em trực tiếp của chúng
+  - `'onlyCurrentTree'`: Chỉ hiển thị các mục trong cây hiện tại (mục đang hoạt động, các mục cha và con của mục hoạt động)
+  - `'onlySiblings'`: Chỉ hiển thị các mục trong cây hiện tại và các anh chị em trực tiếp của chúng
 
-## `Transform`
+### `Transform`
 
-Áp dụng tỷ lệ hoặc biến đổi cho các phần tử.
+Áp dụng tỉ lệ hoặc biến đổi cho các phần tử.
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <Transform :scale="0.5">
@@ -258,102 +248,114 @@ Thuộc tính:
 </Transform>
 ```
 
-Thuộc tính:
+Tham số:
 
-- `scale` (`number | string`, mặc định `1`): giá trị tỷ lệ biến đổi
-- `origin` (`string`, mặc định `'top left'`): giá trị gốc của biến đổi
+- `scale` (`number | string`, mặc định `1`): giá trị tỉ lệ biến đổi (transform scale)
+- `origin` (`string`, mặc định `'top left'`): giá trị gốc biến đổi (transform origin)
 
-## `Tweet`
+### `Tweet`
 
 Nhúng một tweet.
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <Tweet id="20" />
 ```
 
-Thuộc tính:
+Tham số:
 
 - `id` (`number | string`, bắt buộc): ID của tweet
-- `scale` (`number | string`, mặc định `1`): giá trị tỷ lệ biến đổi
-- `conversation` (`string`, mặc định `'none'`): tham số nhúng [tweet embed parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
-- `cards` (`'hidden' | 'visible'`, mặc định `'visible'`): tham số nhúng [tweet embed parameter](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+- `scale` (`number | string`, mặc định `1`): giá trị tỉ lệ biến đổi (transform scale)
+- `conversation` (`string`, mặc định `'none'`): [tham số nhúng tweet](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
+- `cards` (`'hidden' | 'visible'`, mặc định `'visible'`): [tham số nhúng tweet](https://developer.twitter.com/en/docs/twitter-for-websites/embedded-tweets/guides/embedded-tweet-parameter-reference)
 
-## `VAfter`, `VClick` và `VClicks`
+### `VAfter`, `VClick` và `VClicks`
 
-<LinkCard link="guide/animations#click-animation" />
+Xem https://sli.dev/guide/animations.html
 
-## `VSwitch`
+### `VSwitch`
 
-Chuyển đổi giữa các slot khác nhau dựa trên các lần nhấp.
+Chuyển đổi giữa nhiều slot dựa trên các cú nhấp chuột.
 
-<LinkCard link="guide/animations#enter-leave" />
+Xem https://sli.dev/guide/animations.html#enter-leave
 
-- Nếu thuộc tính `unmount` được đặt là `true`, slot trước đó sẽ bị tháo ra khi chuyển sang slot tiếp theo. Mặc định là `false`.
-- Sử dụng thuộc tính `tag` và `childTag` để thay đổi thẻ mặc định của component và các phần tử con của nó. Mặc định là `div`.
-- Sử dụng thuộc tính `transition` để thay đổi hiệu ứng chuyển tiếp. Mặc định là `false` (tắt).
+- Nếu prop `unmount` được đặt thành `true`, slot trước sẽ bị gỡ bỏ khi chuyển sang slot tiếp theo. Mặc định là `false`.
+- Dùng prop `tag` và `childTag` để thay đổi thẻ mặc định của component và các phần tử con. Mặc định là `div`.
+- Dùng prop `transition` để thay đổi hiệu ứng chuyển đổi. Mặc định là `false` (tắt).
 
-## `VDrag`
+### `VDrag`
 
-<LinkCard link="features/draggable" />
+Xem https://sli.dev/guide/draggable.html
 
-## `SlidevVideo`
+### `SlidevVideo`
 
 Nhúng một video.
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <SlidevVideo v-click autoplay controls>
-  <!-- Bất kỳ thứ gì có thể đi vào thẻ video HTML. -->
+  <!-- Anything that can go in a HTML video element. -->
   <source src="/myMovie.mp4" type="video/mp4" />
   <source src="/myMovie.webm" type="video/webm" />
   <p>
-    Trình duyệt của bạn không hỗ trợ video. Bạn có thể tải xuống tại
-    <a href="/myMovie.mp4">đây</a>.
+    Your browser does not support videos. You may download it
+    <a href="/myMovie.mp4">here</a>.
   </p>
 </SlidevVideo>
 ```
 
-Kiểm tra [Tài liệu về thẻ video HTML](https://developer.mozilla.org/docs/Web/HTML/Element/Video) để xem những gì có thể được bao gồm trong slot của component này.
+Xem [tài liệu phần tử video HTML](https://developer.mozilla.org/docs/Web/HTML/Element/Video) để biết những gì có thể được bao gồm trong slot của component này.
 
-Thuộc tính:
+Tham số:
 
 - `controls` (`boolean`, mặc định: `false`): hiển thị điều khiển video
 - `autoplay` (`boolean | 'once'`, mặc định: `false`):
-  - `true` hoặc `'once'`: bắt đầu video chỉ một lần và không khởi động lại khi kết thúc hoặc tạm dừng
-  - `false`: không tự động bắt đầu video (dựa vào `controls` thay vào đó)
+  - `true` hoặc `'once'`: chỉ phát video một lần và không phát lại khi video kết thúc hoặc bị tạm dừng
+  - `false`: không tự động phát video (phụ thuộc vào `controls`)
 - `autoreset` (`'slide' | 'click'`, mặc định: `undefined`):
-  - `'slide'`: quay lại đầu video khi quay lại slide
-  - `'click'`: quay lại đầu video khi quay lại lần nhấp vào component
+  - `'slide'`: quay lại đầu video khi trở về slide
+  - `'click'`: quay lại đầu video khi trở về lượt click của component
 - `poster` (`string | undefined`, mặc định: `undefined`):
-  - Nguồn hình ảnh hiển thị khi video không phát.
+  - Nguồn ảnh hiển thị khi video chưa phát
 - `printPoster` (`string | undefined`, mặc định: `undefined`):
-  - Ghi đè cho `poster` khi in.
+  - Thay thế `poster` khi in ấn
 - `timestamp` (`string | number`, mặc định: `0`):
-  - Thời gian bắt đầu của video tính bằng giây.
+  - Thời gian bắt đầu phát video tính bằng giây
 - `printTimestamp` (`string | number | 'last' | undefined`, mặc định: `undefined`):
-  - Ghi đè cho `timestamp` khi in.
+  - Thay thế `timestamp` khi in ấn
 
 ::: warning
-Khi xuất bản, video có thể không tải được vì Chromium không hỗ trợ một số định dạng video. Trong trường hợp này, bạn có thể chỉ định đường dẫn thực thi của trình duyệt. Xem [Đường dẫn thực thi của Chromium](/guide/exporting.html#executable-path) để biết thêm thông tin.
+Khi xuất file, video có thể không tải được vì Chromium không hỗ trợ một số định dạng video. Trong trường hợp này, bạn có thể chỉ định đường dẫn thực thi của trình duyệt. Xem [Đường dẫn thực thi Chromium](/guide/exporting.html#executable-path) để biết thêm chi tiết.
 :::
 
-## `Youtube`
+### `Youtube`
 
-Nhúng một video YouTube.
+Nhúng video từ Youtube.
 
-### Cách sử dụng
+#### Cách sử dụng
 
 ```md
 <Youtube id="luoMHjh-XcQ" />
 ```
 
-Thuộc tính:
+Tham số:
 
-- `id` (`string`, bắt buộc): ID của video YouTube
+- `id` (`string`, bắt buộc): id của video youtube
 - `width` (`number`): chiều rộng của video
 - `height` (`number`): chiều cao của video
 
-Bạn cũng có thể làm video bắt đầu từ một thời gian cụ thể nếu thêm `?start=1234` vào giá trị ID (với `1234` là số giây).
+Bạn cũng có thể cho video bắt đầu phát từ một thời điểm cụ thể bằng cách thêm `?start=1234` vào giá trị id (trong đó 1234 là số giây).
+
+## Component tùy chỉnh
+
+Tạo thư mục `components/` dưới thư mục gốc của dự án, rồi đặt các component Vue tùy chỉnh của bạn vào đó. Sau đó bạn có thể sử dụng chúng với cùng tên trong file markdown!
+
+Đọc thêm ở phần [Tùy chỉnh](/custom/directory-structure#components).
+
+## Component do Theme cung cấp
+
+Các theme cũng có thể cung cấp component. Vui lòng đọc tài liệu của họ để biết những component nào được cung cấp.
+
+Xem thêm trong phần [cấu trúc thư mục](/custom/directory-structure).

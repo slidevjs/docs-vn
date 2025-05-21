@@ -1,8 +1,8 @@
-# Directory Structure
+# Cấu trúc Thư mục
 
-Slidev employs some directory structure conventions to minimize the configuration surface and to make the functionality extensions flexible and intuitive.
+Slidev sử dụng một số quy ước về cấu trúc thư mục nhằm giảm thiểu nhu cầu cấu hình và giúp việc mở rộng tính năng trở nên linh hoạt và trực quan hơn.
 
-The conventional directory structure is:
+Cấu trúc cơ bản như sau:
 
 ```bash
 your-slidev/
@@ -10,38 +10,93 @@ your-slidev/
   ├── layouts/          # custom layouts
   ├── public/           # static assets
   ├── setup/            # custom setup / hooks
-  ├── snippets/         # code snippets
   ├── styles/           # custom style
   ├── index.html        # injections to index.html
   ├── slides.md         # the main slides entry
   └── vite.config.ts    # extending vite config
 ```
 
-All of them are optional.
+Tất cả các thư mục này đều là tùy chọn.
 
 ## Components
 
-Pattern: `./components/*.{vue,js,ts,jsx,tsx,md}`
+Quy ước: `./components/*.{vue,js,ts,jsx,tsx,md}`
 
-<LinkCard link="guide/component" />
+Các component trong thư mục này có thể được sử dụng trực tiếp trong file Markdown của slide, với tên component trùng với tên file.
+
+Ví dụ:
+
+```bash
+your-slidev/
+  ├── ...
+  └── components/
+      ├── MyComponent.vue
+      └── HelloWorld.ts
+```
+
+```md
+<!-- slides.md -->
+
+# My Slide
+
+<MyComponent :count="4"/>
+
+<!-- both namings work -->
+
+<hello-world foo="bar">
+  Slot
+</hello-world>
+```
+
+Tính năng này được cung cấp bởi [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components), bạn có thể tìm hiểu thêm tại đó.
+
+Slidev cũng cung cấp một số [component tích hợp sẵn](/builtin/components) để bạn sử dụng.
 
 ## Layouts
 
-Pattern: `./layouts/*.{vue,js,ts,jsx,tsx}`
+Quy ước: `./layouts/*.{vue,js,ts,jsx,tsx}`
 
-<LinkCard link="guide/layout" />
+```
+your-slidev/
+  ├── ...
+  └── layouts/
+      ├── cover.vue
+      └── my-cool-theme.vue
+```
+
+Bạn có thể sử dụng bất kỳ tên file nào cho layout của mình. Sau đó, bạn tham chiếu đến layout đó trong phần đầu YAML bằng tên file.
+
+```yaml
+---
+layout: my-cool-theme
+---
+```
+
+Nếu layout bạn cung cấp có cùng tên với một layout tích hợp sẵn hoặc layout từ theme, thì layout tùy chỉnh của bạn sẽ được ưu tiên sử dụng. Thứ tự ưu tiên là: `local > theme > built-in`.
+
+Trong component layout, hãy sử dụng `<slot/>` để hiển thị nội dung của slide. Ví dụ:
+
+```html
+<!-- default.vue -->
+<template>
+  <div class="slidev-layout default">
+    <slot />
+  </div>
+</template>
+```
 
 ## Public
 
-Pattern: `./public/*`
+Quy ước: `./public/*`
 
-Assets in this directory will be served at root path `/` during dev, and copied to the root of the dist directory as-is. Read more about [Assets Handling](../guide/faq#assets-handling).
+Các tài nguyên trong thư mục này sẽ được phục vụ tại đường dẫn gốc `/` trong quá trình phát triển, và được sao chép y nguyên vào thư mục dist khi build. Đọc thêm về [thư mục `public` của Vite](https://vitejs.dev/guide/assets.html#the-public-directory).
 
 ## Style
 
-Pattern: `./style.css` | `./styles/index.{css,js,ts}`
+Quy ước: `./style.css` | `./styles/index.{css,js,ts}`
 
-Files following this convention will be injected to the App root. If you need to import multiple CSS entries, you can create the following structure and manage the import order yourself.
+Các file tuân theo quy ước này sẽ được tự động chèn vào gốc của ứng dụng.  
+Nếu bạn cần import nhiều file CSS, bạn có thể tạo cấu trúc thư mục như sau và tự quản lý thứ tự import.
 
 ```bash
 your-slidev/
@@ -61,11 +116,11 @@ import './code.css'
 import './layouts.css'
 ```
 
-Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://postcss.org/), so you can use CSS nesting and [at-directives](https://unocss.dev/transformers/directives#apply) and Nested CSS out-of-box. For example:
+Các style sẽ được xử lý bởi [UnoCSS](https://unocss.dev/) và [PostCSS](https://postcss.org/), vì vậy bạn có thể sử dụng tính năng lồng CSS (css nesting) và các [at-directives](https://unocss.dev/transformers/directives#apply) mà không cần cấu hình thêm. Ví dụ:
 
 <!-- eslint-skip -->
 
-```css
+```less
 .slidev-layout {
   --uno: px-14 py-10 text-[1.1rem];
 
@@ -83,15 +138,15 @@ Styles will be processed by [UnoCSS](https://unocss.dev/) and [PostCSS](https://
 }
 ```
 
-Learn more about the syntax [here](https://unocss.dev/transformers/directives#apply).
+[Tìm hiểu thêm về cú pháp](https://unocss.dev/transformers/directives#apply).
 
 ## `index.html`
 
-Pattern: `index.html`
+Quy ước: `index.html`
 
-The `index.html` provides the ability to inject meta tags and/or scripts to the main `index.html`
+File `index.html` cho phép bạn chèn các thẻ meta và/hoặc script vào `index.html` chính của ứng dụng.
 
-For example, for the following custom `index.html`:
+Ví dụ, với file `index.html` tùy chỉnh sau:
 
 ```html
 <!-- ./index.html -->
@@ -105,7 +160,7 @@ For example, for the following custom `index.html`:
 </body>
 ```
 
-The final hosted `index.html` will be:
+File `index.html` sau khi được build và triển khai cuối cùng sẽ là:
 
 ```html
 <!DOCTYPE html>
@@ -127,8 +182,8 @@ The final hosted `index.html` will be:
 </html>
 ```
 
-## Global Layers
+## Lớp Toàn Cục (Global Layers)
 
-Pattern: `global-top.vue` | `global-bottom.vue` | `custom-nav-controls.vue` | `slide-top.vue` | `slide-bottom.vue`
+Quy ước: `global-top.vue` | `global-bottom.vue`
 
-<LinkCard link="features/global-layers" />
+Tìm hiểu thêm: [Lớp Toàn Cục](/custom/global-layers)
